@@ -3,37 +3,41 @@
   <h1 class="recipe-page-title text-center">Recipes</h1>
   <div class="container recipe-page-card-container">
     <% recipes.forEach(recipe => { %>
+    <div class="container">
+      <div class="card recipe-page-card">
+        <img
+          class="card-img-top p-3 recipe-page-card-image"
+          src="<%= recipe.img %>"
+          alt="recipe image"
+        />
 
-    <div class="card flex-md-row">
-      <div class="card-body d-flex flex-column align-items-start">
-        <h3 class="mb-0">
-          <a class="text-dark" href="#"><%= recipe.title %></a>
-        </h3>
-        <div class="mb-1 text-muted">
-          <i class="far fa-clock pr-2"></i><%= recipe.date %>
-          <br />
-          <small class="text-muted"><%= recipe.submittedBy %></small>
+        <div class="recipe-page-card-body p-3">
+          <h3 class="mb-0 card-title">
+            <a class="text-dark" href="#"><%= recipe.title %></a>
+          </h3>
+          <div class="mb-1 text-muted">
+            <i class="far fa-clock pr-2"></i><%= recipe.date %>
+
+            <small class="text-muted ml-3"><%= recipe.submittedBy %></small>
+          </div>
+          <p class="card-text mt-3 mb-3">"<%= recipe.content %>"</p>
+          <a href="#" class="text-danger">Read more</a>
         </div>
-        <p class="card-text mt-3 mb-auto">"<%= recipe.content %>"</p>
-        <a href="#" class="text-danger">Read more</a>
-
-        <div class="d-flex">
+        <div class="card-footer recipe-page-social-icons">
           <p class="copy-msg">Link Copied!</p>
           <i
-            class="fas fa-link p-1 mt-3 mr-1 copy-link"
+            class="fas fa-link p-1 mt-1 ml-2 copy-link float-right"
             data-placement="top"
             title="Copy Link"
           ></i>
 
           <i
-            class="fas fa-thumbs-up p-1 mt-3"
+            class="fas fa-thumbs-up p-1 mt-1 float-right"
             data-placement="top"
             title="like"
           ></i>
         </div>
       </div>
-
-      <img class="card-img-right" src="<%= recipe.img %>" alt="recipe image" />
     </div>
 
     <% }) %>
