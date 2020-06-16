@@ -589,8 +589,12 @@ footer {
     font-size: 0.9rem;
   }
 
+  .header-filter {
+    backdrop-filter: blur(2px);
+  }
+
   .header-div {
-    padding-top: 11rem;
+    padding-top: 10rem;
   }
 
   .bottle {
