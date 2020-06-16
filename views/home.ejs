@@ -2,7 +2,7 @@
 <div class="header-div">
   <div class="header-filter"></div>
 
-  <img class="bottle" src="img/table.png" alt="" />
+  <img class="bottle" id="bottle" src="img/table.png" alt="" />
 
   <!-- <img class="header-title" src="img/redlogo.png" alt="" /> -->
 </div>
@@ -226,3 +226,12 @@
 </div>
 
 <%- include("partials/footer") -%>
+
+
+<script>
+  // Change to wider picture on small screens
+  if(window.matchMedia('(max-width: 600px)')){
+    const bottle = document.getElementById("bottle");
+    bottle.setAttribute("src", "img/tablemobile.png");
+  }
+</script>
