@@ -683,9 +683,9 @@ footer {
   }
 
   .form-text {
-    padding-top: 2rem;
-    font-size: 1rem;
     width: 100%;
+    padding-top: 2rem;
+    font-size: 1.1rem;
   }
 
   .recipe-page-card-container {
