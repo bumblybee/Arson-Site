@@ -34,10 +34,10 @@ body {
   align-items: center;
   background-color: #faf8f0;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23dbdbd9' fill-opacity='0.46' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23dbdbd9' fill-opacity='0.26' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   position: relative;
   width: 100vw;
-  border-top: 10px solid #b3272b;
+  border-top: 10px solid #be3624;
 }
 
 .nav-header__p {
@@ -50,7 +50,7 @@ body {
 
 .pearson,
 .arson {
-  color: #b3171d;
+  color: #be3624;
   font-family: "Rock Salt";
   letter-spacing: 0.2rem;
   font-weight: bold;
@@ -95,13 +95,13 @@ body {
   z-index: 4;
   width: 100%;
 
-  animation: imageLoad 3s linear;
+  /* animation: imageLoad 3s linear; */
 }
 
 .header-div {
   padding: 10rem 0 0;
   z-index: -2;
-  background: url("https://images.unsplash.com/photo-1529753253655-470be9a42781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background: url("https://images.unsplash.com/photo-1517196084897-498e0abd7c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
   background-size: cover;
   background-position: 80% 70%;
 
@@ -116,7 +116,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: saturate(110%) blur(3px);
+  backdrop-filter: saturate(110%) blur(4px);
   background-color: rgba(7, 7, 7, 0.138);
 }
 
@@ -194,9 +194,6 @@ body {
 }
 
 .story-btn {
-  /* border: 2px solid #bb3441;
-  border-radius: 8px; */
-  /* padding: 0.4rem; */
   background: transparent;
   color: #e64555;
   text-decoration: none;
@@ -205,7 +202,7 @@ body {
 
 .story-btn:hover {
   text-decoration: none;
-  color: #bb3441;
+  color: #be3624;
 }
 
 .plants-img {
@@ -294,12 +291,7 @@ body {
 }
 
 .card {
-  background: #fff;
-  /* box-shadow: 0 2.8px 1.9px rgba(0, 0, 0, 0.028),
-    0 6.7px 4.5px rgba(0, 0, 0, 0.04), 0 12.5px 8.5px rgba(0, 0, 0, 0.05); */
-  /*0 22.3px 15.2px rgba(0, 0, 0, 0.06), 0 41.8px 28.4px rgba(0, 0, 0, 0.072),
-    0 100px 68px rgba(0, 0, 0, 0.1); */
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.028);
   backface-visibility: hidden;
 
   /* Add height to cards in recipe section, then you can put text underneath them */
@@ -339,7 +331,7 @@ body {
 
 .fa-link:hover,
 .fa-thumbs-up:hover {
-  color: #ce1c22;
+  color: #be3624;
 }
 .fa-link:active,
 .fa-thumbs-up:active {
@@ -351,7 +343,7 @@ body {
   position: absolute;
   bottom: -1rem;
   right: 12rem;
-  color: #b3171d;
+  color: #be3624;
   font-size: 1.2rem;
   opacity: 0.7;
 }
@@ -389,12 +381,12 @@ footer {
 }
 
 .emailBtn {
-  background: #bb3441;
+  background: #be3624;
   color: #fff;
 }
 
 .emailBtn:hover {
-  background: #b3171d;
+  background: #992d1e;
   color: #fff;
 }
 
