@@ -261,7 +261,7 @@ body {
   font-size: 4rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
-  color: #f3f0e8;
+  color: #f7f4eb;
 
   text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.5),
     0px -4px 6px rgba(255, 255, 255, 0.3);
@@ -535,14 +535,15 @@ footer {
 
   .hidden-story-title {
     display: block;
-    font-size: 3rem;
+    font-size: 3.2rem;
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
     font-family: "Rock Salt", sans-serif;
     z-index: 5;
-    text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5),
-      0px -4px 6px rgba(255, 255, 255, 0.3);
+    padding-bottom: 3rem;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+      0px -4px 6px rgba(255, 255, 255, 0.3); */
   }
 
   .story-text {
@@ -595,7 +596,7 @@ footer {
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 3.5rem 1.3rem;
+    padding: 5rem 1.4rem;
   }
 
   .chili {
@@ -626,6 +627,7 @@ footer {
     margin: 0.7rem auto;
     height: 280px;
     width: 280px;
+    border-radius: 10%;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
