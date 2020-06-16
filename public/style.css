@@ -143,10 +143,10 @@ body {
 .chili {
   position: absolute;
   z-index: 1;
-  top: 14rem;
-  left: 56rem;
+  top: 16rem;
+  left: 59rem;
   opacity: 0.9;
-  height: 13rem;
+  height: 10rem;
 }
 
 .splat {
@@ -166,12 +166,12 @@ body {
   z-index: 5;
   padding: 1rem 0 3rem;
   font-family: "Rock Salt", cursive;
-  font-size: 3.9rem;
+  font-size: 4rem;
   letter-spacing: 0.25rem;
   /* align-self: start; */
   color: #272727;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5),
-    0px -4px 6px rgba(255, 255, 255, 0.3);
+  /* text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5),
+    0px -4px 6px rgba(255, 255, 255, 0.3); */
 }
 
 .story-text {
@@ -201,7 +201,7 @@ body {
 
 .plants-img {
   z-index: 5;
-  max-height: 420px;
+  max-height: 400px;
   border-radius: 20%;
 
   box-shadow: 0 3.4px 2.8px rgba(0, 0, 0, 0.02),
@@ -209,7 +209,7 @@ body {
     0 27.7px 22.3px rgba(0, 0, 0, 0.042), 0 51.8px 41.8px rgba(0, 0, 0, 0.05),
     0 124px 100px rgba(0, 0, 0, 0.07);
 
-  margin-left: 2.5rem;
+  margin-left: 4rem;
   margin-top: 4rem;
   grid-column-start: 4;
   grid-column-end: 6;
