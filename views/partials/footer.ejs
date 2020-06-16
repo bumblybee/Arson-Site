@@ -1,0 +1,73 @@
+</div>
+
+<footer class="footer">
+  
+    <div class="container footer-container mx-auto">
+        <div class="container">
+            <nav class="nav footer-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/story">Our Story</a>
+                <a class="nav-link" href="/news">News</a>
+                <a class="nav-link facebook-icon" href="/recipes">Recipes</a>
+                <a class="nav-link" href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
+            </nav>
+        
+        </div>
+
+    
+        <div class="container form-container">
+            <h3 class="form-text">Questions? Wanna get ahold of a bottle of sauce?</h3>
+            <form id="contact" action="/sendEmail" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="msg" id="msg" placeholder=" Message" rows="4" required></textarea>
+                </div>
+                <button onClick="animateBtn()" type="submit" class="btn btn-block emailBtn" id="emailBtn" name="emailBtn">Submit</button>
+               
+            </form>
+            
+        </div>
+        
+    </div>
+    
+</footer>
+
+<script>
+    const animateBtn = (e) => {
+        const emailBtn = document.getElementById("emailBtn");
+        const email = document.getElementById("email");
+        const msg = document.getElementById("msg");
+        if(email.value !== "" && msg.value !== "") {
+            emailBtn.innerHTML = "<i class='fas fa-cog fa-2x'></i>";
+            emailBtn.classList.remove("btn-block");
+            emailBtn.classList.add("clicked");
+        }
+    };
+
+    const copiedLinks = document.querySelectorAll(".copy-link");
+    const copiedMsgs = document.querySelectorAll(".copy-msg");
+    const links = Array.from(copiedLinks);
+    const msgs = Array.from(copiedMsgs);
+    links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            window.navigator.clipboard.writeText(window.location.href);
+            console.log(link.previousElementSibling);
+            link.previousElementSibling.style.display = "block";
+            setTimeout(() => {
+            link.previousElementSibling.style.display = "none";
+            }, 2000);
+        });
+    });
+</script>
+
+<script src="index.js"></script>
+
+
+
+</body>
+</html>
