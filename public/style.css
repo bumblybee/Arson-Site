@@ -145,18 +145,9 @@ body {
   position: absolute;
   z-index: 1;
   top: 17rem;
-  left: 52rem;
+  left: 55rem;
   opacity: 0.9;
   height: 10rem;
-}
-
-.splat {
-  position: absolute;
-  z-index: 1;
-  top: 7rem;
-  right: 14rem;
-  opacity: 0.9;
-  height: 37rem;
 }
 
 .hidden-story-title {
