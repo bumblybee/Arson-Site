@@ -658,10 +658,6 @@ footer {
     height: 200px;
   }
 
-  .card-content {
-    display: none;
-  }
-
   footer {
     padding: 2rem 1rem;
   }
