@@ -71,7 +71,7 @@ body {
 .top-nav a {
   font-size: 1.1rem;
   margin-right: 3rem;
-  color: #c91f30;
+  color: #ce1c22;
 }
 
 .nav-link {
@@ -276,6 +276,11 @@ body {
   cursor: pointer;
 }
 
+.card-category {
+  color: #ce1c22;
+  font-weight: bold;
+}
+
 .card-title {
   color: #131212;
   font-size: 1.4rem;
@@ -435,12 +440,16 @@ footer {
 /* .recipe-page-card-body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+} */
+
+.read-more {
+  color: #ce1c22;
 }
 
-.card-img-right {
-  width: 180px;
-  height: 240px;
-} */
+.read-more:hover {
+  text-decoration: none;
+  color: #fc131b;
+}
 
 /* ----------Media Queries--------- */
 
