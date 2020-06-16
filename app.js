@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const fs = require("fs");
 const app = express();
-const PORT = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -148,6 +148,6 @@ app.post("/sendEmail", (req, res) => {
   }, 1800);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on ${port}`);
 });
