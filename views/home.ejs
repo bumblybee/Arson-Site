@@ -2,7 +2,7 @@
 <div class="header-div">
   <div class="header-filter"></div>
 
-  <img class="bottle" id="bottle" src="img/table.png" alt="" />
+  <img class="bottle" id="bottle" src="img/table2.png" alt="" />
 
   <!-- <img class="header-title" src="img/redlogo.png" alt="" /> -->
 </div>
@@ -34,7 +34,7 @@
       dolorum nostrum quod, eum impedit
       veniam optio!
     </p>
-    <a class="btn btn-lg story-btn mt-4" type="button" href="/story"
+    <a class="story-btn mt-4" type="button" href="/story"
       >Read more</a
     >
   </div>
@@ -230,8 +230,13 @@
 
 <script>
   // Change to wider picture on small screens
-  if(window.matchMedia('(max-width: 600px)')){
-    const bottle = document.getElementById("bottle");
+  const bottle = document.getElementById("bottle");
+  const width = window.matchMedia("(max-width: 600px)");
+  if(width.matches){
+    
     bottle.setAttribute("src", "img/tablemobile.png");
+  }
+  else {
+    bottle.setAttribute("src", "img/table.png");
   }
 </script>
