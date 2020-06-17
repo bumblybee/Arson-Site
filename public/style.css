@@ -41,7 +41,7 @@ body {
 
 .nav-header__p {
   color: #272727;
-  text-shadow: 0 1px 1px rgba(20, 20, 18, 0.39);
+
   padding-bottom: 0.5rem;
   font-size: 1.22rem;
   word-spacing: 0.1rem;
@@ -55,6 +55,7 @@ body {
   letter-spacing: 0.2rem;
   font-weight: bold;
   font-size: 1rem;
+  text-shadow: 0 1px 1px rgba(20, 20, 18, 0.39);
 }
 
 .nav,
@@ -615,7 +616,7 @@ footer {
   }
 
   .header-div {
-    padding-top: 8rem;
+    padding-top: 7rem;
   }
 
   .bottle {
@@ -668,7 +669,7 @@ footer {
 
   .story-btn {
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .news-container {
