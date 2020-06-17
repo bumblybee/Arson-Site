@@ -191,7 +191,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   line-height: 2rem;
   letter-spacing: 0.07rem;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   padding: 2rem;
 }
 
@@ -486,6 +486,52 @@ footer {
 .recipe-page-social-icons .fa-link,
 .recipe-page-social-icons .fa-thumbs-up {
   color: #fff;
+}
+
+/* ------------Story Page--------------- */
+
+.story-page-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+
+  color: #faf8f0;
+  background: linear-gradient(
+      to bottom,
+      rgba(36, 36, 36, 0.9),
+      rgba(36, 36, 36, 0.9)
+    ),
+    url("img/flameFinal.jpg");
+
+  background-position: 80% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 18px 15px -20px rgba(0, 0, 0, 0.8);
+
+  padding: 9rem 5rem;
+  height: auto;
+}
+
+.story-page-title {
+  padding: 0 0 4rem;
+  font-family: "Rock Salt", cursive;
+  font-size: 3.7rem;
+  letter-spacing: 0.25rem;
+  /* align-self: start; */
+  color: #faf8f0f3;
+}
+
+.story-page-text {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.story-img {
+  grid-column-start: 4;
+
+  max-height: 370px;
 }
 
 /* ----------Media Queries--------- */
