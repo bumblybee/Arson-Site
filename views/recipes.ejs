@@ -6,7 +6,7 @@
     <div class="container">
       <div class="card recipe-page-card">
         <img
-          class="card-img-top p-3 recipe-page-card-image"
+          class="card-img-top recipe-page-card-image"
           src="<%= recipe.img %>"
           alt="recipe image"
         />
@@ -21,19 +21,21 @@
 
             <small class="text-muted ml-3"><%= recipe.submittedBy %></small>
           </div>
-          <p class="card-text mt-3 mb-3">"<%= recipe.content %>"</p>
-          <!-- <a href="#" class="read-more">Read more</a> -->
+          <p class="card-text mt-3 mb-0">"<%= recipe.content %>"</p>
         </div>
-        <div class="card-footer border-0 bg-white recipe-page-social-icons">
+        <div
+          class="card-footer border-0 recipe-page-social-icons"
+          style="background: #da4733;"
+        >
           <p class="copy-msg">Link Copied!</p>
           <i
-            class="fas fa-link p-1 mt-1 ml-2 copy-link float-right"
+            class="fas fa-link p-1 ml-2 copy-link float-right"
             data-placement="top"
             title="Copy Link"
           ></i>
 
           <i
-            class="fas fa-thumbs-up p-1 mt-1 float-right"
+            class="fas fa-thumbs-up p-1 float-right"
             data-placement="top"
             title="like"
           ></i>

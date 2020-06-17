@@ -65,7 +65,7 @@ body {
 
 .pearson,
 .arson {
-  color: #be3624;
+  color: #b3171d;
   font-family: "Rock Salt";
   letter-spacing: 0.2rem;
   font-weight: bold;
@@ -211,10 +211,10 @@ body {
 
 .story-btn {
   background: transparent;
-  color: #e64555;
+  color: #d8343a;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+
+  font-size: 1.3rem;
 }
 
 .story-btn:hover {
@@ -324,7 +324,7 @@ body {
 }
 
 .card-category {
-  color: #ce1c22;
+  color: #da4733;
   font-weight: bold;
 }
 
@@ -470,10 +470,10 @@ footer {
   font-size: 4rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
-  color: #272727;
+  color: #312420;
 
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
-    0px -4px 6px rgba(255, 255, 255, 0.3);
+  /* text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
+    0px -4px 6px rgba(255, 255, 255, 0.3); */
 }
 
 .recipe-page-card-container {
@@ -494,18 +494,9 @@ footer {
   filter: contrast(110%) saturate(120%);
 }
 
-/* .recipe-page-card-body {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-} */
-
-.read-more {
-  color: #ce1c22;
-}
-
-.read-more:hover {
-  text-decoration: none;
-  color: #fc131b;
+.recipe-page-social-icons .fa-link,
+.recipe-page-social-icons .fa-thumbs-up {
+  color: #fff;
 }
 
 /* ----------Media Queries--------- */
@@ -661,14 +652,14 @@ footer {
   }
 
   .hidden-story-title {
-    font-size: 2.9rem;
+    font-size: 2.7rem;
   }
 
   .story-text {
     display: flex;
     flex-direction: column;
 
-    line-height: 1.7;
+    line-height: 1.65;
   }
 
   .story-text p,
@@ -728,7 +719,7 @@ footer {
   }
 
   .footer-nav a {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .contact {
