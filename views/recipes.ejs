@@ -1,5 +1,5 @@
 <%- include("partials/header") -%>
-<div class="container recipe-page-container">
+<div class="recipe-page-container">
   <h1 class="recipe-page-title text-center">Recipes</h1>
   <div class="container recipe-page-card-container">
     <% recipes.forEach(recipe => { %>
@@ -24,7 +24,7 @@
           <p class="card-text mt-3 mb-3">"<%= recipe.content %>"</p>
           <!-- <a href="#" class="read-more">Read more</a> -->
         </div>
-        <div class="card-footer border-0 recipe-page-social-icons">
+        <div class="card-footer border-0 bg-white recipe-page-social-icons">
           <p class="copy-msg">Link Copied!</p>
           <i
             class="fas fa-link p-1 mt-1 ml-2 copy-link float-right"

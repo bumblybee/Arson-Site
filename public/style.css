@@ -12,7 +12,7 @@ body {
 
 .wrapper {
   width: 100vw;
-  background: #faf8f0;
+  background: #e5e1db;
   font-family: "Oswald", sans-serif;
   z-index: -10;
 }
@@ -31,12 +31,27 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #f6f3ea;
+  background-color: #e5e1db;
+  background-image: linear-gradient(
+    to top,
+    #f6f3ea,
+    #f7f3e7,
+    #f7f3e3,
+    #f7f3e0,
+    #f7f3dd,
+    #fcf8eb,
+    #f4f0da,
+    #f3eed9,
+    #f0ebd9,
+    #ede7da,
+    #e9e4da,
+    #e5e1db
+  );
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23dbdbd9' fill-opacity='0.26' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   position: relative;
   width: 100vw;
-  border-top: 6px solid #be3624;
+  /* border-top: 6px solid #be3624; */
 }
 
 .nav-header__p {
@@ -173,7 +188,7 @@ body {
   z-index: 5;
   padding: 1rem 0 4rem;
   font-family: "Rock Salt", cursive;
-  font-size: 4rem;
+  font-size: 3.9rem;
   letter-spacing: 0.25rem;
   /* align-self: start; */
   color: #faf8f0f3;
@@ -187,9 +202,10 @@ body {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
-  line-height: 1.9rem;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 2rem;
   letter-spacing: 0.07rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   padding: 2rem;
 }
 
@@ -198,6 +214,7 @@ body {
   color: #e64555;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .story-btn:hover {
@@ -222,44 +239,47 @@ body {
   grid-row-start: 1;
 }
 
-.custom-shape-divider-bottom-1592336642 {
+/* ---------SVG Divider----------- */
+.custom-shape-divider-bottom-1592405130 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1592336642 svg {
+.custom-shape-divider-bottom-1592405130 svg {
   position: relative;
   display: block;
-  width: calc(120% + 1.3px);
-  height: 49px;
+  width: calc(300% + 1.3px);
+  height: 86px;
 }
 
-.custom-shape-divider-bottom-1592336642 .shape-fill {
-  fill: #f9f7ef;
+.custom-shape-divider-bottom-1592405130 .shape-fill {
+  fill: #e5e1db;
 }
-
-/* .news-container-filter {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backdrop-filter: blur(20px) saturate(120%);
-  z-index: -1;
-  opacity: 0.9;
-} */
 
 .news-container {
   z-index: 5;
-  color: #272727;
-  background-image: linear-gradient(#faf8f0, #dbd6c8e7);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: #312420;
+  background-color: #e5e1db;
+  background-image: linear-gradient(
+    to top,
+    #f6f3ea,
+    #f7f3e7,
+    #f7f3e3,
+    #f7f3e0,
+    #f7f3dd,
+    #f6f1dc,
+    #f4f0da,
+    #f3eed9,
+    #f0ebd9,
+    #ede7da,
+    #e9e4da,
+    #e5e1db
+  );
 
   padding: 2.5rem 3rem 2.9rem;
 
@@ -270,11 +290,11 @@ body {
 }
 
 .news-title {
-  font-family: "Rock Salt", cursive;
-  font-size: 3.9rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 4.4rem;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.4rem;
   color: #1c1c1cee;
   padding: 2rem 0 1rem;
   /* text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.5),
@@ -322,6 +342,7 @@ body {
 
 .card-text {
   color: #272727;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .fa-link,
@@ -424,6 +445,23 @@ footer {
 }
 
 /* ----------Recipe Page---------- */
+.recipe-page-container {
+  background-image: linear-gradient(
+    to top,
+    #f6f3ea,
+    #f7f3e7,
+    #f7f3e3,
+    #f7f3e0,
+    #f7f3dd,
+    #f6f1dc,
+    #f4f0da,
+    #f3eed9,
+    #f0ebd9,
+    #ede7da,
+    #e9e4da,
+    #e5e1db
+  );
+}
 
 .recipe-page-title {
   text-align: center;
@@ -434,7 +472,7 @@ footer {
   letter-spacing: 0.25rem;
   color: #272727;
 
-  text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5),
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
     0px -4px 6px rgba(255, 255, 255, 0.3);
 }
 
@@ -590,7 +628,7 @@ footer {
   }
 
   .top-nav a {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .header-filter {
@@ -630,7 +668,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .story-text p,
@@ -651,15 +689,16 @@ footer {
 
   .story-btn {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .news-container {
-    padding: 1rem 1rem;
+    padding: 0 0.5rem;
   }
 
   .news-title {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
+    padding: 2rem 0 0;
   }
 
   .news-card-container {
