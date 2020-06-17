@@ -213,7 +213,7 @@ body {
   background: transparent;
   color: #d8343a;
   text-decoration: none;
-
+  font-weight: bold;
   font-size: 1.3rem;
 }
 
@@ -644,8 +644,8 @@ footer {
 
   .chili {
     top: 45rem;
-    left: 21rem;
-    height: 5rem;
+    left: 22rem;
+    height: 3.6rem;
   }
 
   .splat {
