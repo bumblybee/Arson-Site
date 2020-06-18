@@ -31,26 +31,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-image: radial-gradient(
-    circle,
-    #edeae2,
-    #ede9de,
-    #ede9da,
-    #ede8d7,
-    #ede8d3,
-    #eee9d4,
-    #efead4,
-    #f0ebd5,
-    #f2edda,
-    #f3efdf,
-    #f5f1e5,
-    #f6f3ea
-  );
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23dbdbd9' fill-opacity='0.26' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: #edeae2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   position: relative;
   width: 100vw;
-  border-top: 10px solid #272727;
+  border-top: 10px solid rgba(39, 39, 39, 0.973);
 }
 
 .nav-header__p {
@@ -93,7 +79,7 @@ body {
 }
 
 .nav-link {
-  color: #faf8f0;
+  color: #edeae2;
   text-decoration: none;
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.04rem;
@@ -151,17 +137,16 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: minmax(100px, auto);
 
-  color: #faf8f0;
+  color: #edeae2;
   background: linear-gradient(
       to bottom,
       rgba(36, 36, 36, 0.9),
       rgba(36, 36, 36, 0.9)
     ),
     url("img/flameFinal.jpg");
-  /* background: url("https://images.unsplash.com/photo-1529753253655-470be9a42781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+ 
   background-size: cover; */
   background-position: 80% 70%;
-  /* background-image: linear-gradient(#ebe4d2e7, #faf8f0); */
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: inset 0 18px 15px -20px rgba(0, 0, 0, 0.8);
@@ -296,7 +281,7 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.4rem;
-  color: #1c1c1cee;
+ 
   padding: 2rem 0 1rem;
   /* text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.5),
     0px -4px 6px rgba(255, 255, 255, 0.3); */
