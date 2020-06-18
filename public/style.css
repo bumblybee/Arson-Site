@@ -336,12 +336,12 @@ body {
 
 .fa-link,
 .fa-thumbs-up {
-  color: #6c757d;
+  color: #fff;
 }
 
 .fa-link:hover,
 .fa-thumbs-up:hover {
-  color: #be3624;
+  color: #ccc;
 }
 .fa-link:active,
 .fa-thumbs-up:active {
@@ -351,9 +351,13 @@ body {
 .copy-msg {
   display: none;
   position: absolute;
-  bottom: -1rem;
-  right: 12rem;
-  color: #be3624;
+  bottom: 2rem;
+  right: 0;
+  color: #fff;
+  background: #be3624;
+  opacity: 0.9;
+  border-radius: 1px;
+  padding: 0.4rem;
   font-size: 1.2rem;
   opacity: 0.7;
 }
@@ -481,11 +485,6 @@ footer {
 
 .recipe-page-card-image {
   filter: contrast(110%) saturate(120%);
-}
-
-.recipe-page-social-icons .fa-link,
-.recipe-page-social-icons .fa-thumbs-up {
-  color: #fff;
 }
 
 /* ------------Story Page--------------- */
