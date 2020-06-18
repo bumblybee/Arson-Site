@@ -31,7 +31,21 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #eeece8;
+  background-image: radial-gradient(
+    circle,
+    #edeae2,
+    #ede9de,
+    #ede9da,
+    #ede8d7,
+    #ede8d3,
+    #eee9d4,
+    #efead4,
+    #f0ebd5,
+    #f2edda,
+    #f3efdf,
+    #f5f1e5,
+    #f6f3ea
+  );
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23dbdbd9' fill-opacity='0.26' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   position: relative;
@@ -244,28 +258,28 @@ body {
 }
 
 .custom-shape-divider-bottom-1592405130 .shape-fill {
-  fill: #e5e1db;
+  fill: #edeae2;
 }
 
 .news-container {
   margin-top: -0.2rem;
   z-index: 5;
   color: #312420;
-  background-color: #e5e1db;
+  background-color: #edeae2;
   background-image: linear-gradient(
-    to top,
-    #f6f3ea,
-    #f7f3e7,
-    #f7f3e3,
-    #f7f3e0,
-    #f7f3dd,
-    #f6f1dc,
-    #f4f0da,
-    #f3eed9,
-    #f0ebd9,
-    #ede7da,
-    #e9e4da,
-    #e5e1db
+    to bottom,
+    #edeae2,
+    #ede9de,
+    #ede9da,
+    #ede8d7,
+    #ede8d3,
+    #eee9d4,
+    #efead4,
+    #f0ebd5,
+    #f2edda,
+    #f3efdf,
+    #f5f1e5,
+    #f6f3ea
   );
 
   padding: 2.5rem 3rem 2.9rem;
