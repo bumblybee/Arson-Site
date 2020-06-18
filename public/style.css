@@ -618,7 +618,7 @@ footer {
   .story-page-title {
     text-align: center;
     font-size: 3.2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     line-height: 1.6;
   }
   .story-text {
@@ -694,7 +694,7 @@ footer {
 
   .story-page-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.7rem;
   }
 
   .chili {
@@ -709,9 +709,12 @@ footer {
     top: 8rem;
   }
 
-  .hidden-story-title,
-  .story-page-title {
+  .hidden-story-title {
     font-size: 2.7rem;
+  }
+
+  .story-page-title {
+    font-size: 3.1rem;
   }
 
   .story-text,
