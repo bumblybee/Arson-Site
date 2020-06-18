@@ -254,17 +254,10 @@ body {
   background-image: linear-gradient(
     to bottom,
     #edeae2,
-    #ede9de,
-    #ede9da,
-    #ede8d7,
-    #ede8d3,
-    #eee9d4,
-    #efead4,
-    #f0ebd5,
-    #f2edda,
-    #f3efdf,
-    #f5f1e5,
-    #f6f3ea
+    #efece1,
+    #f2eee1,
+    #f4f0e0,
+    #f6f2e0
   );
 
   padding: 2.5rem 3rem 2.9rem;
