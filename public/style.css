@@ -12,6 +12,7 @@ body {
 
 .wrapper {
   width: 100vw;
+  height: 100vh;
   background: #e6e4e0;
   font-family: "Oswald", sans-serif;
   z-index: -10;
@@ -32,17 +33,18 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
+
   background-color: #e6e4e0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
   position: relative;
+  height: auto;
   width: 100vw;
   border-top: 10px solid rgba(39, 39, 39, 0.973);
 }
 
 .nav-header__p {
   color: #272727;
-
-  padding-bottom: 0.5rem;
   font-size: 1.22rem;
   word-spacing: 0.1rem;
   font-family: "Oswald", sans-serif;
@@ -50,7 +52,7 @@ body {
 
 .pearson,
 .arson {
-  color: #b3171d;
+  color: #b31717;
   font-family: "Rock Salt";
   letter-spacing: 0.2rem;
   font-weight: bold;
@@ -67,10 +69,8 @@ body {
 
 .top-nav {
   background: #272727;
-
   box-shadow: 0 2px 8px rgba(27, 27, 27, 0.3);
-  /* display: inline-flex;
-  justify-content: center; */
+ 
 }
 
 .top-nav a {
@@ -86,7 +86,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #da7871;
+  color: #da7d71;
 }
 
 .bottle {
@@ -196,7 +196,7 @@ body {
 
 .story-btn {
   background: transparent;
-  color: #d84430f8;
+  color: #ca4230f8;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.35rem;
@@ -698,12 +698,13 @@ footer {
 
   .nav-header__p {
     font-size: 0.9rem;
+    margin-bottom: 0.6em;
   }
 
   .pearson,
   .arson {
     letter-spacing: 0.13rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .top-nav a {
