@@ -290,7 +290,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.028);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.028);
   backface-visibility: hidden;
 
   /* Add height to cards in recipe section, then you can put text underneath them */
@@ -696,7 +696,7 @@ footer {
 
   .story-page-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 3rem 1.7rem;
+    padding: 3rem 1.9rem;
   }
 
   .chili {
@@ -717,6 +717,7 @@ footer {
 
   .story-page-title {
     font-size: 3.1rem;
+    padding: 2.5rem 0 5rem;
   }
 
   .story-text,
