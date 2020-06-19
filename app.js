@@ -102,12 +102,18 @@ app.get("/error", (req, res) => {
 
 // Contact form submission
 app.post("/sendEmail", (req, res) => {
+
+  //Check if bot filled out form
+  let bot;
+  req.body.bot ? bot = "yes" : bot = "no";
+
   // Timeout for animation to run before posting
   setTimeout(() => {
     // Email body
     const emailText = `
   <h3>Details</h3>
   <ul>
+  <li><strong>Bot:</strong> ${bot} </li>
   <li><strong>Name:</strong> ${req.body.name} </li>
   <li><strong>Email:</strong> ${req.body.email} </li>
   </ul>
