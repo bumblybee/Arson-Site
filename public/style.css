@@ -199,7 +199,7 @@ body {
   color: #d84430f8;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .story-btn:hover {
@@ -716,8 +716,8 @@ footer {
   }
 
   .story-page-title {
-    font-size: 3.1rem;
-    padding: 2.5rem 0 5rem;
+    
+    padding: 2rem 0 4rem;
   }
 
   .story-text,
