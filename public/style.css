@@ -313,10 +313,12 @@ body {
   text-shadow: 0 1px 2px rgba(179, 177, 177, 0.2);
 }
 
-.card-img-top {
-  width: 100%;
-  height: 21vh;
-  filter: contrast(110%) saturate(120%);
+.card-img-container {
+width: 100%;
+height: 20vh;
+background-size: cover;
+background-position: center;
+filter: contrast(120%) saturate(125%) blur(0.5px);
 }
 
 .card-text {
@@ -458,7 +460,7 @@ footer {
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 .recipe-page-card-container .card {
@@ -466,9 +468,7 @@ footer {
     0 14px 12px rgba(0, 0, 0, 0.05);
 }
 
-.recipe-page-card-image {
-  filter: contrast(110%) saturate(120%);
-}
+
 
 /* ------------Story Page--------------- */
 
