@@ -91,7 +91,7 @@ app.get("/news", (req, res) => {
   res.render("news");
 });
 
-//Get rid of sent and sendErr GET after design finished
+//Get rid of sent and sendErr GET routes after design finished
 app.get("/sent", (req, res) => {
   res.render("msgSent");
 });

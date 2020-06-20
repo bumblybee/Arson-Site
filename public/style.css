@@ -66,7 +66,6 @@ body {
 
 .top-nav {
   background: #272727;
-position:
   box-shadow: 0 2px 8px rgba(27, 27, 27, 0.3);
   /* display: inline-flex;
   justify-content: center; */
@@ -715,7 +714,7 @@ footer {
   }
 
   .header-div {
-    padding-top: 6rem;
+    padding-top: 7.5rem;
   }
 
   .bottle {
@@ -757,7 +756,7 @@ footer {
 
   .story-page-title {
     text-align: left;
-    padding: 3.4rem 0 4rem;
+    padding: 2rem 0 4rem;
   }
 
   .story-text,
@@ -848,7 +847,7 @@ footer {
 
   .form-text {
     width: 100%;
-    padding-top: 2rem;
+    padding-top: 3rem;
     font-size: 1.1rem;
   }
 
