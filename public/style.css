@@ -765,8 +765,8 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .plants-img {
-    height: 310px;
-    width: 300px;
+    height: 320px;
+    width: 310px;
     border-radius: 8%;
     grid-row-start: 2;
     grid-row-end: 3;
