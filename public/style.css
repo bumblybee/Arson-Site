@@ -692,7 +692,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .top-nav a {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .header-filter {
@@ -700,7 +700,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .header-div {
-    padding-top: 7.5rem;
+    padding-top: 7rem;
   }
 
   .bottle {
@@ -839,6 +839,11 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
     width: 100%;
     padding-top: 3rem;
     font-size: 1.1rem;
+  }
+
+  .recipe-page-title{
+    padding: 3rem 0;
+    font-size: 3.3rem
   }
 
   .recipe-page-card-container {
