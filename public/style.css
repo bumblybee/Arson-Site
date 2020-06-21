@@ -649,7 +649,7 @@ footer {
 
   .story-page-title {
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     padding-bottom: 3rem;
     line-height: 1.6;
   }
@@ -755,7 +755,8 @@ footer {
 
   .story-page-title {
     text-align: left;
-    padding: 2.1rem 0 4rem;
+    padding: 2.4rem 0 3.5rem;
+    
   }
 
   .story-text,
@@ -770,6 +771,10 @@ footer {
   .story-text p,
   .story-text a {
     padding-left: 1.3rem;
+  }
+
+  .story-page-text p {
+    font-size: 1.4rem;
   }
 
   .plants-img {
