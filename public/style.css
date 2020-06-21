@@ -26,7 +26,6 @@ body {
 }
 
 .nav-header {
- 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -723,12 +722,12 @@ footer {
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 7rem 1rem;
+    padding: 7rem 0.8rem;
   }
 
   .story-page-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 3.2rem 2rem;
+    padding: 3.2rem 0;
   }
 
   .story-page-title-background{
@@ -751,12 +750,12 @@ footer {
   }
 
   .hidden-story-title {
-    font-size: 2.9rem;
+    font-size: 3.1rem;
   }
 
   .story-page-title {
     text-align: left;
-    padding: 2rem 0 4rem;
+    padding: 2.1rem 0 4rem;
   }
 
   .story-text,
@@ -769,14 +768,13 @@ footer {
 
 
 .story-text p,
-  .story-text a {
-    padding-left: 1.9rem;
+.story-text a {
+    padding-left: 1.3rem;
   }
 
   .plants-img {
-    margin: 0.7rem auto;
-    height: 290px;
-    width: 280px;
+    height: 310px;
+    width: 300px;
     border-radius: 8%;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -868,4 +866,39 @@ footer {
   }
 
   
+}
+
+@media only screen and (max-width: 375px) {
+
+  .story-container{
+    padding: 5rem 0.8rem;
+  }
+
+  .hidden-story-title{
+    line-height: 4.5rem;
+    letter-spacing: 0.2rem;
+    
+  }
+
+  .chili{
+    left: 17.5rem;
+    top: 47.5rem;
+  }
+
+  .plants-img {
+    height: 290px;
+    width: 280px;
+  }
+
+  .story-text p,
+  .story-text a {
+    padding-left: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+.plants-img {
+  height: 250px;
+  width: 240px;
+}
 }
