@@ -331,6 +331,7 @@ filter: contrast(120%) saturate(125%) blur(0.5px);
   border-radius: 4px;
 }
 
+
 .fa-link,
 .fa-thumbs-up {
   color: #fffffa;
@@ -423,21 +424,7 @@ footer {
 
 /* ----------Recipe Page---------- */
 .recipe-page-container {
-  background-image: linear-gradient(
-    to bottom,
-    #edeae2,
-    #ede9de,
-    #ede9da,
-    #ede8d7,
-    #ede8d3,
-    #eee9d4,
-    #efead4,
-    #f0ebd5,
-    #f2edda,
-    #f3efdf,
-    #f5f1e5,
-    #f6f3ea
-  );
+background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4, #f8efe0);
 }
 
 .recipe-page-title {
