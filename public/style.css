@@ -767,8 +767,8 @@ footer {
   }
 
 
-.story-text p,
-.story-text a {
+  .story-text p,
+  .story-text a {
     padding-left: 1.3rem;
   }
 
@@ -864,9 +864,8 @@ footer {
   .recipe-date {
     font-size: 0.9rem;
   }
-
-  
 }
+
 
 @media only screen and (max-width: 375px) {
 
