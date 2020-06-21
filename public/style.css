@@ -280,14 +280,14 @@ body {
 .news-card-container {
   height: auto;
   margin: 0 auto;
-  padding-bottom: 4rem;
+  padding-bottom: 3.8rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
 }
 
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.028);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.028);
   backface-visibility: hidden;
 
   /* Add height to cards in recipe section, then you can put text underneath them */
