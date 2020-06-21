@@ -801,9 +801,13 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
     width: 100%;
   }
 
-  .card-img-top {
+  .card-img-container {
+height: 22vh;
+}
+
+  /* .card-img-top {
     height: 200px;
-  }
+  } */
 
   footer {
     padding: 2rem 1rem;
