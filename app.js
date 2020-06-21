@@ -62,11 +62,11 @@ const Recipe = mongoose.model("Recipe", recipeSchema);
 const News = mongoose.model("News", newsSchema);
 
 const newRecipe = new Recipe({
-  title: "Fiesta Scramble",
+  title: "Pizza with a Kick",
   date: "06/2020",
-  content: "Scrambled eggs and Fiesta cheese...",
-  submittedBy: "Alan Gilbert",
-  img: "img/sausage.jpg",
+  content: "...",
+  submittedBy: "Ryan Pangman",
+  img: "img/pizza.jpg",
 });
 
 // newRecipe.save();
