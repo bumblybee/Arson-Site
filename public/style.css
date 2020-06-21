@@ -446,7 +446,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
 }
 
 .recipe-page-card-container .card {
@@ -580,15 +580,14 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .news-card-container {
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-    align-items: center;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* justify-items: center;
+    align-items: center; */
+    /* grid-gap: 1rem; */
   }
 
-  .card {
-    margin-bottom: 0.7rem;
-    width: 50%;
+  .recipe-page-card-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card-img-top {
@@ -666,9 +665,9 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
     grid-row-start: 6;
   }
 
-  .card {
+  /* .card {
     width: 60%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 600px) {
@@ -794,13 +793,16 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
     padding: 2rem 0 0;
   }
 
-  .news-card-container {
-    grid-gap: 0;
+    .news-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    /* justify-items: center;
+    align-items: center; */
+    /* grid-gap: 1rem; */
   }
 
-  .card {
+  /* .card {
     width: 100%;
-  }
+  } */
 
   .card-img-container {
   height: 22vh;
