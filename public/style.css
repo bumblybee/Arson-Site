@@ -287,7 +287,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.028);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.028);
   backface-visibility: hidden;
 
   /* Add height to cards in recipe section, then you can put text underneath them */
@@ -364,7 +364,7 @@ footer {
   background-color: #1c1c1c;
 
   width: 100vw;
-  padding: 4rem 1rem;
+  padding: 4rem 0;
 }
 
 .footer-container {
@@ -827,6 +827,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   .footer-nav {
     flex-direction: row;
     margin-top: 0;
+    padding-right: 0;
     width: 100%;
   }
 
