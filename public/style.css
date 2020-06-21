@@ -587,7 +587,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .card {
-    margin-bottom: 1.5rem;
+    
     width: 50%;
   }
 
@@ -785,7 +785,7 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .news-container {
-    padding: 0 0.5rem;
+    padding: 0 0.3rem;
   }
 
   .news-title {
@@ -802,8 +802,8 @@ background-image: linear-gradient(to bottom, #f2f1f0, #f4f0ec, #f6f0e8, #f7efe4,
   }
 
   .card-img-container {
-height: 22vh;
-}
+  height: 22vh;
+  }
 
   /* .card-img-top {
     height: 200px;
