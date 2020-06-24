@@ -712,7 +712,7 @@ footer {
   }
 
   .header-div {
-    padding-top: 6.5rem;
+    padding-top: 6.1rem;
   }
 
   .bottle {
@@ -757,7 +757,7 @@ footer {
   }
 
   .hidden-story-title {
-    font-size: 2.9rem;
+    font-size: 3rem;
     padding-bottom: 2rem;
   }
 
@@ -785,8 +785,8 @@ footer {
   }
 
   .plants-img {
-    height: 325px;
-    width: 315px;
+    height: 315px;
+    width: 305px;
     border-radius: 8%;
     grid-row-start: 2;
     grid-row-end: 3;
