@@ -211,7 +211,7 @@ body {
     0 8.2px 6.7px rgba(0, 0, 0, 0.028), 0 15.5px 12.5px rgba(0, 0, 0, 0.035),
     0 27.7px 22.3px rgba(0, 0, 0, 0.042), 0 51.8px 41.8px rgba(0, 0, 0, 0.05),
     0 124px 100px rgba(0, 0, 0, 0.07);
-  background: #faf8f0f3;
+  background: #faf8f0dc;
   margin-left: 3.5rem;
   margin-top: 4rem;
   grid-column-start: 4;
@@ -744,7 +744,7 @@ footer {
   }
 
   .hidden-story-title {
-    font-size: 2.9rem;
+    font-size: 2.95rem;
     padding-bottom: 2rem;
   }
 
@@ -764,7 +764,7 @@ footer {
 
   .story-text p,
   .story-text a {
-    padding-left: 1.3rem;
+    padding-left: 1.35rem;
   }
 
   .story-page-text p {
@@ -772,8 +772,8 @@ footer {
   }
 
   .plants-img {
-    height: 305px;
-    width: 295px;
+    height: 315px;
+    width: 305px;
     /* border-radius: 8%; */
     grid-row-start: 2;
     grid-row-end: 3;
