@@ -734,9 +734,9 @@ footer {
   .story-page-title-background {
     height: 500px;
     background-image: linear-gradient(
-        rgba(94, 93, 93, 0.5),
-        rgba(32, 32, 32, 0.89),
-        rgb(10, 10, 10)
+        rgba(59, 59, 59, 0.5),
+        rgba(32, 32, 32, 0.6),
+        rgb(15, 15, 15, 0.9)
       ),
       url("img/plantscrop.jpg");
 
