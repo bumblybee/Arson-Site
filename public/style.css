@@ -745,13 +745,15 @@ footer {
 
   .hidden-story-title {
     font-size: 2.95rem;
-    padding-bottom: 2rem;
+
+    font-weight: bolder;
   }
 
   .story-page-title {
     text-align: center;
     padding: 2rem 0 6rem;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+    font-weight: bold;
   }
 
   .story-text,
@@ -759,7 +761,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    line-height: 1.55;
+    line-height: 1.5;
   }
 
   .story-text p,
