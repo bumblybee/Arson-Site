@@ -483,9 +483,9 @@ footer {
 
 .story-page-title-background {
   background-image: linear-gradient(
-      rgba(59, 59, 59, 0.5),
-      rgba(32, 32, 32, 0.6),
-      rgb(15, 15, 15, 0.9)
+      rgba(59, 59, 59, 0.4),
+      rgba(32, 32, 32, 0.5),
+      rgb(15, 15, 15, 0.8)
     ),
     url("img/plantscrop.jpg");
   background-position: 50% 40%;
@@ -721,7 +721,7 @@ footer {
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 10rem 0.8rem;
+    padding: 6.5rem 0.8rem;
   }
 
   .story-page-container {
@@ -730,17 +730,8 @@ footer {
   }
 
   .story-page-title-background {
-    height: 500px;
-    background-image: linear-gradient(
-        rgba(59, 59, 59, 0.5),
-        rgba(32, 32, 32, 0.6),
-        rgb(15, 15, 15, 0.9)
-      ),
-      url("img/plantscrop.jpg");
-
-    /* background-size: contain;
-    background-attachment: fixed; */
-
+    height: 480px;
+    background-position: 52%;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
   }
 
@@ -820,7 +811,7 @@ footer {
   }
 
   footer {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 
   .footer-container {
