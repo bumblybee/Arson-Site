@@ -774,7 +774,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
   .story-text p,
@@ -783,7 +783,7 @@ footer {
   }
 
   .story-page-text p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .plants-img {
