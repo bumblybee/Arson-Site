@@ -712,7 +712,7 @@ footer {
   }
 
   .header-div {
-    padding-top: 6rem;
+    padding-top: 6.5rem;
   }
 
   .bottle {
@@ -721,7 +721,7 @@ footer {
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 7rem 0.8rem;
+    padding: 10rem 0.8rem;
   }
 
   .story-page-container {
