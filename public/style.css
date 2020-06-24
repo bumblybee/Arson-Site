@@ -486,25 +486,29 @@ footer {
 .story-page-title-background {
   background-image: linear-gradient(
       rgba(59, 59, 59, 0.5),
-      rgba(32, 32, 32, 0.85),
-      rgb(15, 15, 15, 0.93)
+      rgba(32, 32, 32, 0.6),
+      rgb(15, 15, 15, 0.9)
     ),
     url("img/plantscrop.jpg");
-  background-position: center;
+  /* background-position: center; */
+  background-position: 50% 40%;
+  background-size: contain;
+  background-attachment: fixed;
+
   position: absolute;
   top: 0;
   left: 0;
-  height: 640px;
+  height: 730px;
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
   opacity: 0.4;
-  clip-path: polygon(0 0, 100% 0, 100% 63%, 0 63%);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
 
 .story-page-title {
-  padding: 0 0 15rem;
+  padding: 0 0 14rem;
   font-family: "Rock Salt", cursive;
   font-size: 3.5rem;
   letter-spacing: 0.2rem;
@@ -735,9 +739,11 @@ footer {
         rgb(10, 10, 10)
       ),
       url("img/plantscrop.jpg");
-    background-position: 50%;
+    background-position: 50% 0;
+    background-size: contain;
+    background-attachment: scroll;
 
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   }
 
   .chili {
@@ -759,8 +765,8 @@ footer {
 
   .story-page-title {
     text-align: center;
-    padding: 2.5rem 0 10rem;
-    font-size: 2.6rem;
+    padding: 0 0 5rem;
+    font-size: 2.4rem;
   }
 
   .story-text,
