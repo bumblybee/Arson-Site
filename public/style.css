@@ -302,6 +302,12 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
+.card-category:hover,
+.card-category:active {
+  text-decoration: none;
+  color: #aa2f1f;
+}
+
 .card-title {
   color: #131212;
   font-size: 1.4rem;
@@ -563,6 +569,17 @@ footer {
 /* ----------Media Queries--------- */
 
 @media only screen and (max-width: 1600px) {
+  .header-div {
+    padding-top: 7rem;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 3rem;
+    height: 17rem;
+    left: 22%;
+  }
+
   .chili {
     left: 10rem;
     top: 19rem;
@@ -574,6 +591,17 @@ footer {
 }
 
 @media only screen and (max-width: 1029px) {
+  .header-div {
+    padding-top: 7.5rem;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 2rem;
+    height: 13rem;
+    left: 14.5%;
+  }
+
   .story-container {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -710,6 +738,14 @@ footer {
     padding-top: 5.9rem;
   }
 
+  .header-title {
+    position: absolute;
+    top: 2.4em;
+    height: 9rem;
+    left: 5%;
+    /* z-index: -1; */
+  }
+
   .bottle {
     height: 20rem;
   }
@@ -731,9 +767,9 @@ footer {
   }
 
   .chili {
-    top: 44rem;
-    left: 22.5rem;
-    height: 3.6rem;
+    top: 49em;
+    left: 22.4rem;
+    height: 4rem;
   }
 
   .splat {
@@ -875,8 +911,8 @@ footer {
   }
 
   .chili {
-    left: 17.5rem;
-    top: 47.5rem;
+    left: 18.5rem;
+    top: 45.5rem;
   }
 
   .plants-img {

@@ -63,7 +63,7 @@
 
         <!-- Header -->
         <div>
-          <p class="card-category">Recipe</p>
+          <a class="card-category" href="/recipes"><p class="card-category">Recipe</p></a>
           <h4 class="card-title font-weight-bold mb-2">
             Spiced Up Eggs
           </h4>
@@ -108,7 +108,8 @@
 
         <!-- Header -->
         <div>
-          <p class="card-category">News</p>
+          <a class="card-category" href="/news">
+          <p class="card-category">News</p></a>
           <h4 class="card-title font-weight-bold mb-2">
             Fermenting
           </h4>
@@ -155,7 +156,8 @@
 
         <!-- Header -->
         <div>
-          <p class="card-category">Recipe</p>
+          <a class="card-category" href="/recipes">
+          <p class="card-category">Recipe</p></a>
           <h4 class="card-title font-weight-bold mb-2">
             Arson Slaw
           </h4>
@@ -193,7 +195,7 @@
   <script>
     // Change to wider picture on small screens
     const bottle = document.getElementById("bottle");
-    const width = window.matchMedia("(max-width: 600px)");
+    const width = window.matchMedia("(max-width: 800px)");
     if (width.matches) {
       bottle.setAttribute("src", "img/tablemobile2-min.png");
     } else {
@@ -203,3 +205,6 @@
 </div>
 
  <%- include("partials/footer") -%>
+
+
+
