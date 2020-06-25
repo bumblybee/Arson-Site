@@ -121,12 +121,11 @@ body {
   top: 3rem;
   height: 20rem;
   left: 28%;
-  animation: arsonLogoLoad 4s forwards;
+  /* z-index: -1; */
+  /* animation: arsonLogoLoad 4s forwards; */
 }
 
 .story-container {
-  /* border-bottom: 5px dashed #272727; */
-
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -204,7 +203,7 @@ body {
 
 .plants-img {
   z-index: 5;
-  max-height: 360px;
+  max-height: 385px;
   border-radius: 5%;
   padding: 2px;
   box-shadow: 0 3.4px 2.8px rgba(0, 0, 0, 0.02),
@@ -800,9 +799,6 @@ footer {
 
   .news-card-container {
     grid-template-columns: repeat(1, 1fr);
-    /* justify-items: center;
-    align-items: center; */
-    /* grid-gap: 1rem; */
   }
 
   .card-img-container {
