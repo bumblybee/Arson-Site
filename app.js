@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
-const fs = require("fs");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -58,18 +60,14 @@ const newsSchema = new mongoose.Schema({
   },
 });
 
-const Recipe = mongoose.model("Recipe", recipeSchema);
-const News = mongoose.model("News", newsSchema);
-
-const newRecipe = new Recipe({
-  title: "Pizza with a Kick",
-  date: "06/2020",
-  content: "...",
-  submittedBy: "Ryan Pangman",
-  img: "img/pizza.jpg",
+const signInSchema = new mongoose.Schema({
+  username: String,
+  password: String,
 });
 
-// newRecipe.save();
+const Recipe = mongoose.model("Recipe", recipeSchema);
+const News = mongoose.model("News", newsSchema);
+const signIn = new mongoose.model("SignIn", signInSchema);
 
 app.get("/", (req, res) => {
   res.render("home", { title: "Arson Sauce" });
@@ -100,12 +98,56 @@ app.get("/error", (req, res) => {
   res.render("msgErr");
 });
 
+// Render login page
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+//render compose page on login
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  signIn.findOne({ username: username }, (err, user) => {
+    if (user) {
+      bcrypt.compare(password, user.password, (err, result) => {
+        if (err) throw err;
+        if (result === true) {
+          res.render("compose");
+        } else {
+          res.redirect("/login");
+        }
+      });
+    } else {
+      res.redirect("/login");
+    }
+  });
+});
+
+//compose and post new recipe or news item
+app.post("/compose", (req, res) => {
+  if (req.body.check === "news") {
+    console.log("It's news");
+    res.redirect("/");
+  } else if (req.body.check === "recipe") {
+    console.log("It's a recipe");
+    const newRecipe = new Recipe({
+      title: req.body.title,
+      date: req.body.date,
+      content: req.body.content,
+      submittedBy: req.body.submittedBy,
+      img: "img/pizza.jpg",
+    });
+    newRecipe.save();
+    res.redirect("/recipes");
+  }
+});
+
 // Contact form submission
 app.post("/sendEmail", (req, res) => {
-
   //Check if bot filled out form
   let bot;
-  req.body.bot ? bot = "yes" : bot = "no";
+  req.body.bot ? (bot = "yes") : (bot = "no");
 
   // Timeout for animation to run before posting
   setTimeout(() => {
