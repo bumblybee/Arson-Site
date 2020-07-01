@@ -4,6 +4,7 @@ const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const multer = require("multer");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -126,10 +127,10 @@ app.post("/login", (req, res) => {
 
 //compose and post new recipe or news item
 app.post("/compose", (req, res) => {
-  if (req.body.check === "news") {
+  if (req.body.postType === "news") {
     console.log("It's news");
-    res.redirect("/");
-  } else if (req.body.check === "recipe") {
+    res.redirect("/news");
+  } else if (req.body.postType === "recipe") {
     console.log("It's a recipe");
     const newRecipe = new Recipe({
       title: req.body.title,

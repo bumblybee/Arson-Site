@@ -3,8 +3,8 @@
 <div class="header-div">
   <div class="header-filter"></div>
 
-  <img class="bottle" id="bottle" src="img/table2-min.png" alt="" />
-
+  <img class="bottle" id="bottle" src="img/darktable.png" alt="" />
+<!-- <a href='https://www.freepik.com/free-photos-vectors/background'>Background photo created by derich - www.freepik.com</a> -->
   <!-- <img class="header-title" src="img/redlogo.png" alt="" /> -->
 </div>
 
@@ -13,25 +13,22 @@
 
     <img class="chili" src="img/chili.svg" alt="" />
 
-    <h1 class="hidden-story-title">Our Story</h1>
+    <h1 class="hidden-story-title">The Story</h1>
 
     <div class="container story-text">
-      <h1 class="story-title">Our Story</h1>
-
+      <h1 class="story-title">The Story</h1>
+<img class="plants-img" src="img/plants.jpg" alt="" />
       <p>
-        Drumstick chislic tongue meatball, strip steak kielbasa ribeye
-        tenderloin andouille. Frankfurter pork chop prosciutto short ribs.Rump short loin spare ribs ham hock. Filet mignon ham hock
+        When Eric Pearson gave a sample of his spicy red “Pearson Hot Sauce” to a friend, he suggested that the name on the label needed a kick to match the scorching deliciousness inside the bottle. So, during a series of conversations on the subject, a family member (probably Eric’s clever wife) recalled an offhanded remark made by one of their sons’ friends during their high school days, that was ironically fitting.
       </p>
-      <p>
-         Frankfurter t-bone swine alcatra tenderloin short ribs biltong shankle
-        kevin sausage shank jowl. Sausage tenderloin bacon kevin fatback
-        capicola pork jowl short loin shoulder spare ribs brisket andouille pork
-        chop. 
+      <p id="truncate">
+        Eric and his sons were well known for their epic bonfires in the fall. These fires were so big and so hot that some say the marshmallows INSIDE THE HOUSE came out of the package already roasted!! <span>One time the folks from a neighboring farm called the fire department because they saw the glow on the horizon and thought someone’s house was ablaze. The firemen who responded to the call were so impressed that they got out their cell phones and started taking pictures. Even in the dead of an Iowa winter, if the Pearson boys were building a fire, you showed up in shorts and a t-shirt because it was gonna be HOT! After witnessing one of these epic fires, a friend of one of the Pearson boys quipped “Well, ya can’t spell Pearson without ‘arson!’” And a hot sauce name was born.</span> <a class="story-btn" type="button" href="/story">Continue reading...</a>
       </p>
-      <a class="story-btn mt-4" type="button" href="/story">Read more</a>
+      
+      
     </div>
 
-    <img class="plants-img" src="img/plants.jpg" alt="" />
+    
    <div class="custom-shape-divider-bottom-1592405130">
       <svg id="wave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
@@ -76,7 +73,7 @@
       <div class="card-img-container" style="background-image:url(img/eggs.jpg);">
       </div>
 
-      <div class="card-footer border-0" style="background: #be4131;">
+      <div class="card-footer border-0" style="background: hsl(7, 54%, 52%);">
 
         
         <p class="copy-msg">Link Copied!</p>
@@ -125,7 +122,7 @@
 
       <!-- Card content -->
     
-      <div class="card-footer border-0" style="background: #be4131;">
+      <div class="card-footer border-0" style="background: hsl(7, 54%, 52%);">
       
         <p class="copy-msg">Link Copied!</p>
         <i
@@ -171,7 +168,7 @@
 
       <!-- Card content -->
      
-      <div class="card-footer border-0" style="background: #be4131;">
+      <div class="card-footer border-0" style="background: hsl(7, 54%, 52%);">
         <!-- <small class="text-muted card-text">Andy Schoepf</small> -->
         
         <p class="copy-msg">Link Copied!</p>
@@ -192,16 +189,14 @@
 
  
 
-  <script>
+  <!-- <script>
     // Change to wider picture on small screens
-    const bottle = document.getElementById("bottle");
-    const width = window.matchMedia("(max-width: 800px)");
+    const truncate = document.getElementById("truncate").textContent;
+    const width = window.matchMedia("(max-width: 600px)");
     if (width.matches) {
-      bottle.setAttribute("src", "img/tablemobile2-min.png");
-    } else {
-      bottle.setAttribute("src", "img/table2-min.png");
-    }
-  </script>
+      truncate.substring(0, 100);
+    } 
+  </script> -->
 </div>
 
  <%- include("partials/footer") -%>

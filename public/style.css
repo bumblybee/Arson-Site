@@ -81,28 +81,28 @@ body {
 }
 
 .nav-link:hover {
-  color: #da7871;
+  color: hsl(7, 54%, 60%);
 }
 
 .bottle {
-  height: 48rem;
   display: block;
 
-  z-index: 4;
+  /* z-index: 4; */
   width: 100%;
-
-  /* animation: imageLoad 3s linear; */
+  /* height: 70%; */
 }
 
 .header-div {
-  padding: 10rem 0 0;
+  padding: 7rem 0 0;
   z-index: -2;
-  background: url("https://images.unsplash.com/photo-1517196084897-498e0abd7c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background: url("https://images.unsplash.com/photo-1573028597466-7bc09d5369f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
-  background-position: 80% 70%;
+  background-position: 80% 110%;
 
   height: 100%;
   position: relative;
+  /* overflow: hidden; */
+  width: 100vw;
 }
 
 .header-filter {
@@ -112,8 +112,8 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: saturate(110%) blur(4px);
-  background-color: rgba(7, 7, 7, 0.138);
+  backdrop-filter: saturate(110%) blur(2px);
+  background-color: rgba(24, 24, 24, 0.238);
 }
 
 .header-title {
@@ -121,29 +121,28 @@ body {
   top: 3rem;
   height: 20rem;
   left: 28%;
-  /* z-index: -1; */
+  z-index: -1;
   /* animation: arsonLogoLoad 4s forwards; */
 }
 
 .story-container {
   position: relative;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(100px, auto); */
 
-  color: #e6e4e0;
+  color: #faf8f0f3;
   background: linear-gradient(
       to bottom,
-      rgba(36, 36, 36, 0.85),
+      rgba(36, 36, 36, 0.86),
       rgba(36, 36, 36, 0.9)
     ),
     url("https://cdn.pixabay.com/photo/2015/11/09/08/12/fire-1034853__340.jpg");
 
   background-size: cover;
-  /* background-position: 80% 70%; */
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: inset 0 18px 15px -20px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 18px 20px -20px rgba(0, 0, 0, 0.8);
 
   padding: 9rem 0 10rem;
   height: auto;
@@ -152,10 +151,10 @@ body {
 .chili {
   position: absolute;
   z-index: 1;
-  top: 16rem;
-  left: 57rem;
+  top: 32rem;
+  right: 28rem;
   opacity: 0.8;
-  height: 10rem;
+  height: 11rem;
 }
 
 .hidden-story-title {
@@ -164,58 +163,58 @@ body {
 }
 
 .story-title {
-  z-index: 5;
   padding: 1rem 0 4rem;
   font-family: "Rock Salt", cursive;
-  font-size: 4rem;
-  letter-spacing: 0.25rem;
-  /* align-self: start; */
+  font-size: 4.25rem;
   color: #faf8f0f3;
-  /* text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5),
-    0px -4px 6px rgba(255, 255, 255, 0.3); */
 }
 
 .story-text {
   z-index: 5;
-  grid-column-start: 2;
+  /* grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 3; */
   font-family: "Roboto Condensed", sans-serif;
-  line-height: 2rem;
+
+  line-height: 1.5;
   letter-spacing: 0.07rem;
-  font-size: 1.35rem;
-  padding: 2rem;
+  font-size: 1.4rem;
+  text-align: justify;
+  position: relative;
 }
 
 .story-btn {
+  display: inline;
   background: transparent;
-  color: #be4939;
+  color: hsl(7, 54%, 60%);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
 }
 
 .story-btn:hover {
   text-decoration: none;
-  color: #be311e;
+  color: hsl(7, 54%, 40%);
 }
 
 .plants-img {
+  float: left;
   z-index: 5;
-  max-height: 385px;
+  max-height: 440px;
   border-radius: 5%;
-  padding: 2px;
+  /* padding: 2px; */
   box-shadow: 0 3.4px 2.8px rgba(0, 0, 0, 0.02),
     0 8.2px 6.7px rgba(0, 0, 0, 0.028), 0 15.5px 12.5px rgba(0, 0, 0, 0.035),
     0 27.7px 22.3px rgba(0, 0, 0, 0.042), 0 51.8px 41.8px rgba(0, 0, 0, 0.05),
     0 124px 100px rgba(0, 0, 0, 0.07);
   background: #faf8f0dc;
-  margin-left: 3.5rem;
-  margin-top: 4rem;
-  grid-column-start: 4;
+  /* margin-left: 3.5rem;
+  margin-top: 4rem; */
+  margin: 0 2rem 1rem 0;
+  /* grid-column-start: 4;
   grid-column-end: 6;
-  grid-row-start: 1;
+  grid-row-start: 1; */
 }
 
 /* ---------SVG Divider----------- */
@@ -264,12 +263,12 @@ body {
 
 .news-title {
   font-family: "Oswald", sans-serif;
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.05rem;
 
-  padding: 1.5rem 0 0.5rem;
+  padding: 1.5rem 0 0;
   /* text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.5),
     0px -4px 6px rgba(255, 255, 255, 0.3); */
 }
@@ -464,9 +463,9 @@ footer {
 /* ------------Story Page--------------- */
 
 .story-page-container {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  /* display: grid;
+  grid-template-columns: repeat(8, 1fr); */
+  /* grid-auto-rows: minmax(100px, auto); */
 
   color: #e6e4e0;
   background: #202020;
@@ -481,12 +480,12 @@ footer {
   background-position: top;
   box-shadow: inset 0 18px 15px -20px rgba(0, 0, 0, 0.8);
 
-  padding: 9rem 5rem;
+  padding-bottom: 1rem;
   height: auto;
   position: relative;
 }
 
-.story-page-title-background {
+/* .story-page-title-background {
   background-image: linear-gradient(
       rgba(59, 59, 59, 0.4),
       rgba(32, 32, 32, 0.5),
@@ -508,26 +507,56 @@ footer {
   z-index: -1;
   opacity: 0.4;
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-}
+} */
 
 .story-page-title {
-  padding: 0 0 14rem;
+  padding: 8rem 0 8rem;
   font-family: "Rock Salt", cursive;
-  font-size: 3.5rem;
-  letter-spacing: 0.2rem;
+  font-size: 3.9rem;
   text-align: center;
   color: #e6e4e0;
+  background-image: linear-gradient(
+      rgba(59, 59, 59, 0.5),
+      rgba(32, 32, 32, 0.6),
+      rgb(15, 15, 15, 0.8)
+    ),
+    url("img/plantscrop.jpg");
+  background-position: 50% 40%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .story-page-text {
-  grid-column-start: 3;
-  grid-column-end: 7;
-  grid-row-start: 1;
-
   font-family: "Roboto Condensed", sans-serif;
-  letter-spacing: 0.1rem;
-  font-size: 1.4rem;
+
+  font-size: 1.45rem;
   z-index: 0;
+}
+
+.story-page-text h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.35rem;
+  padding: 1rem 2.5rem 0;
+  color: hsl(7, 54%, 60%);
+  margin-bottom: 0.7rem;
+}
+
+.story-page-paragraph-container {
+  background: rgba(168, 165, 165, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: safe;
+  padding: 2rem 0 1rem;
+}
+
+.story-page-text p,
+.story-page-text a {
+  line-height: 1.35;
+  text-align: justify;
+  padding: 0 2.5rem 0.5rem;
 }
 
 .story-email-link {
@@ -540,10 +569,24 @@ footer {
   color: #e6e4e0;
 }
 
-.story-img {
-  grid-column-start: 4;
-  margin-top: 12rem;
-  max-height: 440px;
+/* ----------Login Page------------ */
+
+.login-form-container {
+  margin-top: 7%;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  margin: auto;
+}
+
+/* ----------Compose Page---------- */
+input[type="radio"]:checked + label::before {
+  background-color: #be3624;
+  border-color: #000;
+  color: #fff;
 }
 
 /* -------Animations------- */
@@ -602,20 +645,10 @@ footer {
     left: 14.5%;
   }
 
-  .story-container {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
   .chili {
     height: 7rem;
-    left: 27rem;
-    top: 27rem;
-  }
-
-  .splat {
-    right: 1rem;
-    top: 8rem;
-    height: 28rem;
+    left: 47rem;
+    top: 35rem;
   }
 
   .news-card-container {
@@ -638,22 +671,17 @@ footer {
   .bottle {
     height: 26rem;
   }
-  .story-container,
+
   .story-page-container {
     grid-template-columns: repeat(1, 1fr);
     padding: 3.5rem 0 4rem;
   }
 
   .chili {
-    height: 8rem;
-    left: 10rem;
+    height: 6rem;
+    left: 40rem;
 
-    top: 30rem;
-  }
-
-  .splat {
-    height: 20rem;
-    right: 5rem;
+    top: 34rem;
   }
 
   .story-title {
@@ -679,10 +707,11 @@ footer {
     padding-bottom: 3rem;
     line-height: 1.6;
   }
+
   .story-text {
     grid-row-start: 3;
 
-    line-height: 1.7rem;
+    line-height: 1.6rem;
   }
 
   .story-page-text {
@@ -691,13 +720,11 @@ footer {
   }
 
   .plants-img {
-    margin: 0.7rem auto;
     height: 340px;
     width: 300px;
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    /* margin-left: 5rem; */
   }
 
   .story-img {
@@ -735,7 +762,7 @@ footer {
   }
 
   .header-div {
-    padding-top: 5.9rem;
+    padding-top: 3rem;
   }
 
   .header-title {
@@ -747,81 +774,75 @@ footer {
   }
 
   .bottle {
-    height: 20rem;
+    object-fit: cover;
+    height: 12rem;
   }
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 6.5rem 0.8rem;
-  }
-
-  .story-page-container {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 3rem 0;
-  }
-
-  .story-page-title-background {
-    height: 480px;
-    background-position: 52%;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    padding: 4rem 0.8rem;
   }
 
   .chili {
-    top: 49em;
-    left: 22.4rem;
+    top: 55em;
+    left: 22rem;
     height: 4rem;
   }
 
-  .splat {
-    height: 13rem;
-    left: 0;
-    top: 8rem;
-  }
-
   .hidden-story-title {
-    font-size: 2.95rem;
-
+    font-size: 2.8rem;
+    text-align: center;
     font-weight: bolder;
   }
 
   .story-page-title {
     text-align: center;
-    padding: 2rem 0 6rem;
+    padding: 4rem 0 4rem;
     font-size: 2.6rem;
     font-weight: bold;
   }
 
+  .story-page-text p,
+  .story-page-text a {
+    padding: 0 1rem;
+  }
+
   .story-text,
   .story-page-text {
-    display: flex;
-    flex-direction: column;
-
     line-height: 1.5;
   }
 
-  .story-text p,
-  .story-text a {
-    padding-left: 1.35rem;
+  .story-page-text h2 {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 0.1rem;
   }
 
   .story-page-text p {
-    font-size: 1.35rem;
+    text-align: left;
+    padding: 1rem 0 0 1rem;
+  }
+
+  .story-text p span {
+    display: none;
+  }
+
+  .story-page-text p {
+    font-size: 1.3rem;
   }
 
   .plants-img {
-    height: 315px;
-    width: 305px;
-    /* border-radius: 8%; */
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    border-radius: 10px;
+    height: 290px;
+    width: 280px;
+    display: block;
+    border-radius: 4px;
+    float: none;
+    margin: 0 auto 2rem;
   }
 
   .story-btn {
-    width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin: 0 0 2rem 0.5rem;
   }
 
   .news-container {
@@ -829,8 +850,9 @@ footer {
   }
 
   .news-title {
-    font-size: 3.1rem;
+    font-size: 2.6rem;
     padding: 2rem 0 0;
+    letter-spacing: 0.05rem;
   }
 
   .news-card-container {
