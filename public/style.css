@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background: #000;
+  background: #f3efeb;
   overflow-x: hidden;
 }
 
@@ -407,11 +407,11 @@ footer {
 
 .emailBtn:hover {
   background: #992d1e;
-  color: #fff;
+  color: #f3efeb;
 }
 
 .clicked {
-  color: #fff;
+  color: #f3efeb;
   text-align: center;
   animation: spin 2s 0.25s linear infinite;
   margin-left: 50%;
@@ -749,6 +749,7 @@ footer {
   .story-container {
     grid-template-columns: repeat(1, 1fr);
     padding: 0;
+    z-index: 1;
   }
 
   .chili {
@@ -773,7 +774,6 @@ footer {
     height: 100%;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    margin-bottom: 4rem;
   }
 
   .story-page-container {
@@ -795,11 +795,15 @@ footer {
     font-size: 1.35rem;
   }
 
+  .custom-shape-divider-bottom-1592405130 {
+    z-index: 5;
+  }
+
   .story-text,
   .story-page-text {
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: left;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 7rem;
   }
 
   .story-page-text h2 {
@@ -812,11 +816,15 @@ footer {
     font-size: 1.35rem;
   }
 
+  .story-text p {
+    margin-bottom: 0;
+  }
+
   .story-text p:first-of-type:first-letter {
     font-size: 2.5rem;
   }
 
-  .story-text p span {
+  #truncate {
     display: none;
   }
 
@@ -830,7 +838,6 @@ footer {
 
   .story-btn {
     font-size: 1.2rem;
-    margin: 0 0 7rem;
   }
 
   .news-container {
