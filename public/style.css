@@ -463,17 +463,9 @@ footer {
 /* ------------Story Page--------------- */
 
 .story-page-container {
-  /* display: grid;
-  grid-template-columns: repeat(8, 1fr); */
-  /* grid-auto-rows: minmax(100px, auto); */
-
   color: #e6e4e0;
   background: #202020;
-  background: linear-gradient(
-      to bottom,
-      rgba(32, 32, 32, 0.8),
-      rgba(36, 36, 36, 0.9)
-    ),
+  background: radial-gradient(rgba(36, 36, 36, 0.88), rgba(36, 36, 36, 0.88)),
     url("img/flameFinal.jpg");
 
   background-repeat: no-repeat;
@@ -757,12 +749,12 @@ input[type="radio"]:checked + label::before {
     font-size: 1rem;
   }
 
-  .header-filter {
-    backdrop-filter: blur(2px);
+  .header-div {
+    padding-top: 9rem;
   }
 
-  .header-div {
-    padding-top: 3rem;
+  .header-filter {
+    backdrop-filter: blur(2px);
   }
 
   .header-title {
@@ -780,19 +772,23 @@ input[type="radio"]:checked + label::before {
 
   .story-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 4rem 0.8rem;
+    padding: 4rem 1.4rem;
   }
 
   .chili {
-    top: 55em;
+    top: 56em;
     left: 22rem;
     height: 4rem;
   }
 
   .hidden-story-title {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
     text-align: center;
     font-weight: bolder;
+  }
+
+  .story-page-container {
+    padding-top: 0;
   }
 
   .story-page-title {
@@ -810,17 +806,14 @@ input[type="radio"]:checked + label::before {
   .story-text,
   .story-page-text {
     line-height: 1.5;
+    text-align: left;
+    padding: 1rem 0 0 1rem;
   }
 
   .story-page-text h2 {
     font-size: 2rem;
-    padding: 0 1rem;
+    padding: 0 1rem 0.7rem;
     margin-bottom: 0.1rem;
-  }
-
-  .story-page-text p {
-    text-align: left;
-    padding: 1rem 0 0 1rem;
   }
 
   .story-text p span {
@@ -828,21 +821,21 @@ input[type="radio"]:checked + label::before {
   }
 
   .story-page-text p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .plants-img {
-    height: 290px;
-    width: 280px;
+    height: 300px;
+    width: 290px;
     display: block;
     border-radius: 4px;
     float: none;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
   }
 
   .story-btn {
     font-size: 1rem;
-    margin: 0 0 2rem 0.5rem;
+    margin: 0 0 2rem;
   }
 
   .news-container {
