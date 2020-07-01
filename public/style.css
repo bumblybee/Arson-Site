@@ -776,6 +776,7 @@ footer {
   .story-page-text p,
   .story-page-text a {
     padding: 0 1rem;
+    text-align: left;
   }
 
   .story-text,
