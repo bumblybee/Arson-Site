@@ -536,6 +536,11 @@ footer {
   color: hsl(7, 54%, 60%);
 }
 
+.fire-video-container {
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
 /* ----------Login Page------------ */
 
 .login-form-container {
@@ -779,6 +784,10 @@ footer {
     font-size: 2.6rem;
     font-weight: bold;
     background-position: 51% 40%;
+  }
+
+  .story-text p:first-of-type:first-letter {
+    line-height: 0.9;
   }
 
   .story-page-text p,
