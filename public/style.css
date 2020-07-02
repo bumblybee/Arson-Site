@@ -763,11 +763,11 @@ footer {
   }
 
   .story-title {
-    font-size: 2.9rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: bolder;
     margin-bottom: 0;
-    padding: 3rem 0 1rem;
+    padding: 3rem 0 2rem;
   }
 
   .story-text {
