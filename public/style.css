@@ -747,7 +747,7 @@ footer {
   }
 
   .chili {
-    top: 53em;
+    top: 50em;
     left: 22rem;
     height: 4rem;
   }
@@ -806,11 +806,6 @@ footer {
 
   .story-text p {
     margin-bottom: 1rem;
-  }
-
-  .story-text p:first-of-type:first-letter {
-    /* font-size: 3.7rem;
-    line-height: 1; */
   }
 
   #truncate {
