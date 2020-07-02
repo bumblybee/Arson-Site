@@ -176,11 +176,15 @@ body {
 }
 
 .story-text p:first-of-type:first-letter {
-  font-size: 3rem;
   font-weight: bold;
-  line-height: 40px;
   color: hsl(7, 54%, 55%);
   font-family: "Roboto", sans-serif;
+  float: left;
+  font-size: 3.8rem;
+  line-height: 50px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
 }
 
 .story-btn {
@@ -190,7 +194,6 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
-  margin-left: 0.5rem;
 }
 
 .story-btn:hover {
@@ -807,7 +810,9 @@ footer {
   }
 
   .story-text p:first-of-type:first-letter {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
+    line-height: 35px;
+    padding-top: 6px;
   }
 
   #truncate {
