@@ -180,11 +180,10 @@ body {
   color: hsl(7, 54%, 55%);
   font-family: "Roboto", sans-serif;
   float: left;
-  font-size: 3.8rem;
+  font-size: 4rem;
   line-height: 0.9;
 
-  padding-right: 8px;
-  padding-left: 3px;
+  padding-right: 7px;
 }
 
 .story-btn {
@@ -810,8 +809,8 @@ footer {
   }
 
   .story-text p:first-of-type:first-letter {
-    font-size: 3.3rem;
-    line-height: 1;
+    /* font-size: 3.7rem;
+    line-height: 1; */
   }
 
   #truncate {
