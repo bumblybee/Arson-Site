@@ -811,7 +811,7 @@ footer {
 
   .story-text p:first-of-type:first-letter {
     font-size: 3.3rem;
-    line-height: 0.8;
+    line-height: 1;
   }
 
   #truncate {
