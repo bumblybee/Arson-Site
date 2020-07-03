@@ -815,11 +815,12 @@ footer {
     line-height: 0.9;
   }
 
+
   .story-page-text p,
   .story-page-text a {
     text-align: left;
     font-size: 1.32rem;
-    padding: 0 0 0.7rem;
+    padding: 0 0.8rem 0.7rem;
   }
 
   .story-page-text {
@@ -830,7 +831,7 @@ footer {
 
   .story-page-text h2 {
     font-size: 2rem;
-    padding: 0 0 0.7rem;
+    padding: 0 0.8rem 0.7rem;
     margin-bottom: 0.1rem;
   }
 
