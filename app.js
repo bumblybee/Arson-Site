@@ -1,4 +1,5 @@
 const express = require("express");
+
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
@@ -9,10 +10,38 @@ const multer = require("multer");
 const app = express();
 const port = process.env.PORT || 3000;
 
+
 app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+// --------------- Multer Setup ---------
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/img");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === "image/jpeg" || file.mimetype == "image/png") {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 1024 * 1024 * 5,
+  },
+  fileFilter: fileFilter,
+});
 
 // --------------- MongoDB Code ------------------
 // mongo "mongodb+srv://arson-sauce-2cvre.mongodb.net/arsonSauce" --username admin-tiffani
@@ -40,6 +69,7 @@ const recipeSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add an image file."],
   },
+  imgSrc: String,
 });
 
 const newsSchema = new mongoose.Schema({
@@ -59,6 +89,7 @@ const newsSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add an image file."],
   },
+  imgSrc: String,
 });
 
 const signInSchema = new mongoose.Schema({
@@ -82,6 +113,8 @@ app.get("/recipes", (req, res) => {
   });
 });
 
+
+
 app.get("/story", (req, res) => {
   res.render("story");
 });
@@ -102,6 +135,24 @@ app.get("/error", (req, res) => {
 // Render login page
 app.get("/login", (req, res) => {
   res.render("login");
+});
+
+app.get("/recipe/:recipeID", (req, res) => {
+  const recipeID = req.params.recipeID;
+
+  Recipe.findOne({ _id: recipeID }, (err, recipe) => {
+    if (err) throw err;
+    if(recipe) {
+    const title = recipe.title;
+    const content = recipe.content;
+    const date = recipe.date;
+    const submittedBy = recipe.submittedBy;
+    const image = recipe.imgSrc;
+    res.render("recipe", { title, content, date, submittedBy, image });
+    }else{
+      console.log("something went wrong")
+    }
+  });
 });
 
 //render compose page on login
@@ -126,7 +177,7 @@ app.post("/login", (req, res) => {
 });
 
 //compose and post new recipe or news item
-app.post("/compose", (req, res) => {
+app.post("/compose", upload.single("imgFile"), (req, res) => {
   if (req.body.postType === "news") {
     console.log("It's news");
     res.redirect("/news");
@@ -137,8 +188,10 @@ app.post("/compose", (req, res) => {
       date: req.body.date,
       content: req.body.content,
       submittedBy: req.body.submittedBy,
-      img: "img/pizza.jpg",
+      img: req.file.path,
+      imgSrc: `/img/${req.file.filename}`,
     });
+    console.log(req.file);
     newRecipe.save();
     res.redirect("/recipes");
   }

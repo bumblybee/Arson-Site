@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  
   background: #faf8f0f3;
   overflow-x: hidden;
 }
@@ -99,7 +100,7 @@ body {
   background-size: cover;
   background-position: 80% 110%;
 
-  height: 100%;
+  height: auto;
   position: relative;
   width: 100vw;
 }
@@ -423,7 +424,7 @@ footer {
 /* ----------Recipe Page---------- */
 .recipe-page-container {
   background-image: linear-gradient(
-    to bottom,
+    to right,
     #faf8f0,
     #faf7ef,
     #faf7ed,
