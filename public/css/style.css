@@ -468,7 +468,7 @@ footer {
   color: #e6e4e0;
   background: #202020;
   background: radial-gradient(rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.9)),
-    url("img/flameFinal.jpg");
+    url("/img/flameFinal.jpg");
 
   background-repeat: no-repeat;
   background-position: top;
@@ -490,7 +490,7 @@ footer {
       rgba(32, 32, 32, 0.7),
       rgb(15, 15, 15, 0.8)
     ),
-    url("img/plantscrop.jpg");
+    url("/img/plantscrop.jpg");
   background-position: 50% 40%;
   background-attachment: fixed;
   background-size: cover;
