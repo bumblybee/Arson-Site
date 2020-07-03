@@ -12,27 +12,44 @@
     >
       <h1 class="mb-4 mt-4 text-center">Create Post</h1>
       <div class="form-group col-lg-3 col-sm-4">
-        <label class="mt-2" for="date">Date</label>
+        <label class="mt-2 font-weight-bold" for="date">Date</label>
         <input class="form-control mb-3" type="text" name="date" required />
       </div>
       <div class="form-group col-lg-8 col-sm-6">
-        <label for="title">Title</label>
+        <label class="font-weight-bold" for="title">Title</label>
         <input class="form-control" type="text" name="title" required />
       </div>
-      <div class="form-group col">
-        <label>Content</label>
+      <div class="form-group col mb-4">
+        <label class="font-weight-bold" for="content">Content</label>
+        <textarea
+          class="form-control mb-2"
+          name="content1"
+          rows="5"
+          placeholder="First paragraph"
+          required
+        ></textarea>
         <textarea
           class="form-control"
-          name="content"
-          id=""
-          rows="7"
+          name="content2"
+          rows="5"
+          placeholder="Second paragraph - not required"
+        ></textarea>
+      </div>
+      <div class="form-group col">
+        <label class="font-weight-bold" for="comment">Card Comment</label>
+        <textarea
+          class="form-control"
+          name="comment"
+          placeholder="This is what will show in /recipes on small card"
+          rows="3"
           required
         ></textarea>
       </div>
       <div class="form-group col-lg-4 col-sm-6">
-        <label for="submittedBy">Submitted By</label>
+        <label class="font-weight-bold" for="submittedBy">Submitted By</label>
         <input class="form-control" type="text" name="submittedBy" />
       </div>
+      
       <div class="form-group col-6">
         <input type="file" name="imgFile" required />
       </div>

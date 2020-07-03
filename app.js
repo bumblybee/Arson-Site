@@ -60,11 +60,16 @@ const recipeSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add a date."],
   },
-  content: {
+  content1: {
     type: String,
     required: [true, "Please enter content."],
   },
+  content2: {
+    type: String,
+    required: [false]
+  },
   submittedBy: String,
+  comment: String,
   img: {
     type: String,
     required: [true, "Please add an image file."],
@@ -110,6 +115,25 @@ app.get("/recipes", (req, res) => {
     if (err) throw err;
     // res.set("Content-Type", newRecipe.img.contentType);
     res.render("recipes", { recipes });
+  }).sort({date: -1});
+});
+
+app.get("/recipe/:recipeID", (req, res) => {
+  const recipeID = req.params.recipeID;
+
+  Recipe.findOne({ _id: recipeID }, (err, recipe) => {
+    if (err) throw err;
+    if (recipe) {
+      const title = recipe.title;
+      const content1 = recipe.content1;
+      const content2 = recipe.content2;
+      const date = recipe.date;
+      const submittedBy = recipe.submittedBy;
+      const image = recipe.imgSrc;
+      res.render("recipe", { title, content1, content2, date, submittedBy, image });
+    } else {
+      console.log("something went wrong");
+    }
   });
 });
 
@@ -137,23 +161,6 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.get("/recipe/:recipeID", (req, res) => {
-  const recipeID = req.params.recipeID;
-
-  Recipe.findOne({ _id: recipeID }, (err, recipe) => {
-    if (err) throw err;
-    if(recipe) {
-    const title = recipe.title;
-    const content = recipe.content;
-    const date = recipe.date;
-    const submittedBy = recipe.submittedBy;
-    const image = recipe.imgSrc;
-    res.render("recipe", { title, content, date, submittedBy, image });
-    }else{
-      console.log("something went wrong")
-    }
-  });
-});
 
 //render compose page on login
 app.post("/login", (req, res) => {
@@ -186,8 +193,10 @@ app.post("/compose", upload.single("imgFile"), (req, res) => {
     const newRecipe = new Recipe({
       title: req.body.title,
       date: req.body.date,
-      content: req.body.content,
+      content1: req.body.content1,
+      content2: req.body.content2,
       submittedBy: req.body.submittedBy,
+      comment: req.body.comment,
       img: req.file.path,
       imgSrc: `/img/${req.file.filename}`,
     });
