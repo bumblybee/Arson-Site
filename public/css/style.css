@@ -437,7 +437,7 @@ footer {
 
 .recipe-page-title {
   text-align: center;
-  padding: 3.9rem 0;
+  padding: 3.7rem 0;
   font-family: "Oswald", sans-serif;
   font-size: 3.8rem;
   font-weight: bold;
@@ -475,7 +475,7 @@ footer {
   object-fit: cover;
   float: left;
   padding: 0.6rem 2rem 0 0;
-  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(80%);
+  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(94%);
 }
 
 
@@ -580,11 +580,7 @@ footer {
 }
 
 /* ----------Compose Page---------- */
-/* input[type="radio"]:checked + label::before {
-  background-color: #be3624;
-  border-color: #000;
-  color: #fff;
-} */
+
 
 /* -------Animations------- */
 
@@ -921,7 +917,7 @@ footer {
   }
 
   .recipe-page-title {
-    padding: 3rem 0;
+    padding: 2rem 0 1.5rem;
     font-size: 3.1rem;
   }
 
