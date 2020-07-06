@@ -66,15 +66,19 @@ const recipeSchema = new mongoose.Schema({
   },
   content2: {
     type: String,
-    required: [false]
+    required: [false],
+  },
+  content3: {
+    type: String,
+    required: [false],
   },
   submittedBy: String,
   comment: String,
-  img: {
-    type: String,
+  imgs: [{
+    type: Object,
     required: [true, "Please add an image file."],
-  },
-  imgSrc: String,
+  }],
+  // imgSrc: [String],
 });
 
 const newsSchema = new mongoose.Schema({
@@ -127,10 +131,11 @@ app.get("/recipe/:recipeID", (req, res) => {
       const title = recipe.title;
       const content1 = recipe.content1;
       const content2 = recipe.content2;
+      const content3 = recipe.content3;
       const date = recipe.date;
       const submittedBy = recipe.submittedBy;
-      const image = recipe.imgSrc;
-      res.render("recipe", { title, content1, content2, date, submittedBy, image });
+      const images = recipe.imgs;
+      res.render("recipe", { title, content1, content2, content3, date, submittedBy, images });
     } else {
       console.log("something went wrong");
     }
@@ -184,7 +189,7 @@ app.post("/login", (req, res) => {
 });
 
 //compose and post new recipe or news item
-app.post("/compose", upload.single("imgFile"), (req, res) => {
+app.post("/compose", upload.array("imgFiles", 3), (req, res) => {
   if (req.body.postType === "news") {
     console.log("It's news");
     res.redirect("/news");
@@ -195,12 +200,13 @@ app.post("/compose", upload.single("imgFile"), (req, res) => {
       date: req.body.date,
       content1: req.body.content1,
       content2: req.body.content2,
+      content3: req.body.content3,
       submittedBy: req.body.submittedBy,
       comment: req.body.comment,
-      img: req.file.path,
-      imgSrc: `/img/${req.file.filename}`,
+      imgs: req.files,
+      // imgSrc: `/img/${req.file.filename}`,
     });
-    console.log(req.file);
+    console.log(req.files);
     newRecipe.save();
     res.redirect("/recipes");
   }

@@ -5,7 +5,7 @@
 >
   <div class="col-lg-8 col-sm-12 mx-auto">
     <form
-      class="border p-4 rounded"
+      class="border p-4 rounded bg-white"
       method="POST"
       action="/compose"
       enctype="multipart/form-data"
@@ -29,10 +29,16 @@
           required
         ></textarea>
         <textarea
-          class="form-control"
+          class="form-control mb-2"
           name="content2"
           rows="5"
           placeholder="Second paragraph - not required"
+        ></textarea>
+        <textarea
+          class="form-control"
+          name="content3"
+          rows="5"
+          placeholder="Third paragraph - not required"
         ></textarea>
       </div>
       <div class="form-group col">
@@ -51,7 +57,8 @@
       </div>
       
       <div class="form-group col-6">
-        <input type="file" name="imgFile" required />
+        <label class="font-weight-bold" for="imgFiles">Photos<span class="font-weight-light"> - will display in order uploaded</span></label>
+        <input type="file" name="imgFiles" multiple required />
       </div>
       <div class="form-group col">
         <label class="d-block" for="recipe-check">

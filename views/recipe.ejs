@@ -1,9 +1,6 @@
 <%- include("partials/header") -%>
 <div class="container single-recipe-wrapper">
-  <div class="container">
-    <img class="recipe-top-image" src="<%= image %>" alt="" />
-  </div>
-  <div class="recipe-content">
+   <div class="recipe-content container">
     <h1 class="single-recipe-title"><%= title %></h1>
     <p class="text-muted"><%= date %><span class="font-weight-bold text-danger ml-2"><%= submittedBy %></span></p>
     <div class="recipe-page-social-icons">
@@ -20,9 +17,28 @@
           title="Like"
         ></i>
     </div>
+  <div>
+    <img class="recipe-top-image" src="/img/<%= images[0].filename %>" alt="" />
+  </div>
+ 
+    
     <div class="single-recipe-text">
       <p><%= content1 %></p>
+      <hr style="width:30%; margin-bottom:2rem">
+      <% if(images.length > 1) { %>
+      <div class="container">
+        <img class="recipe-middle-image" src="/img/<%= images[1].filename %>" alt="" />
+      </div>
+    <% } %>
       <p><%= content2 %></p>
+      
+      <% if(images.length > 2) { %>
+        <hr style="width:30%; margin-bottom:2rem">
+      <div class="container">
+        <img class="recipe-bottom-image" src="/img/<%= images[2].filename %>" alt="" />
+      </div>
+      <% } %>
+      <p><%= content3 %></p>
     </div>
   </div>
   

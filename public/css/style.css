@@ -324,7 +324,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(80%);
+  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(88%);
 }
 
 .card-text {
@@ -454,18 +454,39 @@ footer {
   color: #312420;
 }
 
+.recipe-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
 .single-recipe-title{
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-family: "Oswald", sans-serif;
 }
 
+.single-recipe-text p{
+  padding: 3rem 0;
+  text-align: left;
+  width: 77%;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
 .recipe-top-image{
-  height: 500px;
-  width: 400px;
+  height: 450px;
+  width: 80%;
+  object-fit: contain;
+  filter: contrast(120%) saturate(125%) brightness(94%);
+}
+
+.recipe-middle-image, .recipe-bottom-image{
+ height: 300px;
+  width: 80%;
   object-fit: cover;
-  float: left;
-  padding: 0.6rem 2rem 0 0;
-  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(94%);
+ filter: contrast(110%) saturate(110%) brightness(94%);
 }
 
 .recipe-page-social-icons i{
@@ -499,9 +520,6 @@ footer {
   width: 6.5%;
 }
 
-.single-recipe-text{
-  width: 81%;
-}
 
 
 /* ------------Story Page--------------- */
@@ -963,32 +981,16 @@ footer {
   }
 
   /* ------------Single Recipe Page--------- */
+
 .single-recipe-wrapper{
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem 0.5rem;
 }
 
-.recipe-top-image{
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-  float: none;
-  padding: 0;
-}
-
-.recipe-content{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  padding: 1rem;
+.single-recipe-wrapper img {
   width: 100%;
 }
 
-.single-recipe-text{
+.single-recipe-text p{
   width: 100%;
 }
 
