@@ -280,6 +280,10 @@ body {
   grid-gap: 2rem;
 }
 
+.card-link-wrapper:hover {
+  text-decoration: none;
+}
+
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
@@ -334,34 +338,15 @@ body {
   border-radius: 4px;
 }
 
-.fa-link,
-.fa-thumbs-up {
-  color: hsla(48, 50%, 97%);
+.fas {
+  color: #312420;
 }
 
-.fa-link:hover,
-.fa-thumbs-up:hover {
+.fas:hover{
   color: #ccc;
 }
 
-.fa-link:active,
-.fa-thumbs-up:active {
-  color: #6c757d;
-}
 
-.copy-msg {
-  display: none;
-  position: absolute;
-  bottom: 2.2rem;
-  right: 0;
-  color: hsla(48, 50%, 97%);
-  background: #be3624;
-  opacity: 0.9;
-  border-radius: 1px;
-  padding: 0.4rem;
-  font-size: 1.2rem;
-  opacity: 0.7;
-}
 
 footer {
   background-color: #1c1c1c;
@@ -443,9 +428,6 @@ footer {
   font-weight: bold;
   letter-spacing: 0.25rem;
   color: #312420;
-
-  /* text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
-    0px -4px 6px rgba(255, 255, 255, 0.3); */
 }
 
 .recipe-page-card-container {
@@ -464,9 +446,17 @@ footer {
     height: 100%;
 }
 
+
+
 /* ------------Single Recipe Page--------- */
 .single-recipe-wrapper{
   padding: 2rem;
+  color: #312420;
+}
+
+.single-recipe-title{
+  font-size: 2.5rem;
+  font-family: "Oswald", sans-serif;
 }
 
 .recipe-top-image{
@@ -476,6 +466,41 @@ footer {
   float: left;
   padding: 0.6rem 2rem 0 0;
   filter: contrast(130%) saturate(145%) blur(0.5px) brightness(94%);
+}
+
+.recipe-page-social-icons i{
+  border: 2px solid #312420;
+  color: #312420;
+
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+.recipe-page-social-icons i:hover{
+  border: 2px solid #ccc;
+  color: #ccc;
+  cursor: pointer;
+}
+  
+.copy-msg {
+  display: none;
+  position: absolute;
+  bottom: 25.5rem;
+  left: 51rem;
+  color: hsla(48, 50%, 97%);
+  background: #be3624;
+  opacity: 0.9;
+  border-radius: 1px;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  width: 6.5%;
+}
+
+.single-recipe-text{
+  width: 81%;
 }
 
 
@@ -961,6 +986,16 @@ footer {
   justify-content: center;
   padding: 1rem;
   width: 100%;
+}
+
+.single-recipe-text{
+  width: 100%;
+}
+
+.copy-msg {
+  left: 8rem;
+  width: 30%;
+  bottom: 5rem;
 }
 }
 

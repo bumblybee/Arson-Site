@@ -4,15 +4,45 @@
     <img class="recipe-top-image" src="<%= image %>" alt="" />
   </div>
   <div class="recipe-content">
-  <h1><%= title %></h1>
-  <p class="text-muted font-weight-bold"><%= date %></p>
-  <p class="font-weight-bold text-danger"><%= submittedBy %></p>
-  <div>
-    <p><%= content1 %></p>
-    <p><%= content2 %></p>
-  </div>
-</div>
-</div>
+    <h1 class="single-recipe-title"><%= title %></h1>
+    <p class="text-muted"><%= date %><span class="font-weight-bold text-danger ml-2"><%= submittedBy %></span></p>
+    <div class="recipe-page-social-icons">
+      <p class="copy-msg">Link Copied!</p>
+        <i
+          class="fas fa-link copy-link"
+          data-placement="top"
+          title="Copy Link"
+        ></i>
 
+        <i
+          class="fas fa-thumbs-up"
+          data-placement="top"
+          title="Like"
+        ></i>
+    </div>
+    <div class="single-recipe-text">
+      <p><%= content1 %></p>
+      <p><%= content2 %></p>
+    </div>
+  </div>
+  
+</div>
+<script>
+  //Copy Link on Click
+  const copiedLinks = document.querySelectorAll(".copy-link");
+  const copiedMsgs = document.querySelectorAll(".copy-msg");
+  const links = Array.from(copiedLinks);
+  const msgs = Array.from(copiedMsgs);
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      window.navigator.clipboard.writeText(window.location.href);
+      console.log(link.previousElementSibling);
+      link.previousElementSibling.style.display = "block";
+      setTimeout(() => {
+        link.previousElementSibling.style.display = "none";
+      }, 2000);
+    });
+  });
+</script>
 </body>
 </html>
