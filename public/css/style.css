@@ -301,7 +301,6 @@ body {
   color: hsl(7, 60%, 50%);
   font-weight: bold;
   font-family: "Oswald", sans-serif;
-  
 }
 
 
@@ -472,7 +471,8 @@ footer {
   width: 77%;
   margin: 0 auto;
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .recipe-top-image{
@@ -508,16 +508,15 @@ footer {
 .copy-msg {
   display: none;
   position: absolute;
-  bottom: 25.5rem;
-  left: 51rem;
+  bottom: 24.5rem;
+  left: 53rem;
   color: hsla(48, 50%, 97%);
   background: #be3624;
-  opacity: 0.9;
-  border-radius: 1px;
-  padding: 0.4rem;
+  border-radius: 4px;
+  padding: 0.3rem;
   font-size: 1.2rem;
-  opacity: 0.7;
-  width: 6.5%;
+  opacity: 0.5;
+  width: 7.5%;
 }
 
 
@@ -990,6 +989,10 @@ footer {
   width: 100%;
 }
 
+.single-recipe-title {
+  font-size: 2.9rem;
+}
+
 .single-recipe-text p{
   width: 100%;
 }
@@ -997,7 +1000,8 @@ footer {
 .copy-msg {
   left: 8rem;
   width: 30%;
-  bottom: 5rem;
+  height: 40px;
+  top: 23.5rem;
 }
 }
 
@@ -1020,4 +1024,11 @@ footer {
   .story-btn {
     margin: 0;
   }
+
+  .copy-msg {
+  left: 7rem;
+  width: 35%;
+  
+  top: 27.5rem;
+}
 }
