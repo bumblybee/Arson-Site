@@ -475,6 +475,10 @@ footer {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.single-recipe-text p:nth-of-type(2), .single-recipe-text p:nth-of-type(3) {
+  padding: 0;
+}
+
 .recipe-top-image{
   height: 450px;
   width: 80%;
