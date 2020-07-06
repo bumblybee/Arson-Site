@@ -111,7 +111,12 @@ const News = mongoose.model("News", newsSchema);
 const signIn = new mongoose.model("SignIn", signInSchema);
 
 app.get("/", (req, res) => {
-  res.render("home", { title: "Arson Sauce" });
+
+  Recipe.find({}, (err, recipes) => {
+    recipes = recipes.filter((recipe, index) => index < 3);
+    res.render("home", { recipes });
+  }).sort({ date: -1 });
+  
 });
 
 app.get("/recipes", (req, res) => {

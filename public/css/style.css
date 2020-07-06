@@ -267,8 +267,7 @@ body {
   letter-spacing: 0.05rem;
 
   padding: 1.5rem 0 0;
-  /* text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.5),
-    0px -4px 6px rgba(255, 255, 255, 0.3); */
+ 
 }
 
 .news-card-container {
@@ -280,8 +279,13 @@ body {
   grid-gap: 2rem;
 }
 
+.card-link-wrapper{
+ color: #312420;
+}
 .card-link-wrapper:hover {
+  color: #312420;
   text-decoration: none;
+  
 }
 
 .card {

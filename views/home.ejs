@@ -40,152 +40,61 @@
 </div>
   <div class="news-container">
  
-<div class="container">
-  <h1 class="news-title">Recent Updates</h1>
-</div>
+  <div class="container">
+    <h1 class="news-title">Recent Updates</h1>
+  </div>
   <div class="news-card-container container">
-
-    <!----------- Card ----------------->
-    <div class="card border-0">
-      <div class="card-body d-flex flex-row">
-        <!-- Avatar change-->
-        <img
-          src="/img/cutlery.png"
-          class="rounded-circle mr-3"
-          height="50px"
-          width="50px"
-          alt="cutlery"
-        />
-
-        <!-- Header -->
-        <div>
-          <a class="card-category" href="/recipes"><p class="card-category">Recipe</p></a>
-          <h4 class="card-title font-weight-bold mb-2">
-            Spiced Up Eggs
-          </h4>
-
-          <p class="card-text"><i class="far fa-clock pr-2"></i>05/2020</p>
-        </div>
-      </div>
-
-      <!-- image -->
-      <div class="card-img-container" style="background-image:url(/img/eggs.jpg);">
-      </div>
-
-      <div class="card-footer border-0" style="background: hsl(48, 50%, 97%);">
-
-        
-        <p class="copy-msg">Link Copied!</p>
-        <i
-          class="copy-link fas fa-link float-right p-1 mt-1"
-          data-placement="top"
-          title="Copy Link"
-        ></i>
-        <i
-          class="fas fa-thumbs-up float-right p-1 mt-1 mr-1"
-          data-placement="top"
-          title="Like"
-        ></i>
-      </div>
-    </div>
-
-    <!----------- Card ----------------->
-
-    <div class="card border-0">
-      <div class="card-body d-flex flex-row">
-        <!-- Avatar change-->
-        <img
-          src="/img/newspaper.png"
-          class="rounded-circle mr-3"
-          height="50px"
-          width="50px"
-          alt="grill"
-        />
-
-        <!-- Header -->
-        <div>
-          <a class="card-category" href="/news">
-          <p class="card-category">News</p></a>
-          <h4 class="card-title font-weight-bold mb-2">
-            Fermenting
-          </h4>
-          <p class="card-text card-content">
-            <i class="far fa-clock pr-2"></i>05/2020
-          </p>
-        </div>
-      </div>
-
-      <!-- image -->
-      <div class="card-img-container" style="background-image:url(/img/ferment.jpg);">
-       </div>
-
-      <!-- Card content -->
+    <% recipes.forEach(recipe => { %>
     
-      <div class="card-footer border-0" style="background: hsl(48, 50%, 97%);">
-      
-        <p class="copy-msg">Link Copied!</p>
-        <i
-          class="copy-link fas fa-link float-right p-1 mt-1"
-          data-placement="top"
-          title="Copy Link"
-        ></i>
-          <i
-          class="fas fa-thumbs-up float-right p-1 mt-1 mr-1"
-          data-placement="top"
-          title="Like"
-        ></i>
-      </div>
-    </div>
-
-    <!-----------Card ------------->
-
-    <div class="card border-0">
-      <div class="card-body d-flex flex-row">
-        <!-- Avatar change-->
-        <img
-          src="/img/cutlery.png"
-          class="rounded-circle mr-3"
-          height="50px"
-          width="50px"
-          alt="grill"
-        />
-
-        <!-- Header -->
-        <div>
-          <a class="card-category" href="/recipes">
-          <p class="card-category">Recipe</p></a>
-          <h4 class="card-title font-weight-bold mb-2">
-            Arson Slaw
-          </h4>
-          <p class="card-text"><i class="far fa-clock pr-2"></i>06/2020</p>
-        </div>
-      </div>
-
-      <!-- image -->
-      <div class="card-img-container" style="background-image:url(/img/coleslaw.jpg);">
-      </div>
-
-      <!-- Card content -->
+    <!----------- Card ----------------->
      
-      <div class="card-footer border-0" style="background: hsl(48, 50%, 97%);">
-        
-        <p class="copy-msg">Link Copied!</p>
-        <i
-          class="copy-link fas fa-link float-right p-1 mt-1"
-          data-placement="top"
-          title="Copy Link"
-        ></i>
-        <i
-          class="fas fa-thumbs-up float-right p-1 mt-1 mr-1"
-          data-placement="top"
-          title="Like"
-        ></i>
+      <div class="card border-0">
+       
+        <div class="card-body d-flex flex-row">
+          <img
+            src="/img/cutlery.png"
+            class="rounded-circle mr-3"
+            height="50px"
+            width="50px"
+            alt="cutlery"
+          />
+
+          <!-- Header -->
+          <div>
+            <a class="card-category" href="/recipes">
+            <p class="card-category">Recipe</p></a>
+            <h4 class="card-title font-weight-bold mb-2"><a href="/recipe/<%= recipe._id %>" class="card-link-wrapper">
+            <%= recipe.title %></a>
+            </h4>
+
+            <p class="card-text"><i class="far fa-clock pr-2"></i><%= recipe.date %></p>
+          </div>
+        </div>
+
+        <!-- image -->
+        <a href="/recipe/<%= recipe._id %>" class="card-link-wrapper"><div class="card-img-container" style="background-image:url('/img/<%= recipe.imgs[0].filename %>');">
+        </div></a>
+
+        <div class="card-footer border-0" style="background: hsl(48, 50%, 97%);">
+          <p class="copy-msg">Link Copied!</p>
+          <i
+           class="copy-link fas fa-link float-right p-1 mt-1"
+            data-placement="top"
+            title="Copy Link"
+          ></i>
+          <i
+            class="fas fa-thumbs-up float-right p-1 mt-1 mr-1"
+            data-placement="top"
+            title="Like"
+          ></i>
+        </div>
+   
       </div>
-    </div>
+       
+     
+   
+    <% }) %>
   </div>
-  </div>
-
-
 </div>
 
  <%- include("partials/footer") -%>
