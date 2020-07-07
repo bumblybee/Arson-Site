@@ -6,8 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  
-   background-image: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     #faf8f0,
     #faf7ef,
@@ -28,7 +27,6 @@ body {
 .banner {
   width: 13rem;
   height: 11rem;
-
   padding: 0.9rem 0;
   filter: saturate(120%);
 }
@@ -44,7 +42,6 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   position: relative;
   width: 100vw;
-  /* border-top: 10px solid rgba(39, 39, 39, 0.973); */
 }
 
 .nav-header__p {
@@ -94,10 +91,7 @@ body {
 
 .bottle {
   display: block;
-
-  /* z-index: 4; */
   width: 100%;
-  /* height: 70%; */
 }
 
 .header-div {
@@ -129,7 +123,6 @@ body {
   height: 20rem;
   left: 28%;
   z-index: -1;
-  /* animation: arsonLogoLoad 4s forwards; */
 }
 
 .story-container {
@@ -190,7 +183,6 @@ body {
   float: left;
   font-size: 4rem;
   line-height: 0.9;
-
   padding-right: 7px;
 }
 
@@ -259,7 +251,6 @@ body {
   );
 
   padding: 2.5rem 3rem 2.9rem;
-
   position: relative;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -272,9 +263,7 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.05rem;
-
   padding: 1.5rem 0 0;
- 
 }
 
 .news-card-container {
@@ -298,9 +287,6 @@ body {
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
-
-  /* Add height to cards in recipe section, then you can put text underneath them */
-  /* height: 250px; */
 }
 
 .card:hover {
@@ -360,7 +346,6 @@ body {
 
 footer {
   background-color: #1c1c1c;
-
   width: 100vw;
   padding: 4rem 0;
 }
@@ -372,7 +357,6 @@ footer {
 
 .footer-nav {
   width: 25%;
-
   display: flex;
   flex-direction: column;
 }
@@ -442,7 +426,6 @@ footer {
 
 .recipe-page-card-container {
   height: auto;
-
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -451,7 +434,7 @@ footer {
 }
 
 .recipe-page-card-container .card {
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.028), 0 7px 8px rgba(0, 0, 0, 0.04),
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.028), 0 7px 8px rgba(0, 0, 0, 0.04),
     0 14px 12px rgba(0, 0, 0, 0.05);
     height: 100%;
 }
@@ -476,7 +459,6 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column;
-
 }
 
 .single-recipe-title{
@@ -579,7 +561,6 @@ footer {
 
 .story-page-text {
   font-family: "Roboto Condensed", sans-serif;
-
   font-size: 1.45rem;
   z-index: 0;
 }
@@ -710,9 +691,6 @@ footer {
 
   .news-card-container {
     grid-template-columns: repeat(2, 1fr);
-    /* justify-items: center;
-    align-items: center; */
-    /* grid-gap: 1rem; */
   }
 
   .recipe-page-card-container {
@@ -737,7 +715,6 @@ footer {
   .chili {
     height: 6rem;
     left: 40rem;
-
     top: 34rem;
   }
 
@@ -759,7 +736,6 @@ footer {
 
   .story-text {
     grid-row-start: 3;
-
     line-height: 1.6rem;
   }
 
@@ -773,7 +749,6 @@ footer {
     width: 300px;
     grid-row-start: 2;
     grid-row-end: 3;
-    /* margin-left: 5rem; */
   }
 
   .story-img {
@@ -786,7 +761,6 @@ footer {
   .banner {
     width: 9rem;
     height: 7rem;
-
     padding: 0.5rem 0;
     filter: saturate(120%);
   }
@@ -819,7 +793,6 @@ footer {
     top: 2.4em;
     height: 9rem;
     left: 5%;
-    /* z-index: -1; */
   }
 
   .bottle {
@@ -1052,7 +1025,6 @@ footer {
   .copy-msg {
   left: 7rem;
   width: 35%;
-  
   top: 27.5rem;
-}
+  }
 }
