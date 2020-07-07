@@ -7,7 +7,14 @@ body {
   padding: 0;
   width: 100vw;
   
-  background: #faf8f0f3;
+   background-image: linear-gradient(
+    to bottom,
+    #faf8f0,
+    #faf7ef,
+    #faf7ed,
+    #fbf6ec,
+    #fbf5eb
+  );
   overflow-x: hidden;
 }
 
@@ -455,6 +462,14 @@ footer {
 .single-recipe-wrapper{
   padding: 2rem;
   color: #312420;
+   background-image: linear-gradient(
+    to bottom,
+    #faf8f0,
+    #faf7ef,
+    #faf7ed,
+    #fbf6ec,
+    #fbf5eb
+  );
 }
 
 .recipe-content{
@@ -935,10 +950,6 @@ footer {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .footer-nav-container {
-    padding: 0 0 0 0.9rem;
-  }
-
   .footer-nav {
     flex-direction: row;
     margin-top: 0;
@@ -954,9 +965,7 @@ footer {
     justify-self: start;
   }
 
-  .facebook-icon {
-    justify-self: end;
-  }
+ 
 
   .form-text {
     width: 100%;

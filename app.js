@@ -113,6 +113,9 @@ const signIn = new mongoose.model("SignIn", signInSchema);
 app.get("/", (req, res) => {
 
   Recipe.find({}, (err, recipes) => {
+    //TODO: Include a news item on home page when I have content
+    if(err) throw err;
+    //Grab first three recipes
     recipes = recipes.filter((recipe, index) => index < 3);
     res.render("home", { recipes });
   }).sort({ date: -1 });
