@@ -1,9 +1,9 @@
 <%- include("partials/header") -%>
 
 <div
-  class="row justify-content-center container mt-4 mb-4 p-4 shadow-sm mx-auto"
+  class="row justify-content-center container mt-4 mb-4 p-4 mx-auto"
 >
-  <div class="col-lg-8 col-sm-12 mx-auto">
+  <div class="col-lg-8 col-md-12 mx-auto shadow-sm">
     <form
       class="border p-4 rounded bg-white"
       method="POST"
@@ -46,8 +46,9 @@
         <textarea
           class="form-control"
           name="comment"
-          placeholder="This is what will show in /recipes on small card"
+          placeholder="Text to display on card"
           rows="3"
+          maxlength="130"
           required
         ></textarea>
       </div>
@@ -57,8 +58,8 @@
       </div>
       
       <div class="form-group col-6">
-        <label class="font-weight-bold" for="imgFiles">Photos<span class="font-weight-light"> - will display in order uploaded</span></label>
-        <input type="file" name="imgFiles" multiple required />
+        <label class="font-weight-bold" for="imgFiles">Photos<span class="font-weight-light"> - will display in order uploaded, top to bottom</span></label>
+        <input class="mb-2" type="file" name="imgFiles" multiple required />
       </div>
       <div class="form-group col">
         <label class="d-block" for="recipe-check">
