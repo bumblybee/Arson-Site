@@ -478,7 +478,7 @@ footer {
 
 .recipe-top-image{
   margin-bottom: 2rem;
-  height: 440px;
+  height: auto;
   width: 30%;
   object-fit: cover;
   filter: contrast(120%) saturate(125%) brightness(94%);
@@ -963,7 +963,6 @@ footer {
     font-size: 0.9rem;
   }
 
-
   .recipe-date {
     font-size: 0.9rem;
   }
@@ -975,12 +974,12 @@ footer {
 }
 
 .recipe-top-image {
-  width: 98%;
-  height: 400px;
+  width: 80%;
 }
 
 .recipe-middle-image, .recipe-bottom-image{
   width: 100%;
+  height: auto;
 }
 
 .single-recipe-title {
