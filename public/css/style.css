@@ -275,13 +275,12 @@ body {
   grid-gap: 2rem;
 }
 
-.card-link-wrapper{
- color: #312420;
+.card-link-wrapper {
+  color: #312420;
 }
 .card-link-wrapper:hover {
   color: #312420;
   text-decoration: none;
-  
 }
 
 .card {
@@ -299,7 +298,6 @@ body {
   font-weight: bold;
   font-family: "Oswald", sans-serif;
 }
-
 
 .card-category:hover,
 .card-category:active {
@@ -340,7 +338,7 @@ body {
   color: #312420;
 }
 
-.fas:hover{
+.fas:hover {
   color: #ccc;
 }
 
@@ -430,22 +428,19 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-row-gap: 1.5rem;
-  
 }
 
 .recipe-page-card-container .card {
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.028), 0 7px 8px rgba(0, 0, 0, 0.04),
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.028), 0 7px 8px rgba(0, 0, 0, 0.04),
     0 14px 12px rgba(0, 0, 0, 0.05);
-    height: 100%;
+  height: 100%;
 }
 
-
-
 /* ------------Single Recipe Page--------- */
-.single-recipe-wrapper{
+.single-recipe-wrapper {
   padding: 2rem;
   color: #312420;
-   background-image: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     #faf8f0,
     #faf7ef,
@@ -455,18 +450,18 @@ footer {
   );
 }
 
-.recipe-content{
+.recipe-content {
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-.single-recipe-title{
+.single-recipe-title {
   font-size: 3.5rem;
   font-family: "Oswald", sans-serif;
 }
 
-.single-recipe-text p{
+.single-recipe-text p {
   padding-bottom: 1rem;
   text-align: inherit;
   width: 70%;
@@ -476,7 +471,7 @@ footer {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.recipe-top-image{
+.recipe-top-image {
   margin-bottom: 2rem;
   height: auto;
   width: 30%;
@@ -484,7 +479,8 @@ footer {
   filter: contrast(120%) saturate(125%) brightness(94%);
 }
 
-.recipe-middle-image, .recipe-bottom-image{
+.recipe-middle-image,
+.recipe-bottom-image {
   margin: 1rem 0 2rem;
   height: 300px;
   width: 72%;
@@ -492,7 +488,7 @@ footer {
   filter: contrast(110%) saturate(110%) brightness(94%);
 }
 
-.recipe-page-social-icons i{
+.recipe-page-social-icons i {
   border: 2px solid #312420;
   color: #312420;
 
@@ -502,12 +498,12 @@ footer {
   margin-bottom: 3rem;
 }
 
-.recipe-page-social-icons i:hover{
+.recipe-page-social-icons i:hover {
   border: 2px solid #ccc;
   color: #ccc;
   cursor: pointer;
 }
-  
+
 .copy-msg {
   display: none;
   position: absolute;
@@ -521,8 +517,6 @@ footer {
   opacity: 0.5;
   width: 7.5%;
 }
-
-
 
 /* ------------Story Page--------------- */
 
@@ -625,7 +619,6 @@ footer {
 }
 
 /* ----------Compose Page---------- */
-
 
 /* -------Animations------- */
 
@@ -816,11 +809,11 @@ footer {
   }
 
   .story-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: center;
     font-weight: bolder;
     margin-bottom: 0;
-    padding: 3rem 0 2rem;
+    padding: 3rem 0;
   }
 
   .story-text {
@@ -847,7 +840,6 @@ footer {
   .story-text p:first-of-type:first-letter {
     line-height: 0.9;
   }
-
 
   .story-page-text p,
   .story-page-text a {
@@ -969,35 +961,36 @@ footer {
 
   /* ------------Single Recipe Page--------- */
 
-.single-recipe-wrapper{
-  padding: 1rem 0.5rem;
-}
+  .single-recipe-wrapper {
+    padding: 1rem 0.5rem;
+  }
 
-.recipe-top-image {
-  width: 80%;
-}
+  .recipe-top-image {
+    width: 80%;
+  }
 
-.recipe-middle-image, .recipe-bottom-image{
-  width: 100%;
-  height: auto;
-}
+  .recipe-middle-image,
+  .recipe-bottom-image {
+    width: 100%;
+    height: auto;
+  }
 
-.single-recipe-title {
-  font-size: 2.9rem;
-}
+  .single-recipe-title {
+    font-size: 2.9rem;
+  }
 
-.single-recipe-text p{
-  width: 100%;
-  text-align: left;
-  margin: 0 auto;
-}
+  .single-recipe-text p {
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+  }
 
-.copy-msg {
-  left: 8rem;
-  width: 30%;
-  height: 40px;
-  top: 23.5rem;
-}
+  .copy-msg {
+    left: 8rem;
+    width: 30%;
+    height: 40px;
+    top: 23.5rem;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -1021,8 +1014,8 @@ footer {
   }
 
   .copy-msg {
-  left: 7rem;
-  width: 35%;
-  top: 27.5rem;
+    left: 7rem;
+    width: 35%;
+    top: 27.5rem;
   }
 }
