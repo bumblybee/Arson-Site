@@ -542,19 +542,22 @@ footer {
 
 /* -------------- News Post Page ----------- */
 
+.news-page-container {
+  margin-top: 3rem;
+}
+
 .news-page-container hr {
-  width: 80%;
   margin-left: 0;
 }
 
 .news-page-content {
-  width: 82%;
-  margin: 1.5rem 0 2rem;
+  width: 80%;
+  margin: 2rem 0;
   line-height: 1.5;
-  font-family: "Roboto Condensed", sans-serif;
+
   font-weight: 300;
   line-height: 1.4;
-  letter-spacing: 0.07rem;
+
   font-size: 1.4rem;
 }
 
@@ -1061,6 +1064,13 @@ footer {
 
   /* ----------News Post Page------------ */
 
+  .news-page-container {
+    margin-top: 0;
+  }
+
+  .news-page-social-icons i {
+    margin-bottom: 2rem;
+  }
   .news-page-image {
     width: 100%;
     height: auto;
