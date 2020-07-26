@@ -8,18 +8,25 @@ body {
   width: 100vw;
   background-image: linear-gradient(
     to bottom,
-    #faf8f0,
-    #faf7ef,
-    #faf7ed,
-    #fbf6ec,
-    #fbf5eb
+    #fbfbf9,
+    #fcfaf9,
+    #fbfafa,
+    #faf9fa,
+    #f9f9f9,
+    #f9f9f9,
+    #f8f8f8,
+    #f8f8f8,
+    #f8f8f8,
+    #f7f7f7,
+    #f7f7f7,
+    #f6f6f6
   );
   overflow-x: hidden;
 }
 
 .wrapper {
   width: 100vw;
-  background: #faf8f0f3;
+  background: #f9f9f9;
   font-family: "Oswald", sans-serif;
   z-index: -10;
 }
@@ -38,7 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  background-color: #faf8f0f3;
+  background-color: #f9f9f9;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   position: relative;
   width: 100vw;
@@ -233,21 +240,28 @@ body {
 }
 
 .custom-shape-divider-bottom-1592405130 .shape-fill {
-  fill: #faf8f0;
+  fill: #fbfbf9;
 }
 
 .news-container {
   margin-top: -0.2rem;
   z-index: 5;
   color: #312420;
-  background-color: #faf8f0;
+  background-color: #fbfbf9;
   background-image: linear-gradient(
     to bottom,
-    #faf8f0,
-    #faf7ef,
-    #faf7ed,
-    #fbf6ec,
-    #fbf5eb
+    #fbfbf9,
+    #fcfaf9,
+    #fbfafa,
+    #faf9fa,
+    #f9f9f9,
+    #f9f9f9,
+    #f8f8f8,
+    #f8f8f8,
+    #f8f8f8,
+    #f7f7f7,
+    #f7f7f7,
+    #f6f6f6
   );
 
   padding: 2.5rem 3rem 2.9rem;
@@ -329,7 +343,7 @@ body {
 }
 
 .card-body {
-  background-color: hsl(48, 50%, 97%);
+  background-color: #fdfdfa;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.02' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   border-radius: 4px;
 }
@@ -403,12 +417,19 @@ footer {
 /* ----------Recipe Page---------- */
 .card-page-container {
   background-image: linear-gradient(
-    to right,
-    #faf8f0,
-    #faf7ef,
-    #faf7ed,
-    #fbf6ec,
-    #fbf5eb
+    to bottom,
+    #fbfbf9,
+    #fcfaf9,
+    #fbfafa,
+    #faf9fa,
+    #f9f9f9,
+    #f9f9f9,
+    #f8f8f8,
+    #f8f8f8,
+    #f8f8f8,
+    #f7f7f7,
+    #f7f7f7,
+    #f6f6f6
   );
 }
 
