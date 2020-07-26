@@ -1,10 +1,10 @@
 <%- include("partials/header") -%>
-<div class="recipe-page-container">
+<div class="card-page-container">
   <h1 class="recipe-page-title text-center">Recipes</h1>
   <div class="container recipe-page-card-container">
     <% recipes.forEach(recipe => { %>
     <div class="container">
-      <a href="/recipe/<%= recipe._id %>" class="card-link-wrapper">
+      <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper">
       <div class="card border-0 recipe-page-card">
         <div class="card-img-container rounded-top" style="background-image:url('/img/<%= recipe.imgs[0].filename %>');">
         </div>

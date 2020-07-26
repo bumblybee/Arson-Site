@@ -7,15 +7,16 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const multer = require("multer");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
 const port = process.env.PORT || 3000;
-
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 // --------------- Multer Setup ---------
 const storage = multer.diskStorage({
@@ -46,8 +47,9 @@ const upload = multer({
 // --------------- MongoDB Code ------------------
 // mongo "mongodb+srv://arson-sauce-2cvre.mongodb.net/arsonSauce" --username admin-tiffani
 
+//TODO: change db password
 mongoose.connect(
-  "mongodb+srv://admin-tiffani:fire3720@arson-sauce-2cvre.mongodb.net/arsonSauce?retryWrites=true&w=majority",
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_NAME}-2cvre.mongodb.net/arsonSauce?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
@@ -74,10 +76,12 @@ const recipeSchema = new mongoose.Schema({
   },
   submittedBy: String,
   comment: String,
-  imgs: [{
-    type: Object,
-    required: [true, "Please add an image file."],
-  }],
+  imgs: [
+    {
+      type: Object,
+      required: [true, "Please add an image file."],
+    },
+  ],
   // imgSrc: [String],
 });
 
@@ -90,15 +94,23 @@ const newsSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please add a date."],
   },
-  content: {
+  content1: {
     type: String,
     required: [true, "Please add content."],
   },
-  img: {
+  content2: {
     type: String,
-    required: [true, "Please add an image file."],
   },
-  imgSrc: String,
+  content3: {
+    type: String,
+  },
+  comment: String,
+  imgs: [
+    {
+      type: Object,
+      required: [true, "Please add an image file."],
+    },
+  ],
 });
 
 const signInSchema = new mongoose.Schema({
@@ -110,16 +122,56 @@ const Recipe = mongoose.model("Recipe", recipeSchema);
 const News = mongoose.model("News", newsSchema);
 const signIn = new mongoose.model("SignIn", signInSchema);
 
-app.get("/", (req, res) => {
+// const newPost = new News({
+//   title: "Test",
+//   date: "test",
+//   content1: "Testing",
+// });
 
+// newPost.save();
+
+app.get("/", (req, res) => {
   Recipe.find({}, (err, recipes) => {
     //TODO: Include a news item on home page when I have content
-    if(err) throw err;
+    if (err) throw err;
     //Grab first three recipes
     recipes = recipes.filter((recipe, index) => index < 3);
     res.render("home", { recipes });
   }).sort({ date: -1 });
-  
+});
+
+app.get("/news", (req, res) => {
+  News.find({}, (err, posts) => {
+    if (err) throw err;
+
+    res.render("news", { posts });
+  }).sort({ date: -1 });
+});
+
+app.get("/news/:id", (req, res) => {
+  const postId = req.params.id;
+  News.findOne({ _id: postId }, (err, post) => {
+    if (err) throw err;
+    if (post) {
+      const title = post.title;
+      const content1 = post.content1;
+      const content2 = post.content2;
+      const content3 = post.content3;
+      const date = post.date;
+      const images = post.imgs;
+
+      res.render("newsPost", {
+        title,
+        content1,
+        content2,
+        content3,
+        date,
+        images,
+      });
+    } else {
+      console.log("something went wrong");
+    }
+  });
 });
 
 app.get("/recipes", (req, res) => {
@@ -127,10 +179,10 @@ app.get("/recipes", (req, res) => {
     if (err) throw err;
     // res.set("Content-Type", newRecipe.img.contentType);
     res.render("recipes", { recipes });
-  }).sort({date: -1});
+  }).sort({ date: -1 });
 });
 
-app.get("/recipe/:recipeID", (req, res) => {
+app.get("/recipes/:recipeID", (req, res) => {
   const recipeID = req.params.recipeID;
 
   Recipe.findOne({ _id: recipeID }, (err, recipe) => {
@@ -143,21 +195,23 @@ app.get("/recipe/:recipeID", (req, res) => {
       const date = recipe.date;
       const submittedBy = recipe.submittedBy;
       const images = recipe.imgs;
-      res.render("recipe", { title, content1, content2, content3, date, submittedBy, images });
+      res.render("recipe", {
+        title,
+        content1,
+        content2,
+        content3,
+        date,
+        submittedBy,
+        images,
+      });
     } else {
       console.log("something went wrong");
     }
   });
 });
 
-
-
 app.get("/story", (req, res) => {
   res.render("story");
-});
-
-app.get("/news", (req, res) => {
-  res.render("news");
 });
 
 //Get rid of sent and sendErr GET routes after design finished
@@ -173,7 +227,6 @@ app.get("/error", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login");
 });
-
 
 //render compose page on login
 app.post("/login", (req, res) => {
@@ -199,7 +252,17 @@ app.post("/login", (req, res) => {
 //compose and post new recipe or news item
 app.post("/compose", upload.array("imgFiles", 3), (req, res) => {
   if (req.body.postType === "news") {
-    console.log("It's news");
+    const newPost = new News({
+      title: req.body.title,
+      date: req.body.date,
+      content1: req.body.content1,
+      content2: req.body.content2,
+      content3: req.body.content3,
+      comment: req.body.comment,
+      imgs: req.files,
+    });
+    console.log("It worked", newPost);
+    newPost.save();
     res.redirect("/news");
   } else if (req.body.postType === "recipe") {
     console.log("It's a recipe");
@@ -244,7 +307,7 @@ app.post("/sendEmail", (req, res) => {
     // Mailgun auth
     const auth = {
       auth: {
-        api_key: "1719ccda7e1284e05257b0f5c8f8c89f-a2b91229-115732bb",
+        api_key: process.env.MAILGUN_KEY,
         domain: "sandbox8c22f2f4bbff4cd3a3ccecb0bfb916cb.mailgun.org",
       },
     };

@@ -320,7 +320,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(130%) saturate(145%) blur(0.5px) brightness(88%);
+  filter: contrast(120%) saturate(125%) blur(0.5px) brightness(91%);
 }
 
 .card-text {
@@ -401,7 +401,7 @@ footer {
 }
 
 /* ----------Recipe Page---------- */
-.recipe-page-container {
+.card-page-container {
   background-image: linear-gradient(
     to right,
     #faf8f0,
@@ -498,7 +498,8 @@ footer {
   margin-bottom: 3rem;
 }
 
-.recipe-page-social-icons i:hover {
+.recipe-page-social-icons i:hover,
+.news-page-social-icons i:hover {
   border: 2px solid #ccc;
   color: #ccc;
   cursor: pointer;
@@ -516,6 +517,33 @@ footer {
   font-size: 1.2rem;
   opacity: 0.5;
   width: 7.5%;
+}
+
+/* -------------- News Post Page ----------- */
+
+.news-page-container hr {
+  width: 80%;
+  margin-left: 0;
+}
+
+.news-page-content {
+  width: 82%;
+  margin: 1.5rem 0 2rem;
+}
+
+.news-page-social-icons i {
+  border: 2px solid #312420;
+  color: #312420;
+
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0.5rem 0 4rem;
+}
+
+.news-page-image {
+  height: 500px;
+  width: 60%;
 }
 
 /* ------------Story Page--------------- */
@@ -620,6 +648,11 @@ footer {
 
 /* ----------Compose Page---------- */
 
+/* #news-form,
+#recipe-form {
+  display: none;
+} */
+
 /* -------Animations------- */
 
 @keyframes spin {
@@ -628,15 +661,6 @@ footer {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes imageLoad {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -945,6 +969,7 @@ footer {
   .recipe-page-card-container {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .recipe-page-card-container .card {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -990,6 +1015,17 @@ footer {
     width: 30%;
     height: 40px;
     top: 23.5rem;
+  }
+
+  /* ----------News Post Page------------ */
+
+  .news-page-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .news-page-content {
+    width: 100%;
   }
 }
 

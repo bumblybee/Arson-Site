@@ -1,6 +1,40 @@
 <%- include("partials/header") -%>
 
-<div class="container news-container">
-  <h1>News</h1>
-  <div class="container news-card-container"></div>
+<!-- TODO: Fix css from recipes to news classes -->
+<div class="card-page-container">
+  <h1 class="recipe-page-title text-center">News</h1>
+  <div class="container recipe-page-card-container">
+    <% posts.forEach(post => { %>
+    <div class="container">
+      <a href="/news/<%= post._id %>" class="card-link-wrapper">
+      <div class="card border-0 recipe-page-card">
+        <div class="card-img-container rounded-top" style="background-image:url('/img/<%= post.imgs[0].filename %>');">
+        </div>
+
+        <div class="recipe-page-card-body card-body p-3">
+          <p class="card-category recipe-card-category">News</p>
+          <h3 class="mb-0 card-title">
+            <%= post.title %>
+          </h3>
+          <div class="mb-1 text-muted card-text">
+            <i class="far fa-clock pr-2"></i><%= post.date %>
+          </div>
+          <!-- Add substring to recipes after creating full recipe route -->
+          <p class="card-text mt-3 mb-0">"<%= post.comment %>"</p>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <% }) %>
+  </div>
 </div>
+
+
+
+</body>
+</html>
+
+
+
+

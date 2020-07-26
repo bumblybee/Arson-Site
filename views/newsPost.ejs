@@ -1,0 +1,115 @@
+
+<!-- TODO: Change css to news and also reformat layout and compose form -->
+<%- include("partials/header") -%>
+ <div class="container-fluid news-page-container mt-4 pt-4">
+
+    <div class="row justify-content-center">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-7">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%= title %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <span class="text-danger font-weight-normal">Eric Pearson</span>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p class="text-muted"><%= date %></p>
+
+        <div class="news-page-social-icons">
+          <p class="copy-msg">Link Copied!</p>
+          <i
+          class="fas fa-link copy-link"
+          data-placement="top"
+          title="Copy Link"
+          ></i>
+
+          <i
+          class="fas fa-thumbs-up"
+          data-placement="top"
+          title="Like"
+          ></i>
+        </div>
+
+       
+        
+
+        <!-- Post Content -->
+        <div>
+        <p class="lead news-page-content"><%= content1 %></p>
+
+        <img class="news-page-image" src="/img/<%= images[0].filename %>" alt="news">
+
+        <p class="lead news-page-content"><%= content2 %></p>
+
+        
+         <% if(images.length > 1) { %>
+      
+        <img class="news-page-image" src="/img/<%= images[1].filename %>" alt="news"/>
+     
+    <% } %>
+       
+        
+        <p class="lead news-page-content"><%= content3 %></p>
+
+         <% if(images.length > 2) { %>
+       
+      <div class="container">
+        <img class="news-page-image" src="/img/<%= images[2].filename %>" alt="" />
+      </div>
+      <% } %>
+      </div>
+
+        
+
+        <!-- Comments Form -->
+        <!-- <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div> -->
+
+        <!-- Single Comment -->
+        <!-- <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div> -->
+
+          </div>
+        </div>
+
+      </div>
+<script>
+  //Copy Link on Click
+  const copiedLinks = document.querySelectorAll(".copy-link");
+  const copiedMsgs = document.querySelectorAll(".copy-msg");
+  const links = Array.from(copiedLinks);
+  const msgs = Array.from(copiedMsgs);
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      window.navigator.clipboard.writeText(window.location.href);
+      console.log(link.previousElementSibling);
+      link.previousElementSibling.style.display = "block";
+      setTimeout(() => {
+        link.previousElementSibling.style.display = "none";
+      }, 2000);
+    });
+  });
+</script>
+</body>
+</html>
