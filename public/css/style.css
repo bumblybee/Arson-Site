@@ -463,11 +463,18 @@ footer {
   color: #312420;
   background-image: linear-gradient(
     to bottom,
-    #faf8f0,
-    #faf7ef,
-    #faf7ed,
-    #fbf6ec,
-    #fbf5eb
+    #fbfbf9,
+    #fcfaf9,
+    #fbfafa,
+    #faf9fa,
+    #f9f9f9,
+    #f9f9f9,
+    #f8f8f8,
+    #f8f8f8,
+    #f8f8f8,
+    #f7f7f7,
+    #f7f7f7,
+    #f6f6f6
   );
 }
 
@@ -544,6 +551,21 @@ footer {
 
 .news-page-container {
   margin-top: 3rem;
+  background-image: linear-gradient(
+    to bottom,
+    #fbfbf9,
+    #fcfaf9,
+    #fbfafa,
+    #faf9fa,
+    #f9f9f9,
+    #f9f9f9,
+    #f8f8f8,
+    #f8f8f8,
+    #f8f8f8,
+    #f7f7f7,
+    #f7f7f7,
+    #f6f6f6
+  );
 }
 
 .news-page-container hr {
