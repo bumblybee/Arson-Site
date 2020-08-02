@@ -6,6 +6,7 @@ const mailgun = require("nodemailer-mailgun-transport");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const multer = require("multer");
+const crypto = require("crypto");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -18,13 +19,22 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const randomId = crypto.randomBytes(5).toString("hex");
+
 // --------------- Multer Setup ---------
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./public/img");
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    //Added randomID in case same photo name uploaded later
+    cb(
+      null,
+      file.originalname.split(".")[0] +
+        randomId +
+        "." +
+        file.originalname.split(".")[1]
+    );
   },
 });
 
@@ -83,8 +93,6 @@ const recipeSchema = new mongoose.Schema({
       required: [true, "Please add an image file."],
     },
   ],
-
-  // imgSrc: [String],
 });
 
 const newsSchema = new mongoose.Schema({
@@ -160,7 +168,7 @@ app.get("/news/:id", (req, res) => {
       const content2 = post.content2;
       const content3 = post.content3;
       const date = post.date;
-      const images = post.imgs;
+      const images = post.images;
 
       res.render("newsPost", {
         title,
@@ -273,7 +281,18 @@ app.post("/compose/:type", upload.any(), (req, res) => {
     // console.log(req.files[0].filename);
     newRecipe.save();
     res.redirect("/recipes");
-  } else {
+  } else if (type === "news") {
+    const newPost = new News({
+      title: req.body.title,
+      date: req.body.date,
+      content1: req.body.content1,
+      content2: req.body.content2,
+      content3: req.body.content3,
+      submittedBy: req.body.submittedBy,
+      comment: req.body.comment,
+      images: req.files,
+    });
+    newPost.save();
     res.redirect("/news");
   }
 });

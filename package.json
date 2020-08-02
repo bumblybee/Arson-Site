@@ -21,6 +21,6 @@
     "multer": "^1.4.2",
     "nodemailer": "^6.4.8",
     "nodemailer-mailgun-transport": "^2.0.0",
-    "uuid": "^8.2.0"
+    "uuid": "^8.3.0"
   }
 }
