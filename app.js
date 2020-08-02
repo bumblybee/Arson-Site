@@ -76,12 +76,14 @@ const recipeSchema = new mongoose.Schema({
   },
   submittedBy: String,
   comment: String,
-  imgs: [
+
+  images: [
     {
       type: Object,
       required: [true, "Please add an image file."],
     },
   ],
+
   // imgSrc: [String],
 });
 
@@ -105,7 +107,7 @@ const newsSchema = new mongoose.Schema({
     type: String,
   },
   comment: String,
-  imgs: [
+  images: [
     {
       type: Object,
       required: [true, "Please add an image file."],
@@ -194,7 +196,7 @@ app.get("/recipes/:recipeID", (req, res) => {
       const content3 = recipe.content3;
       const date = recipe.date;
       const submittedBy = recipe.submittedBy;
-      const images = recipe.imgs;
+      const images = recipe.images;
       res.render("recipe", {
         title,
         content1,
@@ -238,7 +240,7 @@ app.post("/login", (req, res) => {
       bcrypt.compare(password, user.password, (err, result) => {
         if (err) throw err;
         if (result === true) {
-          res.render("compose");
+          res.render("choosePostType");
         } else {
           res.redirect("/login");
         }
@@ -249,23 +251,14 @@ app.post("/login", (req, res) => {
   });
 });
 
-//compose and post new recipe or news item
-app.post("/compose", upload.array("imgFiles", 3), (req, res) => {
-  if (req.body.postType === "news") {
-    const newPost = new News({
-      title: req.body.title,
-      date: req.body.date,
-      content1: req.body.content1,
-      content2: req.body.content2,
-      content3: req.body.content3,
-      comment: req.body.comment,
-      imgs: req.files,
-    });
-    console.log("It worked", newPost);
-    newPost.save();
-    res.redirect("/news");
-  } else if (req.body.postType === "recipe") {
-    console.log("It's a recipe");
+app.get("/compose/:type", (req, res) => {
+  const type = req.params.type;
+  type === "news" ? res.render("composeNews") : res.render("composeRecipe");
+});
+
+app.post("/compose/:type", upload.any(), (req, res) => {
+  const type = req.params.type;
+  if (type === "recipe") {
     const newRecipe = new Recipe({
       title: req.body.title,
       date: req.body.date,
@@ -274,14 +267,50 @@ app.post("/compose", upload.array("imgFiles", 3), (req, res) => {
       content3: req.body.content3,
       submittedBy: req.body.submittedBy,
       comment: req.body.comment,
-      imgs: req.files,
-      // imgSrc: `/img/${req.file.filename}`,
+      images: req.files,
     });
-    console.log(req.files);
+    // res.json(newRecipe.images);
+    // console.log(req.files[0].filename);
     newRecipe.save();
     res.redirect("/recipes");
+  } else {
+    res.redirect("/news");
   }
 });
+
+// //compose and post new recipe or news item
+// app.post("/compose", upload.array("imgFiles", 3), (req, res) => {
+//   if (req.body.postType === "news") {
+//     const newPost = new News({
+//       title: req.body.title,
+//       date: req.body.date,
+//       content1: req.body.content1,
+//       content2: req.body.content2,
+//       content3: req.body.content3,
+//       comment: req.body.comment,
+//       imgs: req.files,
+//     });
+//     console.log("It worked", newPost);
+//     newPost.save();
+//     res.redirect("/news");
+//   } else if (req.body.postType === "recipe") {
+//     console.log("It's a recipe");
+//     const newRecipe = new Recipe({
+//       title: req.body.title,
+//       date: req.body.date,
+//       content1: req.body.content1,
+//       content2: req.body.content2,
+//       content3: req.body.content3,
+//       submittedBy: req.body.submittedBy,
+//       comment: req.body.comment,
+//       imgs: req.files,
+//       // imgSrc: `/img/${req.file.filename}`,
+//     });
+//     console.log(req.files);
+//     newRecipe.save();
+//     res.redirect("/recipes");
+//   }
+// });
 
 // Contact form submission
 app.post("/sendEmail", (req, res) => {

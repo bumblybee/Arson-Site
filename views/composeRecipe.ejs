@@ -1,0 +1,76 @@
+<%- include("partials/header") -%>
+
+<div class="row justify-content-center container mt-4 mb-3 p-4 mx-auto">
+  <div class="col-lg-8 col-md-12 mx-auto shadow-sm">
+    <form
+      id="recipe-form"
+      class="border p-4 rounded bg-white"
+      method="POST"
+      action="/compose/recipe"
+      enctype="multipart/form-data"
+    >
+      <h1 class="mb-4 mt-4 text-center">Create Recipe</h1>
+      <div class="form-group col-lg-3 col-sm-4">
+        <label class="mt-2 font-weight-bold" for="date">Date</label>
+        <input class="form-control mb-3" type="text" name="date" required />
+      </div>
+      <div class="form-group col-lg-8 col-sm-6">
+        <label class="font-weight-bold" for="title">Title</label>
+        <input class="form-control" type="text" name="title" required />
+      </div>
+      <div class="form-group col mb-4">
+        <div class="form-group col-6">
+          <label class="font-weight-bold" for="img1">Main Photo</label>
+          <input class="mb-2" type="file" name="img1" required />
+        </div>
+        <textarea
+          class="form-control mb-2"
+          name="content1"
+          rows="5"
+          placeholder="First paragraph"
+          required
+        ></textarea>
+        <div class="form-group col-6">
+          <label class="font-weight-bold" for="img2">Photo</label>
+          <input class="mb-2" type="file" name="img2" />
+        </div>
+        <textarea
+          class="form-control mb-2"
+          name="content2"
+          rows="5"
+          placeholder="Second paragraph - not required"
+        ></textarea>
+        <div class="form-group col-6">
+          <label class="font-weight-bold" for="img3">Photo</label>
+          <input class="mb-2" type="file" name="img3" />
+        </div>
+        <textarea
+          class="form-control"
+          name="content3"
+          rows="5"
+          placeholder="Third paragraph - not required"
+        ></textarea>
+      </div>
+      <div class="form-group col">
+        <label class="font-weight-bold" for="comment">Card Comment</label>
+        <textarea
+          class="form-control"
+          name="comment"
+          placeholder="Text to display on card"
+          rows="3"
+          maxlength="130"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group col-lg-4 col-sm-6">
+        <label class="font-weight-bold" for="submittedBy">Recipe Author</label>
+        <input class="form-control" type="text" name="submittedBy" />
+      </div>
+      <div class="form-group col">
+        <button class="btn btn-danger btn-block" type="submit" name="button">
+          Publish
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
