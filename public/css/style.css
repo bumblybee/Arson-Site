@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  height: 100vh;
   background-image: linear-gradient(
     to bottom,
     #fbfbf9,
@@ -714,11 +715,6 @@ footer {
 }
 
 /* ----------Compose Page---------- */
-
-/* #news-form,
-#recipe-form {
-  display: none;
-} */
 
 /* -------Animations------- */
 

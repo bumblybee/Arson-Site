@@ -107,7 +107,9 @@
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper"
         ><div
           class="card-img-container"
-          style="background-image: url('/img/<%= recipe.imgs[0].filename %>');"
+          style="
+            background-image: url('/img/<%= recipe.images[0].filename %>');
+          "
         ></div
       ></a>
 
