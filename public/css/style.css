@@ -105,9 +105,9 @@ body {
 .header-div {
   padding: 6rem 0 0;
   z-index: -2;
-  background: url("https://images.unsplash.com/photo-1573028597466-7bc09d5369f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background: url("https://images.unsplash.com/photo-1507048947301-7afc2aca0edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
-  background-position: 80% 110%;
+  background-position: 80% 40%;
 
   height: auto;
   position: relative;
@@ -783,10 +783,6 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-  .bottle {
-    height: 26rem;
-  }
-
   .story-page-container {
     grid-template-columns: repeat(1, 1fr);
     padding: 3.5rem 0 3rem;
@@ -862,6 +858,7 @@ footer {
 
   .header-div {
     padding-top: 7rem;
+    background-position: 20% 60%;
   }
 
   .header-filter {
