@@ -5,7 +5,7 @@
     <% recipes.forEach(recipe => { %>
     <div class="container">
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper">
-      <div class="card border-0 recipe-page-card">
+      <div class="card recipe-page-card">
         <div class="card-img-container rounded-top" style="background-image:url('/img/<%= recipe.images[0].filename %>');">
         </div>
 
