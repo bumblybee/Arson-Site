@@ -107,7 +107,7 @@ body {
   z-index: -2;
   background: url("https://images.unsplash.com/photo-1507048947301-7afc2aca0edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
-  background-position: 80% 40%;
+  background-position: 80% 55%;
 
   height: auto;
   position: relative;
@@ -122,7 +122,7 @@ body {
   top: 0;
   left: 0;
   backdrop-filter: saturate(110%) blur(2px);
-  background-color: rgba(24, 24, 24, 0.238);
+  background-color: rgba(24, 24, 24, 0.4);
 }
 
 .header-title {
@@ -299,7 +299,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
 }
 
@@ -344,9 +344,13 @@ body {
 }
 
 .card-body {
-  background-color: #fdfdfa;
+  background-color: #f3f3f3;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23454545' fill-opacity='0.02' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   border-radius: 4px;
+}
+
+.card-body:hover {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .fas {
@@ -742,12 +746,16 @@ footer {
   }
 
   .chili {
-    left: 10rem;
-    top: 19rem;
+    right: 21rem;
+    top: 35rem;
     height: 7.5rem;
   }
   .story-title {
     padding-top: 0.5rem;
+  }
+
+  .story-text {
+    width: 85%;
   }
 }
 
@@ -765,8 +773,18 @@ footer {
 
   .chili {
     height: 7rem;
-    left: 47rem;
-    top: 35rem;
+    right: 17rem;
+    top: 45rem;
+  }
+
+  .plants-img {
+    float: none;
+    margin: 1rem auto 2rem;
+    display: block;
+  }
+
+  .story-title {
+    text-align: center;
   }
 
   .news-card-container {
@@ -790,7 +808,7 @@ footer {
 
   .chili {
     height: 6rem;
-    left: 40rem;
+    right: 13rem;
     top: 34rem;
   }
 
