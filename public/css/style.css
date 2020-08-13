@@ -288,6 +288,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+  position: relative;
 }
 
 .card-link-wrapper {
@@ -487,6 +488,7 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .single-recipe-title {
@@ -541,15 +543,16 @@ footer {
 .copy-msg {
   display: none;
   position: absolute;
-  bottom: 24.5rem;
-  left: 53rem;
+  top: 10rem;
+  left: 12rem;
   color: hsla(48, 50%, 97%);
   background: #be3624;
   border-radius: 4px;
-  padding: 0.3rem;
-  font-size: 1.2rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
   opacity: 0.5;
-  width: 7.5%;
+  width: 30%;
+  z-index: 10;
 }
 
 /* -------------- News Post Page ----------- */
@@ -1097,10 +1100,10 @@ footer {
   }
 
   .copy-msg {
-    left: 8rem;
-    width: 30%;
-    height: 40px;
-    top: 23.5rem;
+    left: 9rem;
+    width: 28%;
+    /* height: 40px; */
+    top: 10rem;
   }
 
   /* ----------News Post Page------------ */
