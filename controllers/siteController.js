@@ -30,14 +30,13 @@ exports.loginUser = (req, res) => {
   });
 };
 
-exports.getHomeUpdates = (req, res) => {
-  Recipe.find({}, (err, recipes) => {
-    //TODO: Include a news item on home page when I have content
-    if (err) throw err;
-    //Grab first three recipes
-    recipes = recipes.filter((recipe, index) => index < 3);
-    res.render("home", { recipes });
-  }).sort({ date: -1 });
+exports.getHomeUpdates = async (req, res) => {
+  let recipes = await Recipe.find().sort({ date: -1 });
+  let news = await News.find().sort({ date: -1 });
+  recipes = recipes.filter((recipe, index) => index < 2);
+  news = news.filter((news, index) => index < 1)[0];
+
+  res.render("home", { recipes, news });
 };
 
 exports.getStory = (req, res) => {

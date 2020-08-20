@@ -65,6 +65,6 @@ const signInSchema = new mongoose.Schema({
   password: String,
 });
 
-exports.Recipe = mongoose.model("Recipe", recipeSchema);
-exports.News = mongoose.model("News", newsSchema);
+exports.Recipe = new mongoose.model("Recipe", recipeSchema);
+exports.News = new mongoose.model("News", newsSchema);
 exports.signIn = new mongoose.model("SignIn", signInSchema);

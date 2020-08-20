@@ -70,7 +70,47 @@
   <div class="container">
     <h1 class="news-title">Recent Updates</h1>
   </div>
+
+  <!-- Cards -->
   <div class="news-card-container container">
+    <div class="card home-card border-top-0">
+      <div class="card-body d-flex flex-row">
+        <img
+          src="/img/newspaper.png"
+          class="rounded-circle mr-3"
+          height="50px"
+          width="50px"
+          alt="newspaper"
+        />
+
+        <!-- Header -->
+        <div>
+          <a class="card-category" href="/recipes">
+            <p class="card-category">News</p></a
+          >
+          <h4 class="card-title font-weight-bold mb-2">
+            <a href="/news/<%= news._id %>" class="card-link-wrapper">
+              <%= news.title %></a
+            >
+          </h4>
+
+          <p class="card-text">
+            <i class="far fa-clock pr-2"></i><%= news.date %>
+          </p>
+        </div>
+      </div>
+
+      <!-- image -->
+      <a href="/news/<%= news._id %>" class="card-link-wrapper"
+        ><div
+          class="card-img-container"
+          style="background-image: url('/img/<%= news.images[0].filename %>');"
+        ></div
+      ></a>
+
+      <div class="card-footer border-0 p-3" style="background: #fafafa;"></div>
+    </div>
+
     <% recipes.forEach(recipe => { %>
 
     <!----------- Card ----------------->

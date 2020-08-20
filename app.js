@@ -15,9 +15,6 @@ app.use(compression());
 
 app.use("/", siteRouter);
 
-// --------------- MongoDB Code ------------------
-// mongo "mongodb+srv://arson-sauce-2cvre.mongodb.net/arsonSauce" --username admin-tiffani
-
 //TODO: change db password
 mongoose.connect(
   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_NAME}-2cvre.mongodb.net/arsonSauce?retryWrites=true&w=majority`,
