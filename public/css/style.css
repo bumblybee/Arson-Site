@@ -583,10 +583,11 @@ footer {
 
 .news-page-container hr {
   margin-left: 0;
+  width: 75%;
 }
 
 .news-page-content {
-  width: 80%;
+  width: 75%;
   margin: 2rem 0;
   line-height: 1.5;
 
@@ -856,6 +857,9 @@ footer {
   .story-img {
     grid-column-start: 1;
     grid-row-start: 6;
+  }
+  .news-page-container hr {
+    width: 100%;
   }
 }
 
