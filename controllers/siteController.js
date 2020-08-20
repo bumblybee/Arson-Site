@@ -200,7 +200,8 @@ exports.sendEmail = (req, res) => {
         }
       });
     } else {
-      res.render("msgErr");
+      //Send confirmation even though not sent so they don't know it didn't go through
+      res.render("msgSent");
     }
   }, 1800);
 };
