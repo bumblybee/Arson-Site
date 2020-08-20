@@ -191,12 +191,16 @@ exports.sendEmail = (req, res) => {
       html: emailText,
     };
 
-    transporter.sendMail(mailOptions, (err, data) => {
-      if (err) {
-        res.render("msgErr");
-      } else {
-        res.render("msgSent");
-      }
-    });
+    if (bot === "no") {
+      transporter.sendMail(mailOptions, (err, data) => {
+        if (err) {
+          res.render("msgErr");
+        } else {
+          res.render("msgSent");
+        }
+      });
+    } else {
+      res.render("msgErr");
+    }
   }, 1800);
 };
