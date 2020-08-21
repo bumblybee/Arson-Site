@@ -1,7 +1,7 @@
 const express = require("express");
 const compression = require("compression");
 const mongoose = require("mongoose");
-
+const helmet = require("helmet");
 const siteRouter = require("./routes");
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(compression());
-
+app.use(helmet());
 app.use("/", siteRouter);
 
 //TODO: change db password
