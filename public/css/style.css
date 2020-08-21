@@ -488,7 +488,7 @@ footer {
   height: auto;
   width: 30%;
   object-fit: cover;
-  filter: contrast(120%) saturate(125%) brightness(94%);
+  filter: contrast(110%) saturate(115%) brightness(96%);
 }
 
 .recipe-middle-image,
@@ -497,7 +497,7 @@ footer {
   height: 300px;
   width: 72%;
   object-fit: cover;
-  filter: contrast(110%) saturate(110%) brightness(94%);
+  filter: contrast(105%) saturate(112%);
 }
 
 .recipe-page-social-icons i {
