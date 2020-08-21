@@ -324,7 +324,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(115%) saturate(125%) blur(0.5px) brightness(90%);
+  filter: contrast(115%) saturate(125%) blur(0.5px) brightness(93%);
 }
 
 .card-text {
@@ -555,11 +555,11 @@ footer {
 
 .news-page-container hr {
   margin-left: 0;
-  width: 75%;
+  width: 80%;
 }
 
 .news-page-content {
-  width: 75%;
+  width: 65%;
   margin: 2rem 0;
   line-height: 1.5;
 
