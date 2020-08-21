@@ -7,21 +7,7 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(
-    to bottom,
-    #fafaf9,
-    #fcfaf9,
-    #fbfafa,
-    #faf9fa,
-    #f9f9f9,
-    #f9f9f9,
-    #f8f8f8,
-    #f8f8f8,
-    #f8f8f8,
-    #f7f7f7,
-    #f7f7f7,
-    #f6f6f6
-  );
+  background: #fbfbf9;
   overflow-x: hidden;
 }
 
@@ -472,21 +458,7 @@ footer {
 .single-recipe-wrapper {
   padding: 2rem;
   color: #312420;
-  background-image: linear-gradient(
-    to bottom,
-    #fbfbf9,
-    #fcfaf9,
-    #fbfafa,
-    #faf9fa,
-    #f9f9f9,
-    #f9f9f9,
-    #f8f8f8,
-    #f8f8f8,
-    #f8f8f8,
-    #f7f7f7,
-    #f7f7f7,
-    #f6f6f6
-  );
+  background: #fbfbf9;
 }
 
 .recipe-content {
