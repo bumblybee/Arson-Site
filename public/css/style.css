@@ -338,7 +338,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(120%) saturate(125%) blur(0.5px) brightness(91%);
+  filter: contrast(110%) saturate(125%) blur(0.5px) brightness(93%);
 }
 
 .card-text {
