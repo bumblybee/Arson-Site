@@ -154,7 +154,7 @@ exports.compose = (req, res) => {
 exports.sendEmail = (req, res) => {
   //Check if bot filled out form
   let bot;
-  req.body.bot ? (bot = "yes") : (bot = "no");
+  req.body.bot ? (bot = "likely") : (bot = "unlikely");
 
   // Timeout for animation to run before posting
   setTimeout(() => {
@@ -185,13 +185,13 @@ exports.sendEmail = (req, res) => {
     // Email options
     const mailOptions = {
       from: `🌶 Arson Sauce Message ${req.body.email}`,
-      to: "tiffaknee1@gmail.com",
+      to: ["tiffaknee1@gmail.com", "arsonsauce@gmail.com"],
       subject: "New Arson Sauce Form Submission",
       text: req.body.msg,
       html: emailText,
     };
 
-    if (bot === "no") {
+    if (bot === "unlikely") {
       transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
           res.render("msgErr");
