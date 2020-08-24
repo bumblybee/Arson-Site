@@ -40,7 +40,9 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-router.get("/", siteController.getHomeUpdates);
+router.get("/", siteController.getHome);
+
+router.get("/home", siteController.getHome);
 
 router.get("/news", siteController.getNews);
 
@@ -71,7 +73,10 @@ router.get("/compose/:type", siteController.getComposeType);
 
 router.post("/compose/:type", upload.any(), siteController.compose);
 
-// Contact form submission
+// Email form submission
 router.post("/message", siteController.sendEmail);
+
+//404 page
+router.use(siteController.notFound);
 
 module.exports = router;

@@ -30,7 +30,7 @@ exports.loginUser = (req, res) => {
   });
 };
 
-exports.getHomeUpdates = async (req, res) => {
+exports.getHome = async (req, res) => {
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
   recipes = recipes.filter((recipe, index) => index < 2);
@@ -115,7 +115,11 @@ exports.getRecipe = (req, res) => {
 
 exports.getComposeType = (req, res) => {
   const type = req.params.type;
-  type === "news" ? res.render("composeNews") : res.render("composeRecipe");
+  type === "news"
+    ? res.render("composeNews")
+    : type === "recipe"
+    ? res.render("composeRecipe")
+    : res.redirect("/");
 };
 
 exports.compose = (req, res) => {
@@ -203,4 +207,8 @@ exports.sendEmail = (req, res) => {
       res.render("msgSent");
     }
   }, 1600);
+};
+
+exports.notFound = (req, res) => {
+  res.status(404).render("404");
 };
