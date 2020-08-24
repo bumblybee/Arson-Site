@@ -53,13 +53,13 @@ router.get("/recipes/:recipeID", siteController.getRecipe);
 router.get("/story", siteController.getStory);
 
 //Get rid of sent and sendErr GET routes after design finished
-// router.get("/sent", (req, res) => {
-//   res.render("msgSent");
-// });
+router.get("/sent", (req, res) => {
+  res.render("msgSent");
+});
 
-// router.get("/error", (req, res) => {
-//   res.render("msgErr");
-// });
+router.get("/error", (req, res) => {
+  res.render("msgErr");
+});
 
 // Render login page
 router.get("/login", siteController.getLogin);
@@ -72,6 +72,6 @@ router.get("/compose/:type", siteController.getComposeType);
 router.post("/compose/:type", upload.any(), siteController.compose);
 
 // Contact form submission
-router.post("/sendEmail", siteController.sendEmail);
+router.post("/message", siteController.sendEmail);
 
 module.exports = router;

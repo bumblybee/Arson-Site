@@ -17,7 +17,7 @@
     
         <div class="container form-container">
             <h3 class="form-text">Questions? Wanna get ahold of a bottle of sauce?</h3>
-            <form id="contact" action="/sendEmail" method="post">
+            <form id="contact" action="/message" method="post">
                 <div class="form-group">
                     <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name">
                 </div>
@@ -49,6 +49,7 @@
             emailBtn.innerHTML = "<i class='fas fa-cog fa-2x'></i>";
             emailBtn.classList.remove("btn-block");
             emailBtn.classList.add("clicked");
+            emailBtn.blur();
         }
     };
 

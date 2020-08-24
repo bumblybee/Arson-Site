@@ -162,7 +162,6 @@ exports.sendEmail = (req, res) => {
     const emailText = `
   <h3>Details</h3>
   <ul>
-  <li><strong>Bot:</strong> ${bot} </li>
   <li><strong>Name:</strong> ${req.body.name} </li>
   <li><strong>Email:</strong> ${req.body.email} </li>
   </ul>
@@ -203,5 +202,5 @@ exports.sendEmail = (req, res) => {
       //Send confirmation even though not sent so they don't know it didn't go through
       res.render("msgSent");
     }
-  }, 1800);
+  }, 1600);
 };
