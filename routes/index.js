@@ -69,7 +69,7 @@ router.get("/login", siteController.getLogin);
 //render compose page on login
 router.post("/login", siteController.loginUser);
 
-router.get("/compose/:type", siteController.getComposeType);
+// router.get("/compose/:type", siteController.getComposeType);
 
 router.post("/compose/:type", upload.any(), siteController.compose);
 

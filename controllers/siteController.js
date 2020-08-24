@@ -19,7 +19,12 @@ exports.loginUser = (req, res) => {
       bcrypt.compare(password, user.password, (err, result) => {
         if (err) throw err;
         if (result === true) {
-          res.render("choosePostType");
+          req.body.btn === "news"
+            ? res.render("composeNews")
+            : req.body.btn === "recipe"
+            ? res.render("composeRecipe")
+            : res.redirect("/login");
+          console.log(req.body);
         } else {
           res.redirect("/login");
         }
@@ -113,14 +118,15 @@ exports.getRecipe = (req, res) => {
   });
 };
 
-exports.getComposeType = (req, res) => {
-  const type = req.params.type;
-  type === "news"
-    ? res.render("composeNews")
-    : type === "recipe"
-    ? res.render("composeRecipe")
-    : res.redirect("/");
-};
+// exports.getComposeType = (req, res) => {
+//   console.log(req.params);
+//   // const type = req.params.type;
+//   // type === "news"
+//   //   ? res.render("composeNews")
+//   //   : type === "recipe"
+//   //   ? res.render("composeRecipe")
+//   //   : res.redirect("/");
+// };
 
 exports.compose = (req, res) => {
   const type = req.params.type;
