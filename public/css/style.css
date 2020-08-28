@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background: #fbfbf9;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .not-found-title {
