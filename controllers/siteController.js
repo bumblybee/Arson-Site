@@ -119,7 +119,8 @@ exports.getRecipe = (req, res) => {
 };
 
 exports.getPricing = (req, res) => {
-  res.render("pricing");
+  const url = "https://arsonsauce.com/pdf/pricing.pdf";
+  res.render("pricing", { url });
 };
 
 exports.compose = (req, res) => {
