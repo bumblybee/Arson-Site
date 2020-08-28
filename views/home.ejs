@@ -2,7 +2,6 @@
 
 <div class="header-div">
   <div class="header-filter"></div>
-  <!-- TODO: clean up images -->
   <img class="bottle" id="bottle" src="/img/bottle.png" alt="" />
 </div>
 
@@ -104,11 +103,11 @@
       <a href="/news/<%= news._id %>" class="card-link-wrapper"
         ><div
           class="card-img-container"
-          style="background-image: url('/img/<%= news.images[0].filename %>');"
+          style="background-image: url('/img/<%= news.images[0].filename %>')"
         ></div
       ></a>
 
-      <div class="card-footer border-0 p-3" style="background: #fafafa;"></div>
+      <div class="card-footer border-0 p-3" style="background: #fafafa"></div>
     </div>
 
     <% recipes.forEach(recipe => { %>
@@ -146,13 +145,11 @@
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper"
         ><div
           class="card-img-container"
-          style="
-            background-image: url('/img/<%= recipe.images[0].filename %>');
-          "
+          style="background-image: url('/img/<%= recipe.images[0].filename %>')"
         ></div
       ></a>
 
-      <div class="card-footer border-0 p-3" style="background: #fafafa;"></div>
+      <div class="card-footer border-0 p-3" style="background: #fafafa"></div>
     </div>
 
     <% }) %>

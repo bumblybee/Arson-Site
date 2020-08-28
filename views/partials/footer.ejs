@@ -17,7 +17,7 @@
     
         <div class="container form-container">
             <h3 class="form-text">Questions? Wanna get ahold of a bottle of sauce?</h3>
-            <form id="contact" action="/message" method="post">
+            <form id="contact" action="/contact" method="post">
                 <div class="form-group">
                     <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name">
                 </div>
@@ -29,6 +29,8 @@
                     <label class="bot-check text-white" for="bot-check">Agree to terms?</label>
                     <input type="checkbox" name="bot" value="false" class="bot-check">
                 </div>
+                <input type="checkbox" name="subscribeNews" id="subscribe-news">
+                <label class="text-white" for="subscribe-news">Subscribe to News Updates</label>
                 <button onClick="animateBtn()" type="submit" class="btn btn-block emailBtn" id="emailBtn" name="emailBtn">Submit</button>
                
             </form>

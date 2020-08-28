@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arson Sauce Message</title>
+
+    <style>
+      .wrapper {
+        margin: 1rem auto;
+        padding: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 2px solid #a14939;
+      }
+
+      .container {
+        margin-bottom: "1rem";
+      }
+
+      .message-container {
+        margin-top: 2rem;
+      }
+
+      span {
+        font-weight: lighter;
+      }
+
+      p {
+        line-height: 1.3;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="container">
+          <h3>
+            <strong>Name:</strong>
+            <span><%= name %></span>
+          </h3>
+        </div>
+        <div class="container">
+          <h3>
+            <strong>Email Address:</strong>
+            <span><%= email %></span>
+          </h3>
+        </div>
+      </div>
+      <div class="container">
+        <h3>News Updates: <span><%= subscribe %></span></h3>
+      </div>
+
+      <div class="container message-container">
+        <h2>Message</h2>
+        <p><%= msg %></p>
+      </div>
+    </div>
+  </body>
+</html>

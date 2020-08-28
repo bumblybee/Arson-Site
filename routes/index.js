@@ -76,7 +76,7 @@ router.post("/login", siteController.loginUser);
 router.post("/compose/:type", upload.any(), siteController.compose);
 
 // Email form submission
-router.post("/message", siteController.sendEmail);
+router.post("/contact", siteController.sendEmail);
 
 //404 page
 router.use(siteController.notFound);

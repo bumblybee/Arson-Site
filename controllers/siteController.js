@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const emailHandler = require("../handlers/emailHandler");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -158,42 +159,34 @@ exports.compose = (req, res) => {
 };
 
 exports.sendEmail = (req, res) => {
+  // Check subscription status
+  let subscribe;
+  req.body.subscribeNews ? (subscribe = "Yes") : (subscribe = "No");
+
   //Check if bot filled out form
   let bot;
   req.body.bot ? (bot = "likely") : (bot = "unlikely");
 
-  // Timeout for animation to run before posting
-  setTimeout(() => {
-    // Email body
-    const emailText = `
-  <h3>Details</h3>
-  <ul>
-  <li><strong>Name:</strong> ${req.body.name} </li>
-  <li><strong>Email:</strong> ${req.body.email} </li>
-  </ul>
-  <br />
-  <h3>Message</h3>
-  <p>${req.body.msg}</p>
-  `;
+  const { name, email, msg } = req.body;
 
-    // Mailgun auth
-    const auth = {
-      auth: {
-        api_key: process.env.MAILGUN_KEY,
-        domain: "sandbox8c22f2f4bbff4cd3a3ccecb0bfb916cb.mailgun.org",
-      },
-    };
+  // Timeout for animation to run before posting
+  setTimeout(async () => {
+    const emailHTML = await emailHandler.generateHTML("newMessageEmail", {
+      name,
+      email,
+      subscribe,
+      msg,
+    });
 
     // Create transporter through mailgun and pass auth
-    const transporter = nodemailer.createTransport(mailgun(auth));
+    const transporter = nodemailer.createTransport(mailgun(emailHandler.auth));
 
     // Email options
     const mailOptions = {
       from: `🌶 Arson Sauce Message ${req.body.email}`,
-      to: ["tiffaknee1@gmail.com", "arsonsauce@gmail.com"],
+      to: "tiffaknee1@gmail.com",
       subject: "New Arson Sauce Form Submission",
-      text: req.body.msg,
-      html: emailText,
+      html: emailHTML,
     };
 
     if (bot === "unlikely") {
