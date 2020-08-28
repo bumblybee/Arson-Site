@@ -98,7 +98,7 @@ body {
   z-index: -2;
   background: url("/img/flame.jpg");
   background-size: cover;
-  background-position: 80% 40%;
+  background-position: 80% 42%;
 
   height: auto;
   position: relative;
@@ -112,7 +112,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: saturate(120%) blur(2px);
+  backdrop-filter: saturate(120%) blur(3px);
   background-color: rgba(24, 24, 24, 0.4);
 }
 
