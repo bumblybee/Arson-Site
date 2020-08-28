@@ -357,7 +357,7 @@ body {
 footer {
   background-color: #1c1c1c;
   width: 100vw;
-  padding: 4rem 0;
+  padding: 4rem 0 3rem;
 }
 
 .footer-container {
@@ -392,6 +392,7 @@ footer {
 .emailBtn {
   background: #be3624;
   color: #fff;
+  margin-top: 0.5rem;
 }
 
 .emailBtn:hover {

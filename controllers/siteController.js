@@ -184,7 +184,7 @@ exports.sendEmail = (req, res) => {
     // Email options
     const mailOptions = {
       from: `🌶 Arson Sauce Message ${req.body.email}`,
-      to: "tiffaknee1@gmail.com",
+      to: ["tiffaknee1@gmail.com", "arsonsauce@gmail.com"],
       subject: "New Arson Sauce Form Submission",
       html: emailHTML,
     };
@@ -201,7 +201,7 @@ exports.sendEmail = (req, res) => {
       //Send confirmation even though not sent so they don't know it didn't go through
       res.render("msgSent");
     }
-  }, 1600);
+  }, 1300);
 };
 
 exports.notFound = (req, res) => {
