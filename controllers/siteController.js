@@ -119,6 +119,7 @@ exports.getRecipe = (req, res) => {
 };
 
 exports.getPricing = (req, res) => {
+  //TODO: Add file upload POST
   const url = "https://arsonsauce.com/pdf/pricing.pdf";
   res.render("pricing", { url });
 };
