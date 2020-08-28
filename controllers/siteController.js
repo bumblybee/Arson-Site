@@ -118,15 +118,9 @@ exports.getRecipe = (req, res) => {
   });
 };
 
-// exports.getComposeType = (req, res) => {
-//   console.log(req.params);
-//   // const type = req.params.type;
-//   // type === "news"
-//   //   ? res.render("composeNews")
-//   //   : type === "recipe"
-//   //   ? res.render("composeRecipe")
-//   //   : res.redirect("/");
-// };
+exports.getPricing = (req, res) => {
+  res.render("pricing");
+};
 
 exports.compose = (req, res) => {
   const type = req.params.type;

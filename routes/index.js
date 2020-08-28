@@ -54,6 +54,8 @@ router.get("/recipes/:recipeID", siteController.getRecipe);
 
 router.get("/story", siteController.getStory);
 
+router.get("/pricing", siteController.getPricing);
+
 //Get rid of sent and sendErr GET routes after design finished
 router.get("/sent", (req, res) => {
   res.render("msgSent");

@@ -8,7 +8,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: #fbfbf9;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .not-found-title {
@@ -704,7 +704,12 @@ footer {
   margin: auto;
 }
 
-/* ----------Compose Page---------- */
+/* ----------Pricing Page---------- */
+
+.pricing-pdf {
+  width: 100%;
+  height: 650px;
+}
 
 /* -------Animations------- */
 
