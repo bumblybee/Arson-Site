@@ -12,6 +12,9 @@ body {
   overflow-y: auto!;
 }
 
+/* #loading-message {
+  display: none;
+} */
 .not-found-title {
   font-size: 10rem;
   font-weight: bold;
