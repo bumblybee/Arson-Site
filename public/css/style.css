@@ -98,7 +98,7 @@ body {
 }
 
 .header-div {
-  padding: 5rem 0 0;
+  padding: 4rem 0 0;
   z-index: -2;
   background: url("/img/flame.jpg");
   background-size: cover;

@@ -62,7 +62,7 @@
 
 <script>
 
-  //YouTube Player API - set volume
+// YouTube Player API
 var tag = document.createElement("script");
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -78,7 +78,8 @@ function onYouTubeIframeAPIReady() {
     }
   });
 }
-//
+
+// Play video on state change and set volume low
 function onPlayerStateChange(event) {
   switch (event.data) {
     case 0:

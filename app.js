@@ -6,7 +6,7 @@ const helmet = require("helmet");
 const siteRouter = require("./routes");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));

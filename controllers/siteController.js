@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 exports.getLogin = (req, res) => {
-  res.render("login");
+  res.render("auth/login");
 };
 
 exports.loginUser = (req, res) => {
@@ -21,9 +21,9 @@ exports.loginUser = (req, res) => {
         if (err) throw err;
         if (result === true) {
           req.body.btn === "news"
-            ? res.render("composeNews")
+            ? res.render("auth/composeNews")
             : req.body.btn === "recipe"
-            ? res.render("composeRecipe")
+            ? res.render("auth/composeRecipe")
             : res.redirect("/login");
           console.log(req.body);
         } else {
