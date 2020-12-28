@@ -1,5 +1,10 @@
 <%- include("../partials/header") -%>
 
 <div class="row justify-content-center container mt-4 mb-4 p-1 mx-auto">
-  Edit Recipe
+  <% recipes.forEach(recipe => { %>
+  <div>
+    <p><%= recipe.date %></p>
+    <h3><%= recipe.title%></h3>
+  </div>
+  <% }) %>
 </div>

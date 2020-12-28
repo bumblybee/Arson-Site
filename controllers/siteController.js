@@ -108,17 +108,35 @@ exports.loginUser = (req, res) => {
     if (user) {
       bcrypt.compare(password, user.password, (err, result) => {
         if (err) throw err;
+
         if (result === true) {
-          req.body.btn === "create-news"
-            ? res.render("auth/composeNews")
-            : req.body.btn === "create-recipe"
-            ? res.render("auth/composeRecipe")
-            : req.body.btn === "edit-news"
-            ? res.render("auth/editNews")
-            : req.body.btn === "edit-recipe"
-            ? res.render("auth/editRecipe")
-            : res.redirect("/login");
-          console.log(req.body);
+          switch (req.body.btn) {
+            case "create-news":
+              res.render("auth/composeNews");
+              break;
+
+            case "create-recipe":
+              res.render("auth/composeRecipe");
+              break;
+
+            case "edit-recipe":
+              Recipe.find({}, (err, recipes) => {
+                if (err) throw err;
+
+                res.render("auth/editRecipe", { recipes });
+              }).sort({ date: -1 });
+              break;
+
+            case "edit-news":
+              News.find({}, (err, posts) => {
+                if (err) throw err;
+
+                res.render("auth/editNews", { posts });
+              }).sort({ date: -1 });
+              break;
+            default:
+              res.redirect("/login");
+          }
         } else {
           res.redirect("/login");
         }
@@ -158,6 +176,19 @@ exports.compose = (req, res) => {
     });
     newPost.save();
     res.redirect("/news");
+  }
+};
+
+exports.getPostsToEdit = (req, res) => {
+  const type = req.params.type;
+  // First need to display posts, let user choose post to edit, then post edits
+  if (type === "recipe") {
+    Recipe.find({}, (err, recipes) => {
+      if (err) throw err;
+      // res.set("Content-Type", newRecipe.img.contentType);
+      res.render("auth/editRecipe", { recipes });
+    }).sort({ date: -1 });
+  } else if (type === "news") {
   }
 };
 
