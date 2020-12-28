@@ -7,35 +7,6 @@ const emailHandler = require("../handlers/emailHandler");
 const dotenv = require("dotenv");
 dotenv.config();
 
-exports.getLogin = (req, res) => {
-  res.render("auth/login");
-};
-
-exports.loginUser = (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  signIn.findOne({ username: username }, (err, user) => {
-    if (user) {
-      bcrypt.compare(password, user.password, (err, result) => {
-        if (err) throw err;
-        if (result === true) {
-          req.body.btn === "news"
-            ? res.render("auth/composeNews")
-            : req.body.btn === "recipe"
-            ? res.render("auth/composeRecipe")
-            : res.redirect("/login");
-          console.log(req.body);
-        } else {
-          res.redirect("/login");
-        }
-      });
-    } else {
-      res.redirect("/login");
-    }
-  });
-};
-
 exports.getHome = async (req, res) => {
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
@@ -125,6 +96,39 @@ exports.getPricing = (req, res) => {
   res.render("pricing", { url });
 };
 
+exports.getLogin = (req, res) => {
+  res.render("auth/login");
+};
+
+exports.loginUser = (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  signIn.findOne({ username: username }, (err, user) => {
+    if (user) {
+      bcrypt.compare(password, user.password, (err, result) => {
+        if (err) throw err;
+        if (result === true) {
+          req.body.btn === "create-news"
+            ? res.render("auth/composeNews")
+            : req.body.btn === "create-recipe"
+            ? res.render("auth/composeRecipe")
+            : req.body.btn === "edit-news"
+            ? res.render("auth/editNews")
+            : req.body.btn === "edit-recipe"
+            ? res.render("auth/editRecipe")
+            : res.redirect("/login");
+          console.log(req.body);
+        } else {
+          res.redirect("/login");
+        }
+      });
+    } else {
+      res.redirect("/login");
+    }
+  });
+};
+
 exports.compose = (req, res) => {
   const type = req.params.type;
   if (type === "recipe") {
@@ -138,8 +142,7 @@ exports.compose = (req, res) => {
       comment: req.body.comment,
       images: req.files,
     });
-    // res.json(newRecipe.images);
-    // console.log(req.files[0].filename);
+
     newRecipe.save();
     res.redirect("/recipes");
   } else if (type === "news") {
@@ -157,6 +160,8 @@ exports.compose = (req, res) => {
     res.redirect("/news");
   }
 };
+
+exports.edit = (req, res) => {};
 
 exports.sendEmail = (req, res) => {
   // Check subscription status
