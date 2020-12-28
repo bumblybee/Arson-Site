@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const siteController = require("../controllers/siteController");
 
+// TODO: Move multer config to separate file
+
 const multer = require("multer");
 const crypto = require("crypto");
 
@@ -39,6 +41,8 @@ const upload = multer({
   },
   fileFilter: fileFilter,
 });
+
+// ------- Routes -------
 
 router.get("/", siteController.getHome);
 

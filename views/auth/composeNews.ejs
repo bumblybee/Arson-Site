@@ -9,60 +9,98 @@
       action="/compose/news"
       enctype="multipart/form-data"
     >
-      <h1 class="mb-4 mt-4 text-center">Create News Post</h1>
+      <h1 class="mb-1 mt-4 text-center">Create News Post</h1>
+      <p class="text-center mb-4">
+        Form laid out in order content will appear on page
+      </p>
+
       <div class="form-group col-lg-3 col-sm-4">
         <label class="mt-2 font-weight-bold" for="date">Date</label>
-        <input class="form-control mb-3" type="text" name="date" required />
+        <input
+          title="Date you'd like to appear on recipe"
+          class="form-control mb-3"
+          type="text"
+          name="date"
+          id="date"
+          required
+        />
       </div>
-      <div class="form-group col-lg-8 col-sm-6">
+
+      <div class="form-group col-lg-8 col-sm-6 mb-4">
         <label class="font-weight-bold" for="title">Title</label>
-        <input class="form-control" type="text" name="title" required />
+        <input
+          title="Title as you'd like it to appear on recipe header and card"
+          class="form-control"
+          type="text"
+          name="title"
+          id="title"
+          required
+        />
       </div>
+
       <div class="form-group col mb-4">
-        <label class="font-weight-bold" for="content">Content</label>
+        <label class="font-weight-bold" for="content1">First Paragraph</label>
         <textarea
-          class="form-control mb-2"
+          class="form-control mb-4"
           name="content1"
+          id="content1"
           rows="5"
-          placeholder="First paragraph"
+          placeholder="First paragraph of post..."
           required
         ></textarea>
-        <div class="form-group col-6">
+
+        <div class="form-group w-50 mb-4">
           <label class="font-weight-bold" for="img1"
-            >Photo <small>5MB limit</small></label
+            >Main Photo <small>5MB limit</small></label
           >
-          <input class="mb-2 mt-2" type="file" name="img1" required />
+          <input
+            title="Photo to be displayed on card, and the first photo displayed on the post's page"
+            type="file"
+            name="img1"
+            required
+          />
         </div>
+
+        <label class="font-weight-bold" for="content2">Second Paragraph</label>
         <textarea
-          class="form-control mb-2"
+          class="form-control mb-4"
           name="content2"
+          id="content2"
           rows="5"
-          placeholder="Second paragraph - not required"
+          placeholder="Optional text further describing post..."
         ></textarea>
-        <div class="form-group col-6">
+
+        <div class="form-group w-50 mb-4">
           <label class="font-weight-bold" for="img2"
-            >Photo <small>5MB limit</small></label
+            >Additional Photo <small>5MB limit</small></label
           >
-          <input class="mb-2 mt-2" type="file" name="img2" />
+          <input type="file" name="img2" />
         </div>
+
+        <label class="font-weight-bold" for="content3">Third Paragraph</label>
         <textarea
-          class="form-control"
+          class="form-control mb-4"
           name="content3"
+          id="content3"
           rows="5"
-          placeholder="Third paragraph - not required"
+          placeholder="Optional text further describing post..."
         ></textarea>
       </div>
+
       <div class="form-group col">
         <label class="font-weight-bold" for="comment">Card Comment</label>
         <textarea
-          class="form-control"
+          title="Short description of post to display on card. Max chars 130."
+          class="form-control mb-4"
           name="comment"
+          id="comment"
           placeholder="Text to display on card"
           rows="3"
           maxlength="130"
           required
         ></textarea>
       </div>
+
       <div class="form-group col">
         <button
           class="btn btn-danger mb-3 btn-block"
