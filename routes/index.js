@@ -69,12 +69,6 @@ router.get("/error", (req, res) => {
   res.render("msgErr");
 });
 
-// Render login page
-router.get("/login", siteController.getLogin);
-
-//render compose page on login
-router.post("/login", siteController.loginUser);
-
 // router.get("/compose/:type", siteController.getComposeType);
 
 router.post("/compose/:type", upload.any(), siteController.compose);
@@ -87,6 +81,6 @@ router.post("/edit/:type/:id", siteController.edit);
 router.post("/contact", siteController.sendEmail);
 
 //404 page
-router.use(siteController.notFound);
+// router.use(siteController.notFound);
 
 module.exports = router;

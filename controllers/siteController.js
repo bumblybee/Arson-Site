@@ -1,11 +1,9 @@
-const { Recipe, News, signIn } = require("../models");
+const { Recipe, News } = require("../models");
 const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 const emailHandler = require("../handlers/emailHandler");
-const authService = require("../services/authService");
-const COOKIE_CONFIG = require("../config/cookieConfig");
+
+// TODO: fix 404 so it isn't called when using non-root routes
 
 exports.getHome = async (req, res) => {
   let recipes = await Recipe.find().sort({ date: -1 });
@@ -94,52 +92,6 @@ exports.getPricing = (req, res) => {
   //TODO: Add file upload POST
   const url = "https://arsonsauce.com/pdf/pricing.pdf";
   res.render("pricing", { url });
-};
-
-exports.getLogin = (req, res) => {
-  res.render("auth/login");
-};
-
-exports.loginUser = async (req, res) => {
-  const { username, password } = req.body;
-  const { token, user } = await authService.loginWithPassword(
-    username,
-    password
-  );
-
-  if (token) res.cookie("jwt", token, COOKIE_CONFIG);
-
-  if (user) {
-    switch (req.body.btn) {
-      case "create-news":
-        res.render("auth/composeNews");
-        break;
-
-      case "create-recipe":
-        res.render("auth/composeRecipe");
-        break;
-
-      case "edit-recipe":
-        Recipe.find({}, (err, recipes) => {
-          if (err) throw err;
-
-          res.render("auth/editRecipeList", { recipes });
-        }).sort({ date: -1 });
-        break;
-
-      case "edit-news":
-        News.find({}, (err, posts) => {
-          if (err) throw err;
-
-          res.render("auth/editNewsList", { posts });
-        }).sort({ date: -1 });
-        break;
-      default:
-        res.redirect("/login");
-    }
-  } else {
-    res.redirect("/login");
-  }
 };
 
 exports.compose = (req, res) => {
@@ -268,8 +220,4 @@ exports.sendEmail = (req, res) => {
       res.render("msgSent");
     }
   }, 1300);
-};
-
-exports.notFound = (req, res) => {
-  res.status(404).render("404");
 };

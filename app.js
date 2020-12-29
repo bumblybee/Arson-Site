@@ -10,6 +10,8 @@ dotenv.config();
 const cookieParser = require("cookie-parser");
 
 const siteRouter = require("./routes");
+const loginRouter = require("./routes/login");
+const notFoundRouter = require("./routes/notFound");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -21,9 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cookieParser());
-
 app.use(compression());
 app.use(helmet.frameguard({ action: "SAMEORIGIN" }));
+
+// ----Logging----
 
 const morganLogStyle = app.get("env") === "development" ? "dev" : "common";
 app.use(logger(morganLogStyle));
@@ -31,6 +34,8 @@ app.use(logger(morganLogStyle));
 // --------- Routes -------
 
 app.use("/", siteRouter);
+app.use("/", loginRouter);
+app.use("/*", notFoundRouter);
 
 //TODO: change db password
 mongoose.connect(
