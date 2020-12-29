@@ -4,8 +4,8 @@ const mailgun = require("nodemailer-mailgun-transport");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const emailHandler = require("../handlers/emailHandler");
-const dotenv = require("dotenv");
-dotenv.config();
+const authService = require("../services/authService");
+const COOKIE_CONFIG = require("../config/cookieConfig");
 
 exports.getHome = async (req, res) => {
   let recipes = await Recipe.find().sort({ date: -1 });
@@ -100,51 +100,46 @@ exports.getLogin = (req, res) => {
   res.render("auth/login");
 };
 
-exports.loginUser = (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+exports.loginUser = async (req, res) => {
+  const { username, password } = req.body;
+  const { token, user } = await authService.loginWithPassword(
+    username,
+    password
+  );
 
-  signIn.findOne({ username: username }, (err, user) => {
-    if (user) {
-      bcrypt.compare(password, user.password, (err, result) => {
-        if (err) throw err;
+  if (token) res.cookie("jwt", token, COOKIE_CONFIG);
 
-        if (result === true) {
-          switch (req.body.btn) {
-            case "create-news":
-              res.render("auth/composeNews");
-              break;
+  if (user) {
+    switch (req.body.btn) {
+      case "create-news":
+        res.render("auth/composeNews");
+        break;
 
-            case "create-recipe":
-              res.render("auth/composeRecipe");
-              break;
+      case "create-recipe":
+        res.render("auth/composeRecipe");
+        break;
 
-            case "edit-recipe":
-              Recipe.find({}, (err, recipes) => {
-                if (err) throw err;
+      case "edit-recipe":
+        Recipe.find({}, (err, recipes) => {
+          if (err) throw err;
 
-                res.render("auth/editRecipeList", { recipes });
-              }).sort({ date: -1 });
-              break;
+          res.render("auth/editRecipeList", { recipes });
+        }).sort({ date: -1 });
+        break;
 
-            case "edit-news":
-              News.find({}, (err, posts) => {
-                if (err) throw err;
+      case "edit-news":
+        News.find({}, (err, posts) => {
+          if (err) throw err;
 
-                res.render("auth/editNewsList", { posts });
-              }).sort({ date: -1 });
-              break;
-            default:
-              res.redirect("/login");
-          }
-        } else {
-          res.redirect("/login");
-        }
-      });
-    } else {
-      res.redirect("/login");
+          res.render("auth/editNewsList", { posts });
+        }).sort({ date: -1 });
+        break;
+      default:
+        res.redirect("/login");
     }
-  });
+  } else {
+    res.redirect("/login");
+  }
 };
 
 exports.compose = (req, res) => {
@@ -186,7 +181,7 @@ exports.editForm = (req, res) => {
     News.findOne({ _id: id }, (err, post) => {
       if (err) throw err;
       if (post) {
-        res.render("auth/editNews", {
+        res.render("auth/editNewsForm", {
           title: post.title,
           content1: post.content1,
           content2: post.content2,
@@ -203,7 +198,7 @@ exports.editForm = (req, res) => {
     Recipe.findOne({ _id: id }, (err, recipe) => {
       if (err) throw err;
       if (recipe) {
-        res.render("auth/editRecipe", {
+        res.render("auth/editRecipeForm", {
           title: recipe.title,
           date: recipe.date,
           content1: recipe.content1,
@@ -219,7 +214,7 @@ exports.editForm = (req, res) => {
     });
   }
 };
-
+//TODO: handle updating db
 exports.edit = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
