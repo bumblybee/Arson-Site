@@ -123,7 +123,7 @@ exports.loginUser = (req, res) => {
               Recipe.find({}, (err, recipes) => {
                 if (err) throw err;
 
-                res.render("auth/editRecipe", { recipes });
+                res.render("auth/editRecipeList", { recipes });
               }).sort({ date: -1 });
               break;
 
@@ -131,7 +131,7 @@ exports.loginUser = (req, res) => {
               News.find({}, (err, posts) => {
                 if (err) throw err;
 
-                res.render("auth/editNews", { posts });
+                res.render("auth/editNewsList", { posts });
               }).sort({ date: -1 });
               break;
             default:
@@ -179,20 +179,55 @@ exports.compose = (req, res) => {
   }
 };
 
-exports.getPostsToEdit = (req, res) => {
+exports.editForm = (req, res) => {
+  const id = req.params.id;
   const type = req.params.type;
-  // First need to display posts, let user choose post to edit, then post edits
-  if (type === "recipe") {
-    Recipe.find({}, (err, recipes) => {
+  if (type === "news") {
+    News.findOne({ _id: id }, (err, post) => {
       if (err) throw err;
-      // res.set("Content-Type", newRecipe.img.contentType);
-      res.render("auth/editRecipe", { recipes });
-    }).sort({ date: -1 });
-  } else if (type === "news") {
+      if (post) {
+        res.render("auth/editNews", {
+          title: post.title,
+          content1: post.content1,
+          content2: post.content2,
+          content3: post.content3,
+          comment: post.comment,
+          date: post.date,
+          images: post.images,
+        });
+      } else {
+        console.log("something went wrong");
+      }
+    });
+  } else if (type === "recipe") {
+    Recipe.findOne({ _id: id }, (err, recipe) => {
+      if (err) throw err;
+      if (recipe) {
+        res.render("auth/editRecipe", {
+          title: recipe.title,
+          date: recipe.date,
+          content1: recipe.content1,
+          content2: recipe.content2,
+          content3: recipe.content3,
+          submittedBy: recipe.submittedBy,
+          comment: recipe.comment,
+          images: recipe.images,
+        });
+      } else {
+        console.log("something went wrong");
+      }
+    });
   }
 };
 
-exports.edit = (req, res) => {};
+exports.edit = (req, res) => {
+  const id = req.params.id;
+  const type = req.params.type;
+  // First need to display posts, let user choose post to edit, then post edits
+  if (type === "recipe") {
+  } else if (type === "news") {
+  }
+};
 
 exports.sendEmail = (req, res) => {
   // Check subscription status

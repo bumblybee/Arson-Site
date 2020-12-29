@@ -1,0 +1,12 @@
+<%- include("../partials/header") -%>
+
+<div class="justify-content-center container mt-4 mb-4 p-1 mx-auto">
+  <% posts.forEach(post => { %>
+  <a href="edit/news/<%= post._id %>">
+    <div class="mb-4">
+      <p class="mb-0"><%= post.date %></p>
+      <h5 class="mt-0"><%= post.title %></h5>
+    </div>
+  </a>
+  <% }) %>
+</div>

@@ -79,9 +79,9 @@ router.post("/login", siteController.loginUser);
 
 router.post("/compose/:type", upload.any(), siteController.compose);
 
-router.get("/edit/:type", siteController.getPostsToEdit);
+router.get("/edit/:type/:id", siteController.editForm);
 
-router.post("/edit/:type", siteController.edit);
+router.post("/edit/:type/:id", siteController.edit);
 
 // Email form submission
 router.post("/contact", siteController.sendEmail);
