@@ -14,13 +14,14 @@
           <h3 class="mb-0 card-title">
             <%= recipe.title %>
           </h3>
-          <div class="mb-1 text-muted card-text">
-            <i class="far fa-clock pr-2"></i><%= recipe.date %>
+          <div class="card-text mb-3">
+            <i class="fa fa-clock text-muted"></i>
+            <span class="card-date text-muted"><%= recipe.date %></span>
 
-            <small class="ml-1 font-weight-bold text-muted"><%= recipe.submittedBy %></small>
+            <small class="ml-1 text-muted"><%= recipe.submittedBy %></small>
           </div>
-          <!-- Add substring to recipes after creating full recipe route -->
-          <p class="card-text mt-3 mb-0">"<%= recipe.comment %>"</p>
+        
+          <p class="card-text mb-0">"<%= recipe.comment %>"</p>
         </div>
       </div>
       </a>

@@ -16,10 +16,11 @@
           <h3 class="mb-0 card-title">
             <%= post.title %>
           </h3>
-          <div class="mb-1 text-muted card-text">
-            <i class="far fa-clock pr-2"></i><%= post.date %>
+          <div class="mb-1 card-text">
+            <i class="fa fa-clock text-muted"></i>
+            <span class="card-date"> <%= post.date %></span>
           </div>
-          <!-- Add substring to recipes after creating full recipe route -->
+          
           <p class="card-text mt-3 mb-0"><%= post.comment %></p>
         </div>
       </div>
