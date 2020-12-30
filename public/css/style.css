@@ -535,6 +535,13 @@ footer {
   font-family: "Oswald", sans-serif;
 }
 
+/* .single-recipe-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
 .single-recipe-text p {
   padding-bottom: 1rem;
   text-align: inherit;
@@ -553,16 +560,16 @@ footer {
 
   width: 25%;
   object-fit: cover;
-  filter: contrast(110%) saturate(115%) brightness(96%);
+  filter: contrast(105%) saturate(105%) brightness(98%);
 }
 
 .recipe-middle-image,
 .recipe-bottom-image {
-  margin: 1rem 0 2rem;
+  margin: 1rem 22% 2rem;
   height: 300px;
-  width: 72%;
+  width: 55%;
   object-fit: cover;
-  filter: contrast(105%) saturate(112%);
+  filter: contrast(105%) saturate(105%);
 }
 
 .recipe-page-social-icons i {
