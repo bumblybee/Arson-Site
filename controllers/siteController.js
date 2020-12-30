@@ -134,6 +134,7 @@ exports.getEditForm = (req, res) => {
       if (err) throw err;
       if (post) {
         res.render("auth/editNewsForm", {
+          id: post._id,
           title: post.title,
           content1: post.content1,
           content2: post.content2,
@@ -172,6 +173,7 @@ exports.editPost = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
   console.log(req.body);
+
   if (type === "recipe") {
     Recipe.updateOne(
       { _id: id },
@@ -184,16 +186,18 @@ exports.editPost = (req, res) => {
         submittedBy: req.body.submittedBy,
         comment: req.body.comment,
       },
-      function (err, result) {
+      (err, result) => {
         if (err) {
-          res.send(err);
+          console.log(err);
         } else {
           console.log(result);
           res.redirect(`/recipes/${id}`);
         }
       }
     );
-  } else if (type === "news") {
+  }
+
+  if (type === "news") {
     News.updateOne(
       { _id: id },
       {
@@ -204,9 +208,9 @@ exports.editPost = (req, res) => {
         content3: req.body.content3,
         comment: req.body.comment,
       },
-      function (err, result) {
+      (err, result) => {
         if (err) {
-          res.send(err);
+          console.log(err);
         } else {
           console.log(result);
           res.redirect(`/news/${id}`);

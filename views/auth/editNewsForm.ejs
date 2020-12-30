@@ -1,3 +1,5 @@
+<!-- TODO: add enctype to form if images are added to editing options -->
+
 <%- include("../partials/header") -%>
 
 <div class="row justify-content-center container mt-4 mb-4 p-1 mx-auto">
@@ -6,8 +8,7 @@
       id="news-form"
       class="border p-3 rounded bg-white mx-auto"
       method="POST"
-      action="/compose/news"
-      enctype="multipart/form-data"
+      action="/edit/news/<%= id %>"
     >
       <h1 class="mb-1 mt-4 text-center">Edit News Post</h1>
       <p class="text-center mb-4">
@@ -23,6 +24,7 @@
           name="date"
           id="date"
           value="<%= date %>"
+          required
         />
       </div>
 
