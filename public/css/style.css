@@ -524,10 +524,10 @@ footer {
 }
 
 .recipe-content {
-  text-align: center;
   display: flex;
   flex-direction: column;
   position: relative;
+  align-items: center;
 }
 
 .single-recipe-title {
@@ -540,15 +540,18 @@ footer {
   text-align: inherit;
   width: 70%;
   margin: 0 auto;
-  line-height: 1.5;
-  font-size: 1.35rem;
+  line-height: 1.33;
+  font-size: 1.3rem;
   font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  width: 50%;
 }
 
 .recipe-top-image {
   margin-bottom: 2rem;
   height: auto;
-  width: 30%;
+
+  width: 25%;
   object-fit: cover;
   filter: contrast(110%) saturate(115%) brightness(96%);
 }
@@ -563,11 +566,11 @@ footer {
 }
 
 .recipe-page-social-icons i {
-  border: 2px solid #312420;
-  color: #312420;
-
+  border: 2px solid #be3624;
+  color: #be3624;
+  font-size: 0.85rem;
   display: inline-flex;
-  padding: 10px;
+  padding: 8px;
   border-radius: 50%;
   margin-bottom: 3rem;
 }
@@ -1147,7 +1150,6 @@ footer {
   }
 
   .single-recipe-text p {
-    width: 100%;
     text-align: left;
     margin: 0 auto;
   }
