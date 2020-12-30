@@ -73,9 +73,9 @@ router.get("/error", (req, res) => {
 
 router.post("/compose/:type", upload.any(), siteController.compose);
 
-router.get("/edit/:type/:id", siteController.editForm);
+router.get("/edit/:type/:id", siteController.getEditForm);
 
-router.post("/edit/:type/:id", siteController.edit);
+router.post("/edit/:type/:id", siteController.editPost);
 
 // Email form submission
 router.post("/contact", siteController.sendEmail);

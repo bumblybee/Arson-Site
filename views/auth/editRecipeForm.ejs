@@ -4,11 +4,10 @@
   <div class="col-lg-8 col-md-12 mx-auto shadow-sm">
     <!-- TODO: handle action - edit/recipe - etc -->
     <form
-      id="news-form"
+      id="recipe-form"
       class="border p-3 rounded bg-white mx-auto"
       method="POST"
-      action="/compose/news"
-      enctype="multipart/form-data"
+      action="/edit/recipe/<%= id %>"
     >
       <h1 class="mb-1 mt-4 text-center">Edit Recipe</h1>
       <p class="text-center mb-4">

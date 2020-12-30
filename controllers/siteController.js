@@ -126,7 +126,7 @@ exports.compose = (req, res) => {
   }
 };
 
-exports.editForm = (req, res) => {
+exports.getEditForm = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
   if (type === "news") {
@@ -151,6 +151,7 @@ exports.editForm = (req, res) => {
       if (err) throw err;
       if (recipe) {
         res.render("auth/editRecipeForm", {
+          id: recipe._id,
           title: recipe.title,
           date: recipe.date,
           content1: recipe.content1,
@@ -167,12 +168,51 @@ exports.editForm = (req, res) => {
   }
 };
 //TODO: handle updating db
-exports.edit = (req, res) => {
+exports.editPost = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
-  // First need to display posts, let user choose post to edit, then post edits
+  console.log(req.body);
   if (type === "recipe") {
+    Recipe.updateOne(
+      { _id: id },
+      {
+        title: req.body.title,
+        date: req.body.date,
+        content1: req.body.content1,
+        content2: req.body.content2,
+        content3: req.body.content3,
+        submittedBy: req.body.submittedBy,
+        comment: req.body.comment,
+      },
+      function (err, result) {
+        if (err) {
+          res.send(err);
+        } else {
+          console.log(result);
+          res.redirect(`/recipes/${id}`);
+        }
+      }
+    );
   } else if (type === "news") {
+    News.updateOne(
+      { _id: id },
+      {
+        title: req.body.title,
+        date: req.body.date,
+        content1: req.body.content1,
+        content2: req.body.content2,
+        content3: req.body.content3,
+        comment: req.body.comment,
+      },
+      function (err, result) {
+        if (err) {
+          res.send(err);
+        } else {
+          console.log(result);
+          res.redirect(`/news/${id}`);
+        }
+      }
+    );
   }
 };
 
