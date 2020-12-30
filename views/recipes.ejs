@@ -6,10 +6,11 @@
     <div class="container">
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper">
       <div class="card recipe-page-card">
+       
         <div class="card-img-container rounded-top" style="background-image:url('/img/<%= recipe.images[0].filename %>');">
         </div>
 
-        <div class="recipe-page-card-body card-body p-3">
+        <div class="recipe-page-card-body card-body p-3 rounded-bottom">
           <p class="card-category recipe-card-category">Recipe</p>
           <h3 class="mb-0 card-title">
             <%= recipe.title %>
