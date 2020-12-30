@@ -34,7 +34,7 @@ app.use(logger(morganLogStyle));
 // --------- Routes -------
 
 app.use("/", siteRouter);
-app.use("/", loginRouter);
+app.use("/login", loginRouter);
 app.use("/*", notFoundRouter);
 
 //TODO: change db password

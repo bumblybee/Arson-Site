@@ -1,21 +1,21 @@
 <%- include("../partials/header") -%>
 
-<div class="justify-content-center container mt-4 mb-4 p-1 mx-auto d-grid">
-  <ul class="h-25 overflow-auto list-unstyled">
+<div class="w-75 mt-4 pt-2 mx-auto d-grid">
+  <h2 class="text-center pb-2 mb-4">Recipes</h2>
+  <div class="row justify-content-center">
     <% recipes.forEach(recipe => { %>
-    <li>
+    <div class="col-3 border text-center">
       <a
         href="edit/recipe/<%= recipe._id %>"
-        class="text-decoration-none text-dark"
+        class="text-decoration-none text-dark p-1"
+        title="<%= recipe.content1 %>"
       >
-        <div class="mb-4">
+        <div>
           <p class="mb-0"><%= recipe.date %></p>
-          <h5 class="mt-0"><%= recipe.title%></h5>
+          <h6 class="mt-0"><%= recipe.title%></h6>
         </div>
       </a>
-    </li>
+    </div>
     <% }) %>
-  </ul>
+  </div>
 </div>
-
-<!-- I think I need to wrap each in an editable form, or maybe best to add jwt and then add edit button to each single recipe or news post -->

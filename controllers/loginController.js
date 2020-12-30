@@ -1,3 +1,4 @@
+const { Recipe, News } = require("../models");
 const authService = require("../services/authService");
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
