@@ -246,7 +246,7 @@ exports.sendEmail = (req, res) => {
     // Email options
     const mailOptions = {
       from: `🌶 Arson Sauce Message ${req.body.email}`,
-      to: ["tiffaknee1@gmail.com", "arsonsauce@gmail.com"],
+      to: ["tiffaknee1@gmail.com"],
       subject: "New Arson Sauce Form Submission",
       html: emailHTML,
     };
@@ -254,14 +254,14 @@ exports.sendEmail = (req, res) => {
     if (bot === "unlikely") {
       transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
-          res.render("msgErr");
+          res.render("email/msgErr");
         } else {
-          res.render("msgSent");
+          res.render("email/msgSent");
         }
       });
     } else {
       //Send confirmation even though not sent so they don't know it didn't go through
-      res.render("msgSent");
+      res.render("email/msgSent");
     }
   }, 1300);
 };
