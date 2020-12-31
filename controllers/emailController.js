@@ -30,6 +30,7 @@ exports.sendEmail = (req, res) => {
     const transporter = nodemailer.createTransport(mailgun(emailHandler.auth));
 
     // Email options
+    //TODO: move into emailHandler
     const mailOptions = {
       from: `🌶 Arson Sauce ${req.body.email}`,
       to: [process.env.ADMIN_EMAIL],

@@ -10,7 +10,7 @@ exports.generateJWT = (user) => {
   };
 
   const secret = Buffer.from(process.env.JWT_SECRET, "base64");
-  const expiration = "4h";
+  const expiration = "2h";
   return jwt.sign({ data }, secret, {
     expiresIn: expiration,
   });
