@@ -165,7 +165,7 @@ exports.getEditForm = (req, res) => {
     });
   }
 };
-//TODO: handle updating db
+
 exports.editPost = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
