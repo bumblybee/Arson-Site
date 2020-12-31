@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const isAuth = require("../middleware/isAuth");
 const siteController = require("../controllers/siteController");
-const emailController = require("../controllers/emailController");
 
 // TODO: Move multer config to separate file
 
@@ -60,17 +60,6 @@ router.get("/recipes/:recipeID", siteController.getRecipe);
 router.get("/story", siteController.getStory);
 
 router.get("/pricing", siteController.getPricing);
-
-//Get rid of sent and sendErr GET routes after design finished
-router.get("/sent", (req, res) => {
-  res.render("msgSent");
-});
-
-router.get("/error", (req, res) => {
-  res.render("msgErr");
-});
-
-// router.get("/compose/:type", siteController.getComposeType);
 
 router.post("/compose/:type", upload.any(), siteController.compose);
 
