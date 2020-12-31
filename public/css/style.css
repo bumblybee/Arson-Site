@@ -695,8 +695,8 @@ footer {
       rgb(15, 15, 15, 0.8)
     ),
     url("/img/plantscrop.jpg");
-  background-size: contain;
-  background-position: 50% 100%;
+  background-size: cover;
+  background-position: center 30%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   border: 2px solid hsl(40, 11%, 79%);
@@ -813,6 +813,10 @@ footer {
   .story-text {
     width: 85%;
   }
+  .story-page-title {
+    /* background-size: contain; */
+    background-position: 50% 20px;
+  }
 }
 
 @media only screen and (max-width: 1029px) {
@@ -857,7 +861,7 @@ footer {
   }
 
   .story-page-title {
-    background-position: 40% 75%;
+    background-position: 50% 80px;
   }
 }
 
@@ -884,8 +888,9 @@ footer {
 
   .story-page-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.7rem;
     padding: 5rem;
+    background-position: 55% 100px;
   }
 
   .story-text {
@@ -896,6 +901,11 @@ footer {
   .story-page-text {
     grid-row-start: 1;
     line-height: 1.7rem;
+    font-size: 1.3rem;
+  }
+
+  .story-page-text h2 {
+    font-size: 1.85rem;
   }
 
   .plants-img {
@@ -1005,9 +1015,9 @@ footer {
   }
 
   .story-page-title {
-    font-size: 2.6rem;
+    font-size: 2.55rem;
 
-    background-position: 40% 30%;
+    background-position: 52% -45px;
   }
 
   .story-text p:first-of-type:first-letter {
@@ -1028,7 +1038,6 @@ footer {
   }
 
   .story-page-text h2 {
-    font-size: 1.8rem;
     padding: 0 0.8rem 0.7rem;
     margin-bottom: 0.1rem;
   }
