@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const siteController = require("../controllers/siteController");
+const emailController = require("../controllers/emailController");
 
 // TODO: Move multer config to separate file
 
@@ -76,11 +77,5 @@ router.post("/compose/:type", upload.any(), siteController.compose);
 router.get("/edit/:type/:id", siteController.getEditForm);
 
 router.post("/edit/:type/:id", siteController.editPost);
-
-// Email form submission
-router.post("/contact", siteController.sendEmail);
-
-//404 page
-// router.use(siteController.notFound);
 
 module.exports = router;

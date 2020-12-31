@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 
 const siteRouter = require("./routes");
 const loginRouter = require("./routes/login");
+const contactRouter = require("./routes/contact");
 const notFoundRouter = require("./routes/notFound");
 
 const app = express();
@@ -35,6 +36,7 @@ app.use(logger(morganLogStyle));
 
 app.use("/", siteRouter);
 app.use("/login", loginRouter);
+app.use("/contact", contactRouter);
 app.use("/*", notFoundRouter);
 
 //TODO: change db password
