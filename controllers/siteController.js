@@ -2,7 +2,7 @@ const { Recipe, News } = require("../models");
 
 // TODO: fix 404 so it isn't called when using non-root routes
 
-exports.getHome = async (req, res) => {
+exports.getHome = async (req, res, next) => {
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
   recipes = recipes.filter((recipe, index) => index < 2);
@@ -92,6 +92,7 @@ exports.getPricing = (req, res) => {
 };
 
 exports.compose = (req, res) => {
+  console.log(req.token.data);
   const type = req.params.type;
   if (type === "recipe") {
     const newRecipe = new Recipe({
@@ -126,6 +127,7 @@ exports.compose = (req, res) => {
 exports.getEditForm = (req, res) => {
   const id = req.params.id;
   const type = req.params.type;
+  console.log(req);
   if (type === "news") {
     News.findOne({ _id: id }, (err, post) => {
       if (err) throw err;

@@ -19,17 +19,17 @@ exports.generateJWT = (user) => {
 exports.loginWithPassword = async (username, password) => {
   const user = await signIn.findOne({ username: username });
 
-  if (!user) {
-    throw new Error("Invalid credentials");
-  } else {
+  if (user) {
     const correctPassword = await bcrypt.compare(password, user.password);
 
     if (!correctPassword) {
-      throw new Error("Invalid credentials");
+      return new Error("Invalid credentials");
     }
 
     const token = this.generateJWT(user);
 
     return { token, user };
+  } else {
+    return new Error("Invalid credentials");
   }
 };

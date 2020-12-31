@@ -1,12 +1,13 @@
 
 <!-- TODO: Change css to news and also reformat layout and compose form -->
 <%- include("partials/header") -%>
- <div class="container-fluid news-page-container">
 
-    <div class="row justify-content-center">
+ <div class="news-page-container d-flex flex-column align-items-center">
+
+    <div class="d-flex flex-column align-items-center">
 
       <!-- Post Content Column -->
-      <div class="col-lg-7">
+      <div style="width:85%" class="d-flex flex-column ml-auto">
 
         <!-- Title -->
         <h1 class="mt-4"><%= title %></h1>
@@ -20,10 +21,12 @@
         <hr>
 
         <!-- Date/Time -->
-        <p class="text-muted"><%= date %></p>
+       
 
-        <div class="news-page-social-icons">
+        <div class="news-page-social-icons d-flex">
+           
           <p class="copy-msg">Link Copied!</p>
+          <p class="text-muted"><%= date %></p>
           <i
           class="fas fa-link copy-link"
           data-placement="top"
@@ -32,21 +35,21 @@
         </div>
 
        
-        
-
+       
         <!-- Post Content -->
         <div>
         <p class="lead news-page-content"><%= content1 %></p>
-
+<div class="news-img">
         <img class="news-page-image" src="/img/<%= images[0].filename %>" alt="news">
-
+</div>
         <p class="lead news-page-content"><%= content2 %></p>
 
         
          <% if(images.length > 1) { %>
+<div class="news-img">
       
         <img class="news-page-image" src="/img/<%= images[1].filename %>" alt="news"/>
-     
+     </div>
     <% } %>
        
         
@@ -55,7 +58,10 @@
          <% if(images.length > 2) { %>
        
       <div class="container">
+<div class="news-img">
+
         <img class="news-page-image" src="/img/<%= images[2].filename %>" alt="" />
+        </div>
       </div>
       <% } %>
       </div>
@@ -87,7 +93,7 @@
           </div>
         </div>
 
-      </div>
+    
 <script>
   //Copy Link on Click
   const copiedLinks = document.querySelectorAll(".copy-link");

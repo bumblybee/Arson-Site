@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const loginController = require("../controllers/loginController");
+const { catchErrors } = require("../handlers/errorHandlers");
 
 //TODO: isAuth and update posts
 
@@ -8,6 +9,6 @@ const loginController = require("../controllers/loginController");
 router.get("/", loginController.getLoginPage);
 
 // Post data after composing
-router.post("/", loginController.loginUser);
+router.post("/", catchErrors(loginController.loginUser));
 
 module.exports = router;

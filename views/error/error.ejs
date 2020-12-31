@@ -1,0 +1,11 @@
+<%- include("../partials/header") -%>
+
+<div class="container msg-sent mt-1 text-center">
+  <div class="container mt-1">
+    <h4 class="text-center">
+      <% if (code === "credentials_required") { %> You must log in to access
+      this page! <% } %>
+    </h4>
+    <a href="/login" class="btn btn-danger mt-3">Log in</a>
+  </div>
+</div>

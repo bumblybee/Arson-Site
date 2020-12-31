@@ -5,3 +5,30 @@ exports.catchErrors = (fn) => {
     return fn(req, res, next).catch(next);
   };
 };
+
+exports.developmentErrors = (err, req, res, next) => {
+  err.stack = err.stack || "";
+  const errorDetails = {
+    error: err.message,
+    stack: err.stack,
+  };
+
+  // logger.error(err);
+  res.status(err.status || 500).json(errorDetails);
+};
+
+exports.productionErrors = (err, req, res, next) => {
+  // logger.error(err);
+
+  res.status(err.status || 500).json({
+    error: err.message,
+  });
+};
+
+//TODO: Render error and back button
+exports.jwtError = (err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    console.log(err);
+    res.status(401).render("error/error", { code: err.code });
+  }
+};

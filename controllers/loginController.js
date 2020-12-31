@@ -6,6 +6,7 @@ exports.getLoginPage = (req, res) => {
   res.render("auth/login");
 };
 
+//TODO: Split these routes out separately and wire to links in navbar
 exports.loginUser = async (req, res) => {
   const { username, password } = req.body;
   const { token, user } = await authService.loginWithPassword(
@@ -13,7 +14,7 @@ exports.loginUser = async (req, res) => {
     password
   );
 
-  if (token) res.cookie("jwt", token, COOKIE_CONFIG);
+  if (token) res.cookie("PAS", token, COOKIE_CONFIG);
 
   if (user) {
     switch (req.body.btn) {
@@ -44,6 +45,6 @@ exports.loginUser = async (req, res) => {
         res.redirect("/user/login");
     }
   } else {
-    res.redirect("/user/login");
+    res.status(403).redirect("/login");
   }
 };

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { isAuth } = require("../middleware/isAuth");
+const { catchErrors } = require("../handlers/errorHandlers");
 const siteController = require("../controllers/siteController");
 
 // TODO: Move multer config to separate file
@@ -63,8 +64,8 @@ router.get("/pricing", siteController.getPricing);
 
 router.post("/compose/:type", upload.any(), isAuth, siteController.compose);
 
-router.get("/edit/:type/:id", isAuth, siteController.getEditForm);
+router.get("/edit/:type/:id", isAuth, catchErrors(siteController.getEditForm));
 
-router.post("/edit/:type/:id", isAuth, siteController.editPost);
+router.post("/edit/:type/:id", isAuth, catchErrors(siteController.editPost));
 
 module.exports = router;

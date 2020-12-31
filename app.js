@@ -1,5 +1,6 @@
 const express = require("express");
 const compression = require("compression");
+const errorHandlers = require("./handlers/errorHandlers");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 var logger = require("morgan");
@@ -38,6 +39,23 @@ app.use("/", siteRouter);
 app.use("/login", loginRouter);
 app.use("/contact", contactRouter);
 app.use("/*", notFoundRouter);
+
+// ------- Error Handling -------------
+app.use(errorHandlers.jwtError);
+
+if (app.get("env") === "development") {
+  app.use(errorHandlers.developmentErrors);
+} else {
+  app.use(errorHandlers.productionErrors);
+}
+
+if (process.env.NODE_ENV === "development") {
+  console.log("Working in dev environment");
+}
+
+if (process.env.NODE_ENV === "production") {
+  console.log("Working in prod environment");
+}
 
 //TODO: change db password
 mongoose.connect(
