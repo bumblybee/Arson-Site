@@ -56,7 +56,7 @@ exports.getRecipes = (req, res) => {
     res.render("recipes", { recipes });
   }).sort({ date: -1 });
 };
-
+//TODO: set loggedIn to false here and create separate route for displaying single recipes when logged in
 exports.getRecipe = (req, res) => {
   const recipeID = req.params.recipeID;
 
@@ -71,6 +71,7 @@ exports.getRecipe = (req, res) => {
       const submittedBy = recipe.submittedBy;
       const images = recipe.images;
       res.render("recipe", {
+        id: recipe._id,
         title,
         content1,
         content2,
@@ -78,6 +79,7 @@ exports.getRecipe = (req, res) => {
         date,
         submittedBy,
         images,
+        loggedIn: true,
       });
     } else {
       console.log("something went wrong");

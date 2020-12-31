@@ -25,7 +25,6 @@ exports.productionErrors = (err, req, res, next) => {
   });
 };
 
-//TODO: Render error and back button
 exports.jwtError = (err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
     console.log(err);
