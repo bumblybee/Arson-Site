@@ -14,6 +14,6 @@ exports.generateHTML = async (filename, options) => {
 exports.auth = {
   auth: {
     api_key: process.env.MAILGUN_KEY,
-    domain: "sandbox8c22f2f4bbff4cd3a3ccecb0bfb916cb.mailgun.org",
+    domain: process.env.MAILGUN_SANDBOX,
   },
 };
