@@ -17,6 +17,7 @@ exports.loginUser = async (req, res) => {
   if (token) res.cookie("PAS", token, COOKIE_CONFIG);
 
   if (user) {
+    // res.render("home", { loggedIn: true });
     switch (req.body.btn) {
       case "create-news":
         res.render("auth/composeNews");

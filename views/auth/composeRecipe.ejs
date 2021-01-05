@@ -116,10 +116,23 @@
         />
       </div>
       <div class="form-group col">
-        <button class="btn btn-danger btn-block" type="submit" name="button">
+        <button
+          class="btn btn-danger btn-block mb-2"
+          type="submit"
+          name="button"
+        >
           Publish
         </button>
+        <button id="clear-recipe-btn" class="btn btn-block mt-0">Clear</button>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  const clearBtn = document.getElementById("clear-recipe-btn");
+  clearBtn.addEventListener("click", () => {
+    const recipeForm = document.getElementById("recipe-form");
+    recipeForm.reset();
+  });
+</script>

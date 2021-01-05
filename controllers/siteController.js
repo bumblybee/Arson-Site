@@ -56,7 +56,7 @@ exports.getRecipes = (req, res) => {
     res.render("recipes", { recipes });
   }).sort({ date: -1 });
 };
-//TODO: set loggedIn to false here and create separate route for displaying single recipes when logged in
+//TODO: set loggedIn to false here and create separate route for displaying single recipe with edit btn
 exports.getRecipe = (req, res) => {
   const recipeID = req.params.recipeID;
 

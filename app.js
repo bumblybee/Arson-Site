@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -41,21 +41,21 @@ app.use("/contact", contactRouter);
 app.use("/*", notFoundRouter);
 
 // ------- Error Handling -------------
-app.use(errorHandlers.jwtError);
+// app.use(errorHandlers.jwtError);
 
-if (app.get("env") === "development") {
-  app.use(errorHandlers.developmentErrors);
-} else {
-  app.use(errorHandlers.productionErrors);
-}
+// if (app.get("env") === "development") {
+//   app.use(errorHandlers.developmentErrors);
+// } else {
+//   app.use(errorHandlers.productionErrors);
+// }
 
-if (process.env.NODE_ENV === "development") {
-  console.log("Working in dev environment");
-}
+// if (process.env.NODE_ENV === "development") {
+//   console.log("Working in dev environment");
+// }
 
-if (process.env.NODE_ENV === "production") {
-  console.log("Working in prod environment");
-}
+// if (process.env.NODE_ENV === "production") {
+//   console.log("Working in prod environment");
+// }
 
 //TODO: change db password
 mongoose.connect(

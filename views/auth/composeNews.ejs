@@ -103,13 +103,22 @@
 
       <div class="form-group col">
         <button
-          class="btn btn-danger mb-3 btn-block"
+          class="btn btn-danger mb-2 btn-block"
           type="submit"
           name="button"
         >
           Publish
         </button>
+        <button id="clear-news-btn" class="btn btn-block mt-0">Clear</button>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  const clearBtn = document.getElementById("clear-news-btn");
+  clearBtn.addEventListener("click", () => {
+    const newsForm = document.getElementById("news-form");
+    newsForm.reset();
+  });
+</script>
