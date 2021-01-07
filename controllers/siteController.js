@@ -1,13 +1,16 @@
 const { Recipe, News } = require("../models");
+const { checkAuth } = require("../middleware/isAuth");
 
-// TODO: fix 404 so it isn't called when using non-root routes
+exports.getHome = async (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
 
-exports.getHome = async (req, res, next) => {
+  console.log(auth);
+  console.log(token);
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
   recipes = recipes.filter((recipe, index) => index < 2);
   news = news.filter((news, index) => index < 1)[0];
-
+  // console.log(req.cookies);
   res.render("home", { recipes, news });
 };
 
