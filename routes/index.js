@@ -64,7 +64,7 @@ router.get("/pricing", siteController.getPricing);
 
 router.post("/compose/:type", upload.any(), isAuth, siteController.compose);
 
-router.get("/edit/:type/:id", isAuth, catchErrors(siteController.getEditForm));
+router.get("/edit/:type/:id", isAuth, siteController.getEditForm);
 
 router.post("/edit/:type/:id", isAuth, catchErrors(siteController.editPost));
 

@@ -1,4 +1,5 @@
 <%- include("partials/header", {auth}) -%>
+
 <div class="container single-recipe-wrapper">
    <div class="recipe-content container">
     <h1 class="single-recipe-title"><%= title %></h1>
@@ -6,7 +7,7 @@
     <div class="recipe-page-social-icons">
       <p class="copy-msg">Link Copied!</p>
        
-        <% if(loggedIn === true) { %>
+        <% if(auth === true) { %>
   <a class="btn btn-danger mb-3" href="/edit/recipe/<%= id %>">Edit Recipe</a>
 <% } else { %>
  <i

@@ -75,6 +75,7 @@ exports.getRecipe = (req, res) => {
       const date = recipe.date;
       const submittedBy = recipe.submittedBy;
       const images = recipe.images;
+
       res.render("recipe", {
         id: recipe._id,
         title,
@@ -86,8 +87,6 @@ exports.getRecipe = (req, res) => {
         images,
         auth,
       });
-    } else {
-      console.log("something went wrong");
     }
   });
 };
@@ -135,7 +134,6 @@ exports.getEditForm = (req, res) => {
   const { auth, token } = checkAuth(req.cookies["PAS"]);
   const id = req.params.id;
   const type = req.params.type;
-  console.log(req);
   if (type === "news") {
     News.findOne({ _id: id }, (err, post) => {
       if (err) throw err;
