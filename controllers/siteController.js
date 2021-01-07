@@ -3,19 +3,18 @@ const { checkAuth } = require("../middleware/isAuth");
 
 exports.getHome = async (req, res) => {
   const { auth, token } = checkAuth(req.cookies["PAS"]);
-
-  console.log(auth);
-  console.log(token);
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
   recipes = recipes.filter((recipe, index) => index < 2);
   news = news.filter((news, index) => index < 1)[0];
-  // console.log(req.cookies);
-  res.render("home", { recipes, news });
+
+  // TODO: use auth in nav
+  res.render("home", { recipes, news, auth });
 };
 
 exports.getStory = (req, res) => {
-  res.render("story");
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  res.render("story", { auth });
 };
 
 exports.getNews = (req, res) => {
@@ -27,6 +26,7 @@ exports.getNews = (req, res) => {
 };
 
 exports.getNewsPost = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
   const postId = req.params.id;
   News.findOne({ _id: postId }, (err, post) => {
     if (err) throw err;
@@ -45,6 +45,7 @@ exports.getNewsPost = (req, res) => {
         content3,
         date,
         images,
+        auth,
       });
     } else {
       console.log("something went wrong");
@@ -53,14 +54,15 @@ exports.getNewsPost = (req, res) => {
 };
 
 exports.getRecipes = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
   Recipe.find({}, (err, recipes) => {
     if (err) throw err;
-    // res.set("Content-Type", newRecipe.img.contentType);
-    res.render("recipes", { recipes });
+    res.render("recipes", { recipes, auth });
   }).sort({ date: -1 });
 };
 //TODO: set loggedIn to false here and create separate route for displaying single recipe with edit btn
 exports.getRecipe = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
   const recipeID = req.params.recipeID;
 
   Recipe.findOne({ _id: recipeID }, (err, recipe) => {
@@ -82,7 +84,7 @@ exports.getRecipe = (req, res) => {
         date,
         submittedBy,
         images,
-        loggedIn: true,
+        auth,
       });
     } else {
       console.log("something went wrong");
@@ -91,13 +93,13 @@ exports.getRecipe = (req, res) => {
 };
 
 exports.getPricing = (req, res) => {
-  //TODO: Add file upload POST
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  //TODO: Add pricing file upload option
   const url = "https://arsonsauce.com/pdf/pricing.pdf";
-  res.render("pricing", { url });
+  res.render("pricing", { url, auth });
 };
 
 exports.compose = (req, res) => {
-  console.log(req.token.data);
   const type = req.params.type;
   if (type === "recipe") {
     const newRecipe = new Recipe({
@@ -130,6 +132,7 @@ exports.compose = (req, res) => {
 };
 
 exports.getEditForm = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
   const id = req.params.id;
   const type = req.params.type;
   console.log(req);
@@ -146,6 +149,7 @@ exports.getEditForm = (req, res) => {
           comment: post.comment,
           date: post.date,
           images: post.images,
+          auth,
         });
       } else {
         console.log("something went wrong");
@@ -165,6 +169,7 @@ exports.getEditForm = (req, res) => {
           submittedBy: recipe.submittedBy,
           comment: recipe.comment,
           images: recipe.images,
+          auth,
         });
       } else {
         console.log("something went wrong");

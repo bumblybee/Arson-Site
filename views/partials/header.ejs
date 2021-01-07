@@ -117,10 +117,12 @@
               <li class="nav-item">
                 <a class="nav-link contact" href="/#contact">Contact</a>
               </li>
-              <!-- Add logged in option -->
-              <!-- <li class="nav-item">
-                <a class="nav-link compose" href="/#contact">Compose</a>
-              </li> -->
+              <!-- TODO: Render compose pages if auth -->
+              <% if (auth) { %>
+              <li class="nav-item">
+                <a class="nav-link compose" href="/recipes">Compose</a>
+              </li>
+              <% } %>
             </ul>
           </div>
         </div>

@@ -1,9 +1,12 @@
 const { Recipe, News } = require("../models");
 const authService = require("../services/authService");
+const { checkAuth } = require("../middleware/isAuth");
+
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
 exports.getLoginPage = (req, res) => {
-  res.render("auth/login");
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  res.render("auth/login", { auth });
 };
 
 //TODO: Split these routes out separately and wire to links in navbar

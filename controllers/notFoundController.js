@@ -1,3 +1,7 @@
+const { checkAuth } = require("../middleware/isAuth");
+
 exports.notFound = (req, res) => {
-  res.status(404).render("404");
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+
+  res.status(404).render("404", { auth });
 };
