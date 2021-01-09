@@ -41,6 +41,7 @@ exports.getNewsPost = (req, res) => {
       const images = post.images;
 
       res.render("newsPost", {
+        id: post._id,
         title,
         content1,
         content2,

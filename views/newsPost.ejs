@@ -34,8 +34,12 @@
           data-placement="top"
           title="Copy Link"
           ></i>
+          
+        <% if(auth === true) { %>
+  <a class="btn btn-danger h-25 ml-3" href="/edit/news/<%= id %>">Edit Recipe</a>
+<% }  %>
+ 
         </div>
-
        
        
         <!-- Post Content -->
