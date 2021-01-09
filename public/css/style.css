@@ -98,12 +98,18 @@ body {
   color: hsl(7, 54%, 60%);
 }
 
+.dropdown-menu {
+  background: #272727;
+}
+
 .dropdown-item {
   text-transform: none;
+  color: #faf8f0f3;
 }
 
 .dropdown-item:hover {
-  background: #272727;
+  background: hsl(7, 54%, 60%);
+  color: #faf8f0f3;
 }
 
 .bottle {

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { isAuth } = require("../middleware/isAuth");
 const { catchErrors } = require("../handlers/errorHandlers");
-const siteController = require("../controllers/siteController");
+const recipeController = require("../controllers/recipeController");
 
 // TODO: Move multer config to separate file
 
@@ -44,14 +44,15 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-// ------- Routes -------
+router.get("/compose", isAuth, recipeController.getComposeRecipe);
 
-router.get("/", siteController.getHome);
+router.post("/compose", upload.any(), isAuth, recipeController.composeRecipe);
 
-router.get("/home", siteController.getHome);
+router.get("/edit/:id", isAuth, recipeController.getEditRecipeForm);
+router.post("/edit/:id", isAuth, recipeController.editRecipe);
 
-router.get("/story", siteController.getStory);
+router.get("/:id", recipeController.getRecipe);
 
-router.get("/pricing", siteController.getPricing);
+router.get("/", recipeController.getRecipes);
 
 module.exports = router;
