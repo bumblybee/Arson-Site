@@ -15,7 +15,7 @@
         <h1 class="mt-4"><%= title %></h1>
 
         <!-- Author -->
-        <p class="lead">
+        <p class="lead mb-0">
           by
           <span class="text-danger font-weight-normal">Eric Pearson</span>
         </p>
@@ -29,15 +29,20 @@
            
           <p class="copy-msg">Link Copied!</p>
           <p class="text-muted"><%= date %></p>
-          <i
+          
+
+          <!-- Edit Button -->
+        <% if(auth === true) { %>
+         
+        <a class="btn btn-danger h-25 ml-3 mb-4 mt-auto" href="/edit/news/<%= id %>">Edit Post</a>
+       
+        <% } else { %>
+           <i
           class="fas fa-link copy-link"
           data-placement="top"
           title="Copy Link"
           ></i>
-          
-        <% if(auth === true) { %>
-  <a class="btn btn-danger h-25 ml-3" href="/edit/news/<%= id %>">Edit Post</a>
-<% }  %>
+          <% } %>
  
         </div>
        
