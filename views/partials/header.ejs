@@ -119,9 +119,30 @@
               </li>
               <!-- TODO: Render compose pages if auth -->
               <% if (auth) { %>
-              <li class="nav-item">
-                <a class="nav-link compose" href="/recipes">Compose</a>
-              </li>
+              <div class="dropdown">
+                <li class="nav-item">
+                  <a
+                    class="dropdown-toggle nav-link"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Compose
+                  </a>
+
+                  <div
+                    class="dropdown-menu bg-dark"
+                    aria-labelledby="dropdownMenuLink"
+                  >
+                    <a class="dropdown-item text-white" href="#">Recipe</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-white" href="#">News</a>
+                  </div>
+                </li>
+              </div>
               <% } %>
             </ul>
           </div>
