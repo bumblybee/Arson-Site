@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { isAuth } = require("../middleware/isAuth");
 const { catchErrors } = require("../handlers/errorHandlers");
-const siteController = require("../controllers/siteController");
-
-// TODO: Move multer config to separate file
+const newsController = require("../controllers/newsController");
 
 const multer = require("multer");
 const crypto = require("crypto");
@@ -44,30 +42,14 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-// ------- Routes -------
+router.get("/compose", isAuth, newsController.getComposeNews);
+router.post("/compose", upload.any(), isAuth, newsController.composeNews);
 
-router.get("/", siteController.getHome);
+router.get("/edit/:id", isAuth, newsController.getEditNewsForm);
+router.post("/edit/:id", isAuth, newsController.editNews);
 
-router.get("/home", siteController.getHome);
+router.get("/:id", newsController.getNewsPost);
 
-router.get("/recipes", siteController.getRecipes);
-
-router.get("/recipes/:recipeID", siteController.getRecipe);
-
-router.get("/story", siteController.getStory);
-
-router.get("/pricing", siteController.getPricing);
-
-router.get("/compose/recipe", isAuth, siteController.getComposeRecipe);
-
-router.post(
-  "/compose/recipe",
-  upload.any(),
-  isAuth,
-  siteController.composeRecipe
-);
-
-router.get("/edit/recipe/:id", isAuth, siteController.getEditRecipeForm);
-router.post("/edit/recipe/:id", isAuth, siteController.editRecipe);
+router.get("/", newsController.getNews);
 
 module.exports = router;
