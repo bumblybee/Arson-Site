@@ -3,6 +3,8 @@ const { checkAuth } = require("../middleware/isAuth");
 
 // TODO: Check if need token data anywhere, else remove
 
+// TODO: Delete option
+
 exports.getHome = async (req, res) => {
   const { auth, token } = checkAuth(req.cookies["PAS"]);
   let recipes = await Recipe.find().sort({ date: -1 });
@@ -63,7 +65,7 @@ exports.getRecipes = (req, res) => {
     res.render("recipes", { recipes, auth });
   }).sort({ date: -1 });
 };
-//TODO: set loggedIn to false here and create separate route for displaying single recipe with edit btn
+
 exports.getRecipe = (req, res) => {
   const { auth, token } = checkAuth(req.cookies["PAS"]);
   const recipeID = req.params.recipeID;
@@ -144,50 +146,53 @@ exports.composeRecipe = (req, res) => {
   res.redirect("/recipes");
 };
 
-exports.getEditForm = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+exports.getEditNewsForm = (req, res) => {
   const id = req.params.id;
-  const type = req.params.type;
-  if (type === "news") {
-    News.findOne({ _id: id }, (err, post) => {
-      if (err) throw err;
-      if (post) {
-        res.render("auth/editNewsForm", {
-          id: post._id,
-          title: post.title,
-          content1: post.content1,
-          content2: post.content2,
-          content3: post.content3,
-          comment: post.comment,
-          date: post.date,
-          images: post.images,
-          auth,
-        });
-      } else {
-        console.log("something went wrong");
-      }
-    });
-  } else if (type === "recipe") {
-    Recipe.findOne({ _id: id }, (err, recipe) => {
-      if (err) throw err;
-      if (recipe) {
-        res.render("auth/editRecipeForm", {
-          id: recipe._id,
-          title: recipe.title,
-          date: recipe.date,
-          content1: recipe.content1,
-          content2: recipe.content2,
-          content3: recipe.content3,
-          submittedBy: recipe.submittedBy,
-          comment: recipe.comment,
-          images: recipe.images,
-          auth,
-        });
-      } else {
-        console.log("something went wrong");
-      }
-    });
-  }
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+
+  News.findOne({ _id: id }, (err, post) => {
+    if (err) throw err;
+    if (post) {
+      res.render("auth/editNewsForm", {
+        id: post._id,
+        title: post.title,
+        content1: post.content1,
+        content2: post.content2,
+        content3: post.content3,
+        comment: post.comment,
+        date: post.date,
+        images: post.images,
+        auth,
+      });
+    } else {
+      console.log("something went wrong");
+    }
+  });
+};
+
+exports.getEditRecipeForm = (req, res) => {
+  const id = req.params.id;
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+
+  Recipe.findOne({ _id: id }, (err, recipe) => {
+    if (err) throw err;
+    if (recipe) {
+      res.render("auth/editRecipeForm", {
+        id: recipe._id,
+        title: recipe.title,
+        date: recipe.date,
+        content1: recipe.content1,
+        content2: recipe.content2,
+        content3: recipe.content3,
+        submittedBy: recipe.submittedBy,
+        comment: recipe.comment,
+        images: recipe.images,
+        auth,
+      });
+    } else {
+      console.log("something went wrong");
+    }
+  });
 };
 
 exports.editNews = (req, res) => {
