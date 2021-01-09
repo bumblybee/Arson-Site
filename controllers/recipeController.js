@@ -2,7 +2,7 @@ const { Recipe } = require("../models");
 const { checkAuth } = require("../middleware/isAuth");
 
 exports.getRecipes = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   Recipe.find({}, (err, recipes) => {
     if (err) throw err;
     res.render("recipes", { recipes, auth });
@@ -10,7 +10,7 @@ exports.getRecipes = (req, res) => {
 };
 
 exports.getRecipe = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   const id = req.params.id;
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
@@ -40,7 +40,7 @@ exports.getRecipe = (req, res) => {
 };
 
 exports.getComposeRecipe = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   res.render("auth/composeRecipe", { auth });
 };
 
@@ -63,7 +63,7 @@ exports.composeRecipe = (req, res) => {
 
 exports.getEditRecipeForm = (req, res) => {
   const id = req.params.id;
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
     if (err) throw err;

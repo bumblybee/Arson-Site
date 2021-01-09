@@ -1,10 +1,8 @@
 const { News } = require("../models");
 const { checkAuth } = require("../middleware/isAuth");
 
-// Controller Fns
-
 exports.getNews = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   News.find({}, (err, posts) => {
     if (err) throw err;
 
@@ -42,7 +40,7 @@ exports.getNewsPost = (req, res) => {
 };
 
 exports.getComposeNews = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   res.render("auth/composeNews", { auth });
 };
 
@@ -64,7 +62,7 @@ exports.composeNews = (req, res) => {
 
 exports.getEditNewsForm = (req, res) => {
   const id = req.params.id;
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
 
   News.findOne({ _id: id }, (err, post) => {
     if (err) throw err;

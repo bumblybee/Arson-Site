@@ -4,7 +4,7 @@ const emailHandler = require("../handlers/emailHandler");
 
 //TODO: if choose to subscribe, send welcome email
 
-//! re-add eric to email list before going live
+//TODO: re-add eric to email list before going live
 
 exports.sendEmail = (req, res) => {
   // Check subscription status

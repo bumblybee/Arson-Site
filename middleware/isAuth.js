@@ -33,5 +33,5 @@ exports.checkAuth = (cookie) => {
       token = decoded;
     }
   }
-  return { auth, token };
+  return { auth };
 };

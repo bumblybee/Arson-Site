@@ -5,7 +5,7 @@ const { checkAuth } = require("../middleware/isAuth");
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
 exports.getLoginPage = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  const { auth } = checkAuth(req.cookies["PAS"]);
   res.render("auth/login", { auth });
 };
 

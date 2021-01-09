@@ -49,6 +49,7 @@ router.get("/compose", isAuth, recipeController.getComposeRecipe);
 router.post("/compose", upload.any(), isAuth, recipeController.composeRecipe);
 
 router.get("/edit/:id", isAuth, recipeController.getEditRecipeForm);
+
 router.post("/edit/:id", isAuth, recipeController.editRecipe);
 
 router.get("/:id", recipeController.getRecipe);
