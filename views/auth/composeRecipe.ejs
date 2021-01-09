@@ -4,7 +4,7 @@
   <div class="col-lg-8 col-md-12 mx-auto shadow-sm">
     <form
       id="recipe-form"
-      class="border p-2 rounded bg-white"
+      class="border p-2 rounded bg-white mb-2"
       method="POST"
       action="/compose/recipe"
       enctype="multipart/form-data"
@@ -115,17 +115,15 @@
           name="submittedBy"
         />
       </div>
-      <div class="form-group col">
+      <div class="form-group col d-flex">
         <button
-          class="btn btn-danger btn-block mb-2"
+          class="btn btn-danger btn-block mr-3"
           type="submit"
           name="button"
         >
           Publish
         </button>
-        <button id="clear-recipe-btn" class="btn btn-block btn-secondary mt-0">
-          Clear
-        </button>
+        <button id="clear-recipe-btn" class="btn btn-light">Clear</button>
       </div>
     </form>
   </div>
