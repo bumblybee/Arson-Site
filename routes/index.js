@@ -75,10 +75,10 @@ router.post(
   siteController.composeRecipe
 );
 
-// router.post("/compose/:type", upload.any(), isAuth, siteController.compose);
-
 router.get("/edit/:type/:id", isAuth, siteController.getEditForm);
 
-router.post("/edit/:type/:id", isAuth, catchErrors(siteController.editPost));
+router.post("/edit/news/:id", isAuth, siteController.editNews);
+
+router.post("/edit/recipe/:id", isAuth, siteController.editRecipe);
 
 module.exports = router;

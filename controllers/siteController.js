@@ -190,53 +190,52 @@ exports.getEditForm = (req, res) => {
   }
 };
 
-exports.editPost = (req, res) => {
+exports.editNews = (req, res) => {
   const id = req.params.id;
-  const type = req.params.type;
-  console.log(req.body);
+  console.log(req.params, req.body);
 
-  if (type === "recipe") {
-    Recipe.updateOne(
-      { _id: id },
-      {
-        title: req.body.title,
-        date: req.body.date,
-        content1: req.body.content1,
-        content2: req.body.content2,
-        content3: req.body.content3,
-        submittedBy: req.body.submittedBy,
-        comment: req.body.comment,
-      },
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(result);
-          res.redirect(`/recipes/${id}`);
-        }
-      }
-    );
-  }
+  // News.updateOne(
+  //   { _id: id },
+  //   {
+  //     title: req.body.title,
+  //     date: req.body.date,
+  //     content1: req.body.content1,
+  //     content2: req.body.content2,
+  //     content3: req.body.content3,
+  //     comment: req.body.comment,
+  //   },
+  //   (err, result) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.log(result);
+  //       res.redirect(`/news/${id}`);
+  //     }
+  //   }
+  // );
+};
 
-  if (type === "news") {
-    News.updateOne(
-      { _id: id },
-      {
-        title: req.body.title,
-        date: req.body.date,
-        content1: req.body.content1,
-        content2: req.body.content2,
-        content3: req.body.content3,
-        comment: req.body.comment,
-      },
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(result);
-          res.redirect(`/news/${id}`);
-        }
-      }
-    );
-  }
+exports.editRecipe = (req, res) => {
+  const id = req.params.id;
+  console.log(req.params, req.body);
+  // Recipe.updateOne(
+  //   { _id: id },
+  //   {
+  //     title: req.body.title,
+  //     date: req.body.date,
+  //     content1: req.body.content1,
+  //     content2: req.body.content2,
+  //     content3: req.body.content3,
+  //     submittedBy: req.body.submittedBy,
+  //     comment: req.body.comment,
+  //   },
+  //   (err, result) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.log(result);
+  //       res.redirect(`/recipes/${id}`);
+  //     }
+  //   }
+  // );
 };
