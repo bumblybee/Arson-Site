@@ -1,6 +1,8 @@
 const { Recipe, News } = require("../models");
 const { checkAuth } = require("../middleware/isAuth");
 
+// TODO: Check if need token data anywhere, else remove
+
 exports.getHome = async (req, res) => {
   const { auth, token } = checkAuth(req.cookies["PAS"]);
   let recipes = await Recipe.find().sort({ date: -1 });
@@ -8,7 +10,6 @@ exports.getHome = async (req, res) => {
   recipes = recipes.filter((recipe, index) => index < 2);
   news = news.filter((news, index) => index < 1)[0];
 
-  // TODO: use auth in nav
   res.render("home", { recipes, news, auth });
 };
 
@@ -18,10 +19,11 @@ exports.getStory = (req, res) => {
 };
 
 exports.getNews = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
   News.find({}, (err, posts) => {
     if (err) throw err;
 
-    res.render("news", { posts });
+    res.render("news", { posts, auth });
   }).sort({ date: -1 });
 };
 
@@ -98,36 +100,47 @@ exports.getPricing = (req, res) => {
   res.render("pricing", { url, auth });
 };
 
-exports.compose = (req, res) => {
-  const type = req.params.type;
-  if (type === "recipe") {
-    const newRecipe = new Recipe({
-      title: req.body.title,
-      date: req.body.date,
-      content1: req.body.content1,
-      content2: req.body.content2,
-      content3: req.body.content3,
-      submittedBy: req.body.submittedBy,
-      comment: req.body.comment,
-      images: req.files,
-    });
+exports.getComposeNews = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  res.render("auth/composeNews", { auth });
+};
 
-    newRecipe.save();
-    res.redirect("/recipes");
-  } else if (type === "news") {
-    const newPost = new News({
-      title: req.body.title,
-      date: req.body.date,
-      content1: req.body.content1,
-      content2: req.body.content2,
-      content3: req.body.content3,
-      submittedBy: req.body.submittedBy,
-      comment: req.body.comment,
-      images: req.files,
-    });
-    newPost.save();
-    res.redirect("/news");
-  }
+exports.getComposeRecipe = (req, res) => {
+  const { auth, token } = checkAuth(req.cookies["PAS"]);
+  res.render("auth/composeRecipe", { auth });
+};
+
+exports.composeNews = (req, res) => {
+  const newPost = new News({
+    title: req.body.title,
+    date: req.body.date,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    content3: req.body.content3,
+    submittedBy: req.body.submittedBy,
+    comment: req.body.comment,
+    images: req.files,
+  });
+  // newPost.save();
+  console.log(newPost);
+  res.redirect("/news");
+};
+
+exports.composeRecipe = (req, res) => {
+  const newRecipe = new Recipe({
+    title: req.body.title,
+    date: req.body.date,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    content3: req.body.content3,
+    submittedBy: req.body.submittedBy,
+    comment: req.body.comment,
+    images: req.files,
+  });
+
+  // newRecipe.save();
+  console.log(newRecipe);
+  res.redirect("/recipes");
 };
 
 exports.getEditForm = (req, res) => {

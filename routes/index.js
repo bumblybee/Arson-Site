@@ -62,7 +62,20 @@ router.get("/story", siteController.getStory);
 
 router.get("/pricing", siteController.getPricing);
 
-router.post("/compose/:type", upload.any(), isAuth, siteController.compose);
+router.get("/compose/news", isAuth, siteController.getComposeNews);
+
+router.get("/compose/recipe", isAuth, siteController.getComposeRecipe);
+
+router.post("/compose/news", upload.any(), isAuth, siteController.composeNews);
+
+router.post(
+  "/compose/recipe",
+  upload.any(),
+  isAuth,
+  siteController.composeRecipe
+);
+
+// router.post("/compose/:type", upload.any(), isAuth, siteController.compose);
 
 router.get("/edit/:type/:id", isAuth, siteController.getEditForm);
 
