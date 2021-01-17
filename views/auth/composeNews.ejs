@@ -53,10 +53,14 @@
           <label class="font-weight-bold" for="img1"
             >Main Photo <small>5MB limit</small></label
           >
+          <small id="remove-img1" onclick="removeImg(this)">remove photo</small>
           <input
+            class="file-input"
             title="Photo to be displayed on card, and the first photo displayed on the post's page"
             type="file"
             name="img1"
+            id="img1"
+            onChange="showRemove(this.id)"
             required
           />
         </div>
@@ -74,7 +78,14 @@
           <label class="font-weight-bold" for="img2"
             >Additional Photo <small>5MB limit</small></label
           >
-          <input type="file" name="img2" />
+          <small id="remove-img2" onclick="removeImg(this)">remove photo</small>
+          <input
+            class="file-input"
+            id="img2"
+            type="file"
+            name="img2"
+            onChange="showRemove(this.id)"
+          />
         </div>
 
         <label class="font-weight-bold" for="content3">Third Paragraph</label>
@@ -109,18 +120,34 @@
         >
           Publish
         </button>
-        <button id="clear-news-btn" class="btn btn-light">Clear</button>
+        <button id="clear-newsForm-btn" class="btn btn-light">Clear</button>
       </div>
     </form>
   </div>
 </div>
 
 <script>
-  const clearBtn = document.getElementById("clear-news-btn");
+  const clearBtn = document.getElementById("clear-newsForm-btn");
+
   clearBtn.addEventListener("click", () => {
     const newsForm = document.getElementById("news-form");
     newsForm.reset();
   });
 
-  // const clearFile = document.getElementById("clear-file");
+  const fileInputs = document.querySelectorAll(".file-input");
+
+  const showRemove = (id) => {
+    if (id === "img1") {
+      document.getElementById("remove-img1").style.display = "inline";
+    } else if (id === "img2") {
+      document.getElementById("remove-img2").style.display = "inline";
+    }
+  };
+
+  const removeImg = (el) => {
+    console.log(el.nextElementSibling);
+    const input = el.nextElementSibling;
+    input.value = "";
+    input.previousElementSibling.style.display = "none";
+  };
 </script>
