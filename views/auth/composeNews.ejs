@@ -60,7 +60,7 @@
             type="file"
             name="img1"
             id="img1"
-            onChange="showRemove(this.id)"
+            onChange="showRemove(this)"
             required
           />
         </div>
@@ -114,13 +114,15 @@
 
       <div class="form-group col d-flex">
         <button
-          class="btn btn-danger btn-block mr-3"
+          class="btn btn-danger btn-block mr-2"
           type="submit"
           name="button"
         >
           Publish
         </button>
-        <button id="clear-newsForm-btn" class="btn btn-light">Clear</button>
+        <button id="clear-newsForm-btn" class="btn btn-light border">
+          Clear
+        </button>
       </div>
     </form>
   </div>
@@ -136,17 +138,13 @@
 
   const fileInputs = document.querySelectorAll(".file-input");
 
-  const showRemove = (id) => {
-    if (id === "img1") {
-      document.getElementById("remove-img1").style.display = "inline";
-    } else if (id === "img2") {
-      document.getElementById("remove-img2").style.display = "inline";
-    }
+  const showRemove = (el) => {
+    el.previousElementSibling.style.display = "inline";
   };
 
   const removeImg = (el) => {
-    console.log(el.nextElementSibling);
     const input = el.nextElementSibling;
+
     input.value = "";
     input.previousElementSibling.style.display = "none";
   };

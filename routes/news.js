@@ -42,7 +42,7 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-router.get("/compose", isAuth, catchErrors(newsController.getComposeNews));
+router.get("/compose", isAuth, newsController.getComposeNews);
 
 router.post("/compose", upload.any(), isAuth, newsController.composeNews);
 

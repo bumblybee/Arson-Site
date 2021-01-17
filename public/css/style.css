@@ -799,14 +799,16 @@ footer {
 /* ---- Compose Forms ---- */
 
 #remove-img1,
-#remove-img2 {
+#remove-img2,
+#remove-img3 {
   color: hsl(7, 54%, 55%);
   font-weight: bolder;
   display: none;
 }
 
 #remove-img1:hover,
-#remove-img2:hover {
+#remove-img2:hover,
+#remove-img3:hover {
   cursor: pointer;
 }
 

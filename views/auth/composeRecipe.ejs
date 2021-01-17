@@ -47,7 +47,15 @@
             for="img1"
             >Main Photo <small>5MB limit</small></label
           >
-          <input class="mb-2" type="file" name="img1" required />
+          <small id="remove-img1" onclick="removeImg(this)">remove photo</small>
+          <input
+            class="mb-2"
+            type="file"
+            name="img1"
+            id="img1"
+            onChange="showRemove(this)"
+            required
+          />
         </div>
 
         <label class="font-weight-bold" for="content1">First Paragraph</label>
@@ -64,7 +72,14 @@
           <label class="font-weight-bold" for="img2"
             >Additional Photo <small>5MB limit</small></label
           >
-          <input class="mb-2" type="file" name="img2" />
+          <small id="remove-img2" onclick="removeImg(this)">remove photo</small>
+          <input
+            class="mb-2"
+            type="file"
+            name="img2"
+            id="img2"
+            onChange="showRemove(this)"
+          />
         </div>
 
         <label class="font-weight-bold" for="content1">Second Paragraph</label>
@@ -80,7 +95,14 @@
           <label class="font-weight-bold" for="img3"
             >Additional Photo <small>5MB limit</small></label
           >
-          <input class="mb-2" type="file" name="img3" />
+          <small id="remove-img3" onclick="removeImg(this)">remove photo</small>
+          <input
+            class="mb-2"
+            type="file"
+            name="img3"
+            id="img3"
+            onChange="showRemove(this)"
+          />
         </div>
         <label class="font-weight-bold" for="content1">Third Paragraph</label>
 
@@ -117,13 +139,15 @@
       </div>
       <div class="form-group col d-flex">
         <button
-          class="btn btn-danger btn-block mr-3"
+          class="btn btn-danger btn-block mr-2"
           type="submit"
           name="button"
         >
           Publish
         </button>
-        <button id="clear-recipe-btn" class="btn btn-light">Clear</button>
+        <button id="clear-recipe-btn" class="btn btn-light border">
+          Clear
+        </button>
       </div>
     </form>
   </div>
@@ -135,4 +159,15 @@
     const recipeForm = document.getElementById("recipe-form");
     recipeForm.reset();
   });
+
+  const showRemove = (el) => {
+    el.previousElementSibling.style.display = "inline";
+  };
+
+  const removeImg = (el) => {
+    const input = el.nextElementSibling;
+
+    input.value = "";
+    input.previousElementSibling.style.display = "none";
+  };
 </script>
