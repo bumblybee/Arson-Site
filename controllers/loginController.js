@@ -4,6 +4,10 @@ const { checkAuth } = require("../middleware/isAuth");
 
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
+exports.logoutUser = (req, res) => {
+  res.clearCookie("_PAS", COOKIE_CONFIG).redirect("/");
+};
+
 exports.getLoginPage = (req, res) => {
   const { auth } = checkAuth(req.cookies["_PAS"]);
   res.render("auth/login", { auth });

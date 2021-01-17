@@ -8,6 +8,8 @@ const { catchErrors } = require("../handlers/errorHandlers");
 // Render login page
 router.get("/", loginController.getLoginPage);
 
+router.get("/logout", loginController.logoutUser);
+
 // Post data after composing
 router.post("/", catchErrors(loginController.loginUser));
 
