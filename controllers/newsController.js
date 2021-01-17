@@ -41,6 +41,7 @@ exports.getNewsPost = (req, res) => {
 
 exports.getComposeNews = (req, res) => {
   const { auth } = checkAuth(req.cookies["PAS"]);
+
   res.render("auth/composeNews", { auth });
 };
 
