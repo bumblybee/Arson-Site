@@ -4,7 +4,7 @@ const cookie = require("cookie");
 
 const getTokenFromHeader = (req) => {
   if (req.headers) {
-    const token = cookie.parse(req.headers.cookie).PAS;
+    const token = cookie.parse(req.headers.cookie)._PAS;
     return token;
   }
 };
