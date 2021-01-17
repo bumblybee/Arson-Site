@@ -4,6 +4,7 @@
    <div class="recipe-content container">
     <h1 class="single-recipe-title"><%= title %></h1>
     <p class="text-muted"><%= date %><span class="font-weight-bold ml-2" style="color:hsl(7, 60%, 54%)";><%= submittedBy %></span></p>
+
     <div class="recipe-page-social-icons">
       <p class="copy-msg">Link Copied!</p>
        
@@ -24,13 +25,13 @@
     
     <div class="single-recipe-text">
       <p><%= content1 %></p>
-      <!-- <hr style="width:45%; margin-bottom:2rem; border:none; border-bottom:6px dotted rgba(51, 51, 51, 0.486)"> -->
+     
       <% if(images.length > 1) { %>
       <div class="container">
         <img class="recipe-middle-image" src="/img/<%= images[1].filename %>" alt="" />
       </div>
     <% } %>
-      <p><%= content2 %></p>
+      <p class="mt-2"><%= content2 %></p>
       
       <% if(images.length > 2) { %>
       
@@ -38,7 +39,7 @@
         <img class="recipe-bottom-image" src="/img/<%= images[2].filename %>" alt="" />
       </div>
       <% } %>
-      <p><%= content3 %></p>
+      <p class="mt-2"><%= content3 %></p>
     </div>
   </div>
   
