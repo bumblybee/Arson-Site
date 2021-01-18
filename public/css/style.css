@@ -176,16 +176,16 @@ body {
 }
 
 .story-title {
-  padding: 2rem 0;
+  padding: 1rem 0 1.8rem;
   font-family: "Rock Salt", cursive;
   font-size: 3.5rem;
   text-align: center;
 }
 
 .story-text-container {
-  background: rgba(70, 69, 69, 0.32);
+  background: rgba(70, 69, 69, 0.4);
   height: 100%;
-  padding: 0 0 6rem;
+  padding: 0 0 7.5rem;
 }
 
 .story-text {
@@ -271,7 +271,7 @@ body {
 
 /* ---- Updates Section ---- */
 
-.news-container {
+.updates-container {
   margin-top: -0.2rem;
   z-index: 5;
   color: #312420;
@@ -300,16 +300,15 @@ body {
   grid-gap: 3rem;
 }
 
-.news-title {
+.updates-header {
   font-family: "Oswald", sans-serif;
   font-size: 3.2rem;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.05rem;
-  padding: 1.5rem 0 0;
 }
 
-.news-card-container {
+.updates-card-container {
   height: auto;
   margin: 0 auto;
   padding-bottom: 3.8rem;
@@ -883,7 +882,7 @@ footer {
     font-size: 3rem;
   }
 
-  .news-card-container {
+  .updates-card-container {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -1111,17 +1110,17 @@ footer {
     z-index: 5;
   }
 
-  .news-container {
+  .updates-container {
     padding: 0 0.3rem;
   }
 
-  .news-title {
+  .updates-header {
     font-size: 2.6rem;
     padding: 2rem 0 0;
     letter-spacing: 0.05rem;
   }
 
-  .news-card-container {
+  .updates-card-container {
     grid-template-columns: repeat(1, 1fr);
   }
 
