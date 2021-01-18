@@ -90,24 +90,25 @@ exports.getEditRecipeForm = (req, res) => {
 exports.editRecipe = (req, res) => {
   const id = req.params.id;
   console.log(req.params, req.body);
-  // Recipe.updateOne(
-  //   { _id: id },
-  //   {
-  //     title: req.body.title,
-  //     date: req.body.date,
-  //     content1: req.body.content1,
-  //     content2: req.body.content2,
-  //     content3: req.body.content3,
-  //     submittedBy: req.body.submittedBy,
-  //     comment: req.body.comment,
-  //   },
-  //   (err, result) => {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       console.log(result);
-  //       res.redirect(`/recipes/${id}`);
-  //     }
-  //   }
-  // );
+  Recipe.updateOne(
+    { _id: id },
+    {
+      title: req.body.title,
+      date: req.body.date,
+      content1: req.body.content1,
+      content2: req.body.content2,
+      content3: req.body.content3,
+      submittedBy: req.body.submittedBy,
+      comment: req.body.comment,
+    },
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        setTimeout(() => {
+          res.redirect(`/recipes/${id}`);
+        }, 2000);
+      }
+    }
+  );
 };

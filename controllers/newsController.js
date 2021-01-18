@@ -90,23 +90,24 @@ exports.editNews = (req, res) => {
   const id = req.params.id;
   console.log(req.params, req.body);
 
-  // News.updateOne(
-  //   { _id: id },
-  //   {
-  //     title: req.body.title,
-  //     date: req.body.date,
-  //     content1: req.body.content1,
-  //     content2: req.body.content2,
-  //     content3: req.body.content3,
-  //     comment: req.body.comment,
-  //   },
-  //   (err, result) => {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       console.log(result);
-  //       res.redirect(`/news/${id}`);
-  //     }
-  //   }
-  // );
+  News.updateOne(
+    { _id: id },
+    {
+      title: req.body.title,
+      date: req.body.date,
+      content1: req.body.content1,
+      content2: req.body.content2,
+      content3: req.body.content3,
+      comment: req.body.comment,
+    },
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        setTimeout(() => {
+          res.redirect(`/news/${id}`);
+        }, 2000);
+      }
+    }
+  );
 };
