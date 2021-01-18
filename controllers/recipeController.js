@@ -56,9 +56,10 @@ exports.composeRecipe = (req, res) => {
     images: req.files,
   });
 
-  // newRecipe.save();
-  console.log(newRecipe);
-  res.redirect("/recipes");
+  newRecipe.save();
+  setTimeout(() => {
+    res.redirect("/recipes");
+  }, 2000);
 };
 
 exports.getEditRecipeForm = (req, res) => {

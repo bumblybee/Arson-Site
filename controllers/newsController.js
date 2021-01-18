@@ -11,7 +11,7 @@ exports.getNews = (req, res) => {
 };
 
 exports.getNewsPost = (req, res) => {
-  const { auth, token } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = checkAuth(req.cookies["_PAS"]);
   const postId = req.params.id;
   News.findOne({ _id: postId }, (err, post) => {
     if (err) throw err;
@@ -56,9 +56,10 @@ exports.composeNews = (req, res) => {
     comment: req.body.comment,
     images: req.files,
   });
-  // newPost.save();
-  console.log(newPost);
-  res.redirect("/news");
+  newPost.save();
+  setTimeout(() => {
+    res.redirect("/news");
+  }, 2000);
 };
 
 exports.getEditNewsForm = (req, res) => {
