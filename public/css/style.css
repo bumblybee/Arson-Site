@@ -542,6 +542,7 @@ footer {
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: center;
 }
 
 .single-recipe-title {
@@ -549,10 +550,18 @@ footer {
   font-family: "Oswald", sans-serif;
 }
 
+.single-recipe-text {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
 .single-recipe-text p {
   padding-bottom: 1rem;
   text-align: inherit;
-  width: 55%;
+  width: 60%;
   margin: 0 auto;
   line-height: 1.3;
   font-size: 1.3rem;
@@ -571,9 +580,9 @@ footer {
 
 .recipe-middle-image,
 .recipe-bottom-image {
-  margin: 2rem 22%;
+  margin: 2rem auto;
   height: 300px;
-  width: 55%;
+  width: 60%;
   object-fit: cover;
   filter: contrast(105%) saturate(105%);
 }
@@ -773,7 +782,7 @@ footer {
   border-radius: 2px;
 }
 
-/* ----------Pricing Page---------- */
+/* ---------- Pricing Page ---------- */
 
 .pricing-pdf {
   width: 100%;

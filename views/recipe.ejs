@@ -27,21 +27,21 @@
       <p><%= content1 %></p>
      
       <% if(images.length > 1) { %>
-      <div class="container">
+      
         <img class="recipe-middle-image" src="/img/<%= images[1].filename %>" alt="" />
-      </div>
+    
     <% } %>
       <p class="mt-2"><%= content2 %></p>
       
       <% if(images.length > 2) { %>
       
-      <div class="container">
+     
         <img class="recipe-bottom-image" src="/img/<%= images[2].filename %>" alt="" />
-      </div>
+     
       <% } %>
       <p class="mt-2"><%= content3 %></p>
     </div>
-  </div>
+ 
   
 </div>
 <script>
