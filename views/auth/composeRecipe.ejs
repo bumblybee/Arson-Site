@@ -38,25 +38,34 @@
         />
       </div>
 
-      <!-- TODO: Clear file -->
       <div class="form-group col mb-4">
         <div class="form-group w-50 mb-4">
           <label class="font-weight-bold" for="img1"
             >Main Photo <small>5MB limit</small></label
           >
           <small id="remove-img1" onclick="removeImg(this)">remove photo</small>
+
           <input
             title="Photo to be displayed on card, and the first photo displayed on the recipe's page"
             class="mb-2"
             type="file"
             name="img1"
             id="img1"
-            onChange="showRemoveLinkAndPreview(this)"
+            onChange="showRemoveLinkAndPreviewImage(this)"
             required
           />
-          <img id="preview" />
-        </div>
 
+          <div
+            id="img1-preview"
+            class="rounded mb-2 border text-center pt-4 position-relative"
+            style="height: 180px; width: 180px"
+          >
+            <i
+              style="top: 40%; right: 40%; color: #ccc"
+              class="fas fa-image fa-2x position-absolute"
+            ></i>
+          </div>
+        </div>
         <label class="font-weight-bold" for="content1">First Paragraph</label>
         <textarea
           class="form-control mb-4"
@@ -77,8 +86,18 @@
             type="file"
             name="img2"
             id="img2"
-            onChange="showRemoveLinkAndPreview(this)"
+            onChange="showRemoveLinkAndPreviewImage(this)"
           />
+          <div
+            id="img2-preview"
+            class="rounded mb-2 border text-center pt-4 position-relative"
+            style="height: 180px; width: 180px"
+          >
+            <i
+              style="top: 40%; right: 40%; color: #ccc"
+              class="fas fa-image fa-2x position-absolute"
+            ></i>
+          </div>
         </div>
 
         <label class="font-weight-bold" for="content1">Second Paragraph</label>
@@ -96,13 +115,24 @@
           >
           <small id="remove-img3" onclick="removeImg(this)">remove photo</small>
           <input
-            class="mb-2"
+            class="mb-2 d-inline-block"
             type="file"
             name="img3"
             id="img3"
-            onChange="showRemoveLinkAndPreview(this)"
+            onChange="showRemoveLinkAndPreviewImage(this)"
           />
+          <div
+            id="img3-preview"
+            class="rounded mb-2 border text-center pt-4 position-relative"
+            style="height: 180px; width: 180px"
+          >
+            <i
+              style="top: 40%; right: 40%; color: #ccc"
+              class="fas fa-image fa-2x position-absolute"
+            ></i>
+          </div>
         </div>
+        <div class="clearfix"></div>
         <label class="font-weight-bold" for="content1">Third Paragraph</label>
 
         <textarea
@@ -159,7 +189,7 @@
     recipeForm.reset();
   });
 
-  const showRemoveLinkAndPreview = (el) => {
+  const showRemoveLinkAndPreviewImage = (el) => {
     el.previousElementSibling.style.display = "inline";
     showPreviewImage(el);
   };
@@ -169,7 +199,10 @@
 
     reader.readAsDataURL(el.files[0]);
     reader.onload = (e) => {
-      document.getElementById("preview").src = e.target.result;
+      const imgPreview = document.getElementById(`${el.id}-preview`);
+      imgPreview.style.background = `url(${e.target.result})`;
+      imgPreview.style.backgroundSize = "cover";
+      imgPreview.firstElementChild.style.display = "none";
     };
   };
 
@@ -178,6 +211,12 @@
 
     fileInput.value = "";
     fileInput.previousElementSibling.style.display = "none";
-    document.getElementById("preview").src = "";
+    removeImagePreview(fileInput);
+  };
+
+  const removeImagePreview = (fileInput) => {
+    const imgPreview = document.getElementById(`${fileInput.id}-preview`);
+    imgPreview.style.background = "";
+    imgPreview.firstElementChild.style.display = "block";
   };
 </script>

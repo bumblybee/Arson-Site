@@ -55,14 +55,24 @@
           >
           <small id="remove-img1" onclick="removeImg(this)">remove photo</small>
           <input
-            class="file-input"
+            class="file-input mb-2"
             title="Photo to be displayed on card, and the first photo displayed on the post's page"
             type="file"
             name="img1"
             id="img1"
-            onChange="showRemove(this)"
+            onChange="showRemoveLinkAndPreviewImage(this)"
             required
           />
+          <div
+            id="img1-preview"
+            class="rounded mb-2 border text-center pt-4 position-relative"
+            style="height: 180px; width: 180px"
+          >
+            <i
+              style="top: 40%; right: 40%; color: #ccc"
+              class="fas fa-image fa-2x position-absolute"
+            ></i>
+          </div>
         </div>
 
         <label class="font-weight-bold" for="content2">Second Paragraph</label>
@@ -80,12 +90,22 @@
           >
           <small id="remove-img2" onclick="removeImg(this)">remove photo</small>
           <input
-            class="file-input"
+            class="file-input mb-2"
             id="img2"
             type="file"
             name="img2"
-            onChange="showRemove(this)"
+            onChange="showRemoveLinkAndPreviewImage(this)"
           />
+          <div
+            id="img2-preview"
+            class="rounded mb-2 border text-center pt-4 position-relative"
+            style="height: 180px; width: 180px"
+          >
+            <i
+              style="top: 40%; right: 40%; color: #ccc"
+              class="fas fa-image fa-2x position-absolute"
+            ></i>
+          </div>
         </div>
 
         <label class="font-weight-bold" for="content3">Third Paragraph</label>
@@ -138,14 +158,35 @@
 
   const fileInputs = document.querySelectorAll(".file-input");
 
-  const showRemove = (el) => {
+  const showRemoveLinkAndPreviewImage = (el) => {
     el.previousElementSibling.style.display = "inline";
+    showPreviewImage(el);
+  };
+
+  const showPreviewImage = (el) => {
+    let reader = new FileReader();
+
+    reader.readAsDataURL(el.files[0]);
+    reader.onload = (e) => {
+      const imgPreview = document.getElementById(`${el.id}-preview`);
+      imgPreview.style.background = `url(${e.target.result})`;
+      imgPreview.style.backgroundSize = "cover";
+      imgPreview.firstElementChild.style.display = "none";
+    };
   };
 
   const removeImg = (el) => {
-    const input = el.nextElementSibling;
+    const fileInput = el.nextElementSibling;
 
-    input.value = "";
-    input.previousElementSibling.style.display = "none";
+    fileInput.value = "";
+    fileInput.previousElementSibling.style.display = "none";
+
+    removeImagePreview(fileInput);
+  };
+
+  const removeImagePreview = (fileInput) => {
+    const imgPreview = document.getElementById(`${fileInput.id}-preview`);
+    imgPreview.style.background = "";
+    imgPreview.firstElementChild.style.display = "block";
   };
 </script>
