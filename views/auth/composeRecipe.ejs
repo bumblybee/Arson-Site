@@ -177,7 +177,11 @@
         >
           Publish
         </button>
-        <button id="clear-recipe-btn" class="btn btn-light border">
+        <button
+          id="clear-recipe-btn"
+          class="btn btn-light border"
+          onClick="clearForm()"
+        >
           Clear
         </button>
       </div>
@@ -186,8 +190,7 @@
 </div>
 
 <script>
-  const clearBtn = document.getElementById("clear-recipe-btn");
-  clearBtn.addEventListener("click", () => {
+  const clearForm = () => {
     const recipeForm = document.getElementById("recipe-form");
 
     // Clear image previews if clearing form
@@ -198,7 +201,7 @@
     });
 
     recipeForm.reset();
-  });
+  };
 
   const showRemoveLinkAndPreviewImage = (el) => {
     el.previousElementSibling.style.display = "inline";

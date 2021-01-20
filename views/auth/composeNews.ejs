@@ -142,7 +142,11 @@
         >
           Publish
         </button>
-        <button id="clear-newsForm-btn" class="btn btn-light border">
+        <button
+          id="clear-newsForm-btn"
+          class="btn btn-light border"
+          onClick="clearForm()"
+        >
           Clear
         </button>
       </div>
@@ -151,9 +155,7 @@
 </div>
 
 <script>
-  const clearBtn = document.getElementById("clear-newsForm-btn");
-
-  clearBtn.addEventListener("click", () => {
+  const clearForm = () => {
     const newsForm = document.getElementById("news-form");
 
     // Clear image previews if clearing form
@@ -164,7 +166,7 @@
     });
 
     newsForm.reset();
-  });
+  };
 
   const fileInputs = document.querySelectorAll(".file-input");
 
