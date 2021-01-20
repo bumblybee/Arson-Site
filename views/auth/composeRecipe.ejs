@@ -14,6 +14,18 @@
         Form laid out in order content will appear on page
       </p>
 
+      <div class="form-group col-lg-8 col-sm-6 mb-2">
+        <label class="font-weight-bold" for="title">Title</label>
+        <input
+          title="Title as you'd like it to appear on recipe and card header"
+          class="form-control"
+          type="text"
+          name="title"
+          id="title"
+          required
+        />
+      </div>
+
       <div class="form-group col-lg-3 col-sm-4">
         <label class="mt-2 font-weight-bold" for="date">Date</label>
         <input
@@ -22,18 +34,6 @@
           type="text"
           name="date"
           id="date"
-          required
-        />
-      </div>
-
-      <div class="form-group col-lg-8 col-sm-6 mb-4">
-        <label class="font-weight-bold" for="title">Title</label>
-        <input
-          title="Title as you'd like it to appear on recipe and card header"
-          class="form-control"
-          type="text"
-          name="title"
-          id="title"
           required
         />
       </div>
@@ -57,8 +57,9 @@
 
           <div
             id="img1-preview"
-            class="rounded mb-2 border text-center pt-4 position-relative"
+            class="img-preview rounded mb-2 border text-center pt-4 position-relative"
             style="height: 180px; width: 180px"
+            title="image preview"
           >
             <i
               style="top: 40%; right: 40%; color: #ccc"
@@ -90,8 +91,9 @@
           />
           <div
             id="img2-preview"
-            class="rounded mb-2 border text-center pt-4 position-relative"
+            class="img-preview rounded mb-2 border text-center pt-4 position-relative"
             style="height: 180px; width: 180px"
+            title="image preview"
           >
             <i
               style="top: 40%; right: 40%; color: #ccc"
@@ -123,8 +125,9 @@
           />
           <div
             id="img3-preview"
-            class="rounded mb-2 border text-center pt-4 position-relative"
+            class="img-preview rounded mb-2 border text-center pt-4 position-relative"
             style="height: 180px; width: 180px"
+            title="image preview"
           >
             <i
               style="top: 40%; right: 40%; color: #ccc"
@@ -145,7 +148,7 @@
       </div>
 
       <div class="form-group col">
-        <label class="font-weight-bold" for="comment">Card Comments</label>
+        <label class="font-weight-bold" for="comment">Card Caption</label>
         <textarea
           title="Short description to display on card. Max chars 130."
           class="form-control mb-4"
@@ -186,6 +189,14 @@
   const clearBtn = document.getElementById("clear-recipe-btn");
   clearBtn.addEventListener("click", () => {
     const recipeForm = document.getElementById("recipe-form");
+
+    // Clear image previews if clearing form
+    const fileInputs = document.querySelectorAll("input[type=file]");
+
+    Array.from(fileInputs).forEach((el) => {
+      removeImagePreview(el);
+    });
+
     recipeForm.reset();
   });
 
@@ -214,8 +225,8 @@
     removeImagePreview(fileInput);
   };
 
-  const removeImagePreview = (fileInput) => {
-    const imgPreview = document.getElementById(`${fileInput.id}-preview`);
+  const removeImagePreview = (el) => {
+    const imgPreview = document.getElementById(`${el.id}-preview`);
     imgPreview.style.background = "";
     imgPreview.firstElementChild.style.display = "block";
   };

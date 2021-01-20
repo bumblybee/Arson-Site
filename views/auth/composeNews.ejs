@@ -14,18 +14,6 @@
         Form laid out in order content will appear on page
       </p>
 
-      <div class="form-group col-lg-3 col-sm-4">
-        <label class="mt-2 font-weight-bold" for="date">Date</label>
-        <input
-          title="Date you'd like to appear on recipe"
-          class="form-control mb-3"
-          type="text"
-          name="date"
-          id="date"
-          required
-        />
-      </div>
-
       <div class="form-group col-lg-8 col-sm-6 mb-4">
         <label class="font-weight-bold" for="title">Title</label>
         <input
@@ -34,6 +22,18 @@
           type="text"
           name="title"
           id="title"
+          required
+        />
+      </div>
+
+      <div class="form-group col-lg-3 col-sm-4">
+        <label class="mt-2 font-weight-bold" for="date">Date</label>
+        <input
+          title="Date you'd like to appear on recipe"
+          class="form-control mb-3"
+          type="text"
+          name="date"
+          id="date"
           required
         />
       </div>
@@ -67,6 +67,7 @@
             id="img1-preview"
             class="rounded mb-2 border text-center pt-4 position-relative"
             style="height: 180px; width: 180px"
+            title="image preview"
           >
             <i
               style="top: 40%; right: 40%; color: #ccc"
@@ -100,6 +101,7 @@
             id="img2-preview"
             class="rounded mb-2 border text-center pt-4 position-relative"
             style="height: 180px; width: 180px"
+            title="image preview"
           >
             <i
               style="top: 40%; right: 40%; color: #ccc"
@@ -119,7 +121,7 @@
       </div>
 
       <div class="form-group col">
-        <label class="font-weight-bold" for="comment">Card Comment</label>
+        <label class="font-weight-bold" for="comment">Card Caption</label>
         <textarea
           title="Short description of post to display on card. Max chars 130."
           class="form-control mb-4"
@@ -153,6 +155,14 @@
 
   clearBtn.addEventListener("click", () => {
     const newsForm = document.getElementById("news-form");
+
+    // Clear image previews if clearing form
+    const fileInputs = document.querySelectorAll("input[type=file]");
+
+    Array.from(fileInputs).forEach((el) => {
+      removeImagePreview(el);
+    });
+
     newsForm.reset();
   });
 
