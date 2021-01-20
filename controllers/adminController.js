@@ -26,6 +26,6 @@ exports.loginUser = async (req, res) => {
   if (user) {
     res.redirect("/");
   } else {
-    res.status(403).redirect("/login");
+    res.status(403).redirect("/admin");
   }
 };

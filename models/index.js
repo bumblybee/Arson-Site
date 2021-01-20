@@ -30,6 +30,10 @@ const recipeSchema = new mongoose.Schema({
       required: [true, "Please add an image file."],
     },
   ],
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const newsSchema = new mongoose.Schema({
@@ -58,6 +62,10 @@ const newsSchema = new mongoose.Schema({
       required: [true, "Please add an image file."],
     },
   ],
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const signInSchema = new mongoose.Schema({

@@ -3,8 +3,9 @@ const { checkAuth } = require("../middleware/isAuth");
 
 exports.getRecipes = (req, res) => {
   const { auth } = checkAuth(req.cookies["_PAS"]);
-  Recipe.find({}, (err, recipes) => {
+  Recipe.find({ isDeleted: false }, (err, recipes) => {
     if (err) throw err;
+
     res.render("recipes", { recipes, auth });
   }).sort({ date: -1 });
 };

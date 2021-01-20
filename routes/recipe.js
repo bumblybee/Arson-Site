@@ -11,7 +11,7 @@ router.post("/compose", upload, isAuth, recipeController.composeRecipe);
 
 router.get("/edit/:id", isAuth, recipeController.getEditRecipeForm);
 
-router.post("/edit/:id", isAuth, recipeController.editRecipe);
+router.put("/edit/:id", isAuth, recipeController.editRecipe);
 
 router.get("/:id", recipeController.getRecipe);
 

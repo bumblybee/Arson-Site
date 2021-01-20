@@ -3,7 +3,7 @@ const { checkAuth } = require("../middleware/isAuth");
 
 exports.getNews = (req, res) => {
   const { auth } = checkAuth(req.cookies["_PAS"]);
-  News.find({}, (err, posts) => {
+  News.find({ isDeleted: false }, (err, posts) => {
     if (err) throw err;
 
     res.render("news", { posts, auth });
