@@ -51,9 +51,10 @@
             type="file"
             name="img1"
             id="img1"
-            onChange="showRemove(this)"
+            onChange="showRemoveLinkAndPreview(this)"
             required
           />
+          <img id="preview" />
         </div>
 
         <label class="font-weight-bold" for="content1">First Paragraph</label>
@@ -76,7 +77,7 @@
             type="file"
             name="img2"
             id="img2"
-            onChange="showRemove(this)"
+            onChange="showRemoveLinkAndPreview(this)"
           />
         </div>
 
@@ -99,7 +100,7 @@
             type="file"
             name="img3"
             id="img3"
-            onChange="showRemove(this)"
+            onChange="showRemoveLinkAndPreview(this)"
           />
         </div>
         <label class="font-weight-bold" for="content1">Third Paragraph</label>
@@ -158,14 +159,25 @@
     recipeForm.reset();
   });
 
-  const showRemove = (el) => {
+  const showRemoveLinkAndPreview = (el) => {
     el.previousElementSibling.style.display = "inline";
+    showPreviewImage(el);
+  };
+
+  const showPreviewImage = (el) => {
+    let reader = new FileReader();
+
+    reader.readAsDataURL(el.files[0]);
+    reader.onload = (e) => {
+      document.getElementById("preview").src = e.target.result;
+    };
   };
 
   const removeImg = (el) => {
-    const input = el.nextElementSibling;
+    const fileInput = el.nextElementSibling;
 
-    input.value = "";
-    input.previousElementSibling.style.display = "none";
+    fileInput.value = "";
+    fileInput.previousElementSibling.style.display = "none";
+    document.getElementById("preview").src = "";
   };
 </script>
