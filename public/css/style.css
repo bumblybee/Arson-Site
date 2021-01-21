@@ -1172,8 +1172,9 @@ footer {
   }
 
   .recipe-page-title {
-    padding: 2rem 0 1.5rem;
+    padding: 2rem 0;
     font-size: 3.1rem;
+    margin: 0;
   }
 
   .recipe-page-card-container {
