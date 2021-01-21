@@ -3,8 +3,6 @@ const { checkAuth } = require("../middleware/isAuth");
 
 // TODO: Delete option
 
-// TODO: Uncomment db saves at edit and compose before launch
-
 exports.getHome = async (req, res) => {
   const { auth } = checkAuth(req.cookies["_PAS"]);
   let recipes = await Recipe.find().sort({ date: -1 });

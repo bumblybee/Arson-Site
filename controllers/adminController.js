@@ -13,7 +13,6 @@ exports.getLoginPage = (req, res) => {
   res.render("auth/login", { auth });
 };
 
-//TODO: Split these routes out separately and wire to links in navbar
 exports.loginUser = async (req, res) => {
   const { username, password } = req.body;
   const { token, user } = await authService.loginWithPassword(
