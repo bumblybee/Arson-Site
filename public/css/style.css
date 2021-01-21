@@ -1046,6 +1046,10 @@ footer {
     padding: 3rem 0;
   }
 
+  .story-text-container {
+    padding: 0 0 4rem;
+  }
+
   .story-text {
     width: 100%;
     height: 100%;
@@ -1057,14 +1061,15 @@ footer {
   /* ------ Story Page -------- */
 
   .story-page-container {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 1rem;
   }
 
   .story-page-title {
     font-size: 2.55rem;
-
-    background-position: 52% -45px;
+    margin: 0.5rem 0;
+    background-position: 52% -30px;
+    padding: 4rem;
   }
 
   .story-text p:first-of-type:first-letter {
@@ -1081,7 +1086,7 @@ footer {
   .story-page-text {
     line-height: 1.3;
     text-align: left;
-    padding: 0 1rem 0;
+    padding: 0 0.7rem 0;
   }
 
   .story-page-text h2 {
@@ -1264,5 +1269,40 @@ footer {
     left: 7rem;
     width: 35%;
     top: 27.5rem;
+  }
+  .story-page-title {
+    font-size: 2.45rem;
+    background-position: 52% -35px;
+    padding: 3rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .story-page-title {
+    background-position: 52% 10px;
+  }
+
+  .story-page-text {
+    padding: 0 0.25rem 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #fire-video {
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  #fire-video {
+    width: 260px;
+  }
+
+  .story-page-text p {
+    font-size: 1.1rem;
+  }
+
+  .story-page-text h2 {
+    font-size: 1.7rem;
   }
 }
