@@ -906,6 +906,15 @@ footer {
   .story-page-title {
     background-position: 50% 80px;
   }
+
+  .single-recipe-text p {
+    width: 80%;
+  }
+
+  .recipe-middle-image,
+  .recipe-bottom-image {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -968,6 +977,15 @@ footer {
   }
   .news-page-container hr {
     width: 100%;
+  }
+
+  .single-recipe-text p {
+    width: 85%;
+  }
+
+  .recipe-middle-image,
+  .recipe-bottom-image {
+    width: 85%;
   }
 }
 
