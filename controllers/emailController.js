@@ -43,6 +43,7 @@ exports.sendEmail = (req, res) => {
     if (bot === "unlikely") {
       transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
+          console.log(err);
           res.status(400).render("email/msgErr", { auth });
         } else {
           res.render("email/msgSent", { auth });
