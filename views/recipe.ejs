@@ -8,12 +8,22 @@
     <div class="recipe-page-social-icons">
       <p class="copy-msg">Link Copied!</p>
        
-        <% if(auth === true) { %>
-  <a class="btn btn-dark mb-3 mr-2" type="button" href="/recipes/edit/<%= id %>">Edit Recipe</a>
+      <!----- Auth Buttons ----->
 
-  <a class="btn btn-light border-danger text-danger font-weight-bold mb-3" type="button" href="/recipes/delete/<%= id %>" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
-<% } else { %>
- <i
+        <% if(auth === true) { %>
+          <div class="d-flex">
+          <a class="btn btn-dark mb-3 mr-2" type="button" href="/recipes/edit/<%= id %>">Edit Recipe</a>
+
+          <form
+            id="news-delete-form"
+            method="POST"
+            action="/recipes/delete/<%= id %>"
+            >
+            <button class="btn btn-light border-danger text-danger font-weight-bold" type="submit" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+          </form>
+          </div>
+      <% } else { %>
+        <i
           class="fas fa-link copy-link"
           data-placement="top"
           title="Copy Link"

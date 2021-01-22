@@ -17,6 +17,6 @@ router.get("/:id", recipeController.getRecipe);
 
 router.get("/", recipeController.getRecipes);
 
-router.get("/delete/:id", isAuth, recipeController.deleteRecipe);
+router.post("/delete/:id", isAuth, recipeController.deleteRecipe);
 
 module.exports = router;

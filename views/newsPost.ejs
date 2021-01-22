@@ -36,7 +36,13 @@
          
         <a class="btn btn-dark h-25 ml-3 mb-4 mr-2 mt-auto" href="/news/edit/<%= id %>">Edit Post</a>
 
-          <a class="btn btn-light border-danger text-danger font-weight-bold h-25" type="button" href="/news/delete/<%= id %>" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
+          <form
+            id="news-delete-form"
+            method="POST"
+            action="/news/delete/<%= id %>"
+          >
+          <button class="btn btn-light border-danger text-danger font-weight-bold" type="submit" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+          </form>
        
         <% } else { %>
            <i
