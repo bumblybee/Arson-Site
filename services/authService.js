@@ -1,4 +1,4 @@
-const { signIn } = require("../models");
+const { SignIn } = require("../models");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -17,7 +17,7 @@ exports.generateJWT = (user) => {
 };
 
 exports.loginWithPassword = async (username, password) => {
-  const user = await signIn.findOne({ username: username });
+  const user = await SignIn.findOne({ username: username });
 
   if (user) {
     const correctPassword = await bcrypt.compare(password, user.password);

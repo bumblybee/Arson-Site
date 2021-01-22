@@ -111,3 +111,17 @@ exports.editNews = (req, res) => {
     }
   );
 };
+
+exports.deleteNewsPost = (req, res) => {
+  const id = req.params.id;
+  News.updateOne({ _id: id }, { isDeleted: true }, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+      setTimeout(() => {
+        res.redirect(`/news`);
+      }, 1500);
+    }
+  });
+};

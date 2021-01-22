@@ -47,8 +47,8 @@ exports.sendEmail = (req, res) => {
         }
       });
     } else {
-      //Send confirmation even though not sent so they don't know it didn't go through
+      // Send confirmation even though message not sent so they don't know it didn't go through if bot checked box
       res.render("email/msgSent");
     }
-  }, 1200);
+  }, 1000);
 };

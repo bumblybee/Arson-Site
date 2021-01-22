@@ -17,4 +17,6 @@ router.get("/:id", newsController.getNewsPost);
 
 router.get("/", newsController.getNews);
 
+router.get("/delete/:id", isAuth, newsController.deleteNewsPost);
+
 module.exports = router;

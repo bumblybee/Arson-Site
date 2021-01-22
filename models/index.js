@@ -73,6 +73,12 @@ const signInSchema = new mongoose.Schema({
   password: String,
 });
 
+const subscriberSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+});
+
 exports.Recipe = new mongoose.model("Recipe", recipeSchema);
 exports.News = new mongoose.model("News", newsSchema);
-exports.signIn = new mongoose.model("SignIn", signInSchema);
+exports.SignIn = new mongoose.model("SignIn", signInSchema);
+exports.Subscriber = new mongoose.model("Subscriber", subscriberSchema);

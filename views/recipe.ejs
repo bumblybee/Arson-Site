@@ -9,7 +9,9 @@
       <p class="copy-msg">Link Copied!</p>
        
         <% if(auth === true) { %>
-  <a class="btn btn-danger mb-3" href="/recipes/edit/<%= id %>">Edit Recipe</a>
+  <a class="btn btn-dark mb-3 mr-2" type="button" href="/recipes/edit/<%= id %>">Edit Recipe</a>
+
+  <a class="btn btn-light border-danger text-danger font-weight-bold mb-3" type="button" href="/recipes/delete/<%= id %>" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
 <% } else { %>
  <i
           class="fas fa-link copy-link"

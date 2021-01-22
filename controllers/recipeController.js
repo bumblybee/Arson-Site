@@ -90,7 +90,7 @@ exports.getEditRecipeForm = (req, res) => {
 
 exports.editRecipe = (req, res) => {
   const id = req.params.id;
-  console.log(req.params, req.body);
+
   Recipe.updateOne(
     { _id: id },
     {
@@ -112,4 +112,18 @@ exports.editRecipe = (req, res) => {
       }
     }
   );
+};
+
+exports.deleteRecipe = (req, res) => {
+  const id = req.params.id;
+  Recipe.updateOne({ _id: id }, { isDeleted: true }, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+      setTimeout(() => {
+        res.redirect(`/recipes`);
+      }, 1500);
+    }
+  });
 };
