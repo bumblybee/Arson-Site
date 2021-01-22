@@ -1,12 +1,14 @@
 const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const emailHandler = require("../handlers/emailHandler");
+const { checkAuth } = require("../middleware/isAuth");
 
 //TODO: if choose to subscribe, send welcome email
 
 //TODO: re-add eric to email list before going live
 
 exports.sendEmail = (req, res) => {
+  const { auth } = checkAuth(req.cookies["_PAS"]);
   // Check subscription status
   let subscribe;
   req.body.subscribeNews ? (subscribe = "Yes") : (subscribe = "No");
@@ -41,14 +43,14 @@ exports.sendEmail = (req, res) => {
     if (bot === "unlikely") {
       transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
-          res.render("email/msgErr");
+          res.render("email/msgErr", { auth });
         } else {
-          res.render("email/msgSent");
+          res.render("email/msgSent", { auth });
         }
       });
     } else {
-      // Send confirmation even though message not sent so they don't know it didn't go through if bot checked box
-      res.render("email/msgSent");
+      // If we hit this case, a bot has checked the box. Still send confirmation.
+      res.render("/email/msgSent");
     }
   }, 1000);
 };
