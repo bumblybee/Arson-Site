@@ -29,3 +29,18 @@ exports.jwtError = (err, req, res, next) => {
     res.status(401).render("error/error", { code: err.code });
   }
 };
+
+class CustomError extends Error {
+  constructor(error, name, status) {
+    super(error);
+
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, CustomError);
+    }
+
+    this.name = name;
+    this.status = status;
+  }
+}
+
+exports.CustomError = CustomError;

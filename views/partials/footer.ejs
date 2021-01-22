@@ -19,13 +19,13 @@
             <h3 class="form-text">Questions? Wanna get ahold of a bottle of sauce?</h3>
             <form id="contact" action="/contact" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name">
+                    <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="email" name="email" id="email" placeholder="Email" required>
+                    <input class="form-control" type="email" name="email" id="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="msg" id="msg" placeholder="Message" rows="4" required></textarea>
+                    <textarea class="form-control" name="msg" id="msg" placeholder="Message" rows="4"></textarea>
                     <label class="bot-check text-white" for="bot-check">Agree to terms?</label>
                     <input type="checkbox" name="bot" value="false" class="bot-check">
                 </div>

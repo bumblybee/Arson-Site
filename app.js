@@ -28,7 +28,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(compression());
-app.use(helmet.frameguard({ action: "SAMEORIGIN" }));
+app.use(helmet());
 
 // ----Logging----
 
