@@ -35,7 +35,7 @@ exports.sendEmail = (req, res) => {
     //TODO: move into emailHandler
     const mailOptions = {
       from: `🌶 Arson Sauce ${req.body.email}`,
-      to: [process.env.ADMIN_EMAIL],
+      to: [process.env.ADMIN_EMAIL, process.env.ARSON_EMAIL],
       subject: "Arson Sauce Form Submission",
       html: emailHTML,
     };
