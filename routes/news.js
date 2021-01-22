@@ -11,7 +11,7 @@ router.post("/compose", upload, isAuth, newsController.composeNews);
 
 router.get("/edit/:id", isAuth, newsController.getEditNewsForm);
 
-router.put("/edit/:id", isAuth, newsController.editNews);
+router.post("/edit/:id", isAuth, newsController.editNews);
 
 router.get("/:id", newsController.getNewsPost);
 

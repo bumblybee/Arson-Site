@@ -11,12 +11,12 @@ router.post("/compose", upload, isAuth, recipeController.composeRecipe);
 
 router.get("/edit/:id", isAuth, recipeController.getEditRecipeForm);
 
-router.put("/edit/:id", isAuth, recipeController.editRecipe);
+router.post("/edit/:id", isAuth, recipeController.editRecipe);
 
 router.get("/:id", recipeController.getRecipe);
 
-router.get("/", recipeController.getRecipes);
-
 router.post("/delete/:id", isAuth, recipeController.deleteRecipe);
+
+router.get("/", recipeController.getRecipes);
 
 module.exports = router;

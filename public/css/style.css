@@ -100,6 +100,7 @@ body {
 
 .dropdown-menu {
   background: #272727;
+  z-index: 100;
 }
 
 .dropdown-item {
@@ -701,7 +702,7 @@ footer {
   font-family: "Rock Salt", cursive;
   font-size: 3.9rem;
   text-align: center;
-
+  margin: 0;
   color: #e6e4e0;
   background-image: linear-gradient(
       rgba(59, 59, 59, 0.7),
@@ -710,7 +711,7 @@ footer {
     ),
     url("/img/plantscrop.jpg");
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 24%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   border: 2px solid hsl(40, 11%, 79%);
@@ -1083,8 +1084,7 @@ footer {
 
   .story-page-title {
     font-size: 2.55rem;
-    margin: 0.5rem 0;
-    background-position: 52% -30px;
+    background-position: 52% -35px;
     padding: 4rem;
   }
 
@@ -1108,6 +1108,7 @@ footer {
   .story-page-text h2 {
     padding: 0 0.8rem 0.7rem;
     margin-bottom: 0.1rem;
+    font-size: 1.6rem;
   }
 
   .story-text {
@@ -1307,7 +1308,7 @@ footer {
   }
   .story-page-title {
     font-size: 2.45rem;
-    background-position: 52% -35px;
+    background-position: 52% -10px;
     padding: 3rem;
   }
 
@@ -1333,6 +1334,16 @@ footer {
 
   .recipe-page-title {
     font-size: 2.5rem;
+  }
+
+  .story-page-title {
+    background-position: 52% 40px;
+    padding: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  .story-page-text h2 {
+    font-size: 1.5rem;
   }
 }
 
