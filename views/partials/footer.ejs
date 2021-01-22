@@ -47,13 +47,11 @@
         const emailBtn = document.getElementById("emailBtn");
         const email = document.getElementById("email");
         const msg = document.getElementById("msg");
-
+        
         if(email.value !== "" && msg.value !== "") {
-            // emailBtn.innerHTML = "<i class='fas fa-cog fa-2x'></i>";
+            emailBtn.innerHTML = "<i class='fas fa-cog fa-2x'></i>";
             emailBtn.classList.remove("btn-block");
-            emailBtn.classList.remove("btn");
             emailBtn.classList.add("clicked");
-            emailBtn.classList.add("spinner-border text-danger");
             emailBtn.blur();
         }
     };
