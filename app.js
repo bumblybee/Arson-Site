@@ -15,6 +15,7 @@ const adminRouter = require("./routes/admin");
 const contactRouter = require("./routes/contact");
 const storyRouter = require("./routes/story");
 const newsRouter = require("./routes/news");
+const pricingRouter = require("./routes/pricing");
 const recipeRouter = require("./routes/recipe");
 const notFoundRouter = require("./routes/notFound");
 
@@ -41,6 +42,7 @@ app.use(logger(morganLogStyle));
 app.use("/story", storyRouter);
 app.use("/news", newsRouter);
 app.use("/recipes", recipeRouter);
+app.use("/pricing", pricingRouter);
 app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
 app.use("/", siteRouter);
