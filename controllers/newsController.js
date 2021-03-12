@@ -1,8 +1,8 @@
 const { News } = require("../models");
-const { checkAuth } = require("../middleware/isAuth");
+const authService = require("../services/authService");
 
 exports.getNews = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   News.find({ isDeleted: false }, (err, posts) => {
     if (err) throw err;
 
@@ -11,7 +11,7 @@ exports.getNews = (req, res) => {
 };
 
 exports.getNewsPost = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   const postId = req.params.id;
   News.findOne({ _id: postId }, (err, post) => {
     if (err) throw err;
@@ -40,7 +40,7 @@ exports.getNewsPost = (req, res) => {
 };
 
 exports.getComposeNews = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
 
   res.render("auth/composeNews", { auth });
 };
@@ -64,7 +64,7 @@ exports.composeNews = (req, res) => {
 
 exports.getEditNewsForm = (req, res) => {
   const id = req.params.id;
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
 
   News.findOne({ _id: id }, (err, post) => {
     if (err) throw err;
@@ -88,7 +88,7 @@ exports.getEditNewsForm = (req, res) => {
 
 exports.editNews = (req, res) => {
   const id = req.params.id;
-  console.log(req.params, req.body);
+  // console.log(req.params, req.body);
 
   News.updateOne(
     { _id: id },

@@ -1,5 +1,6 @@
 const { SignIn } = require("../models");
 const jwt = require("jsonwebtoken");
+const jsonwebtoken = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -14,6 +15,24 @@ exports.generateJWT = (user) => {
   return jwt.sign({ data }, secret, {
     expiresIn: expiration,
   });
+};
+
+exports.checkAuth = (cookie) => {
+  let auth = false;
+  let token = null;
+  // TODO: remove token in future if not using
+  if (cookie) {
+    const decoded = jsonwebtoken.verify(
+      cookie,
+      Buffer.from(process.env.JWT_SECRET, "base64")
+    );
+
+    if (decoded) {
+      auth = true;
+      token = decoded;
+    }
+  }
+  return { auth };
 };
 
 exports.loginWithPassword = async (username, password) => {

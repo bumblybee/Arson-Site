@@ -1,10 +1,10 @@
 const { Recipe, News } = require("../models");
-const { checkAuth } = require("../middleware/isAuth");
+const authService = require("../services/authService");
 
 // TODO: Delete option
 
 exports.getHome = async (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   let recipes = await Recipe.find().sort({ date: -1 });
   let news = await News.find().sort({ date: -1 });
   recipes = recipes.filter((recipe, index) => index < 2);

@@ -7,7 +7,7 @@ const { catchErrors } = require("../handlers/errorHandlers");
 // Email form submission
 router.post("/", validation, catchErrors(emailController.sendEmail));
 
-//TODO: Comment out sent and err routes after design finished
+// TODO: Comment out sent and err routes after design finished
 router.get("/sent", (req, res) => {
   res.render("email/msgSent");
 });

@@ -1,6 +1,5 @@
 const { Recipe, News } = require("../models");
 const authService = require("../services/authService");
-const { checkAuth } = require("../middleware/isAuth");
 
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
@@ -9,7 +8,7 @@ exports.logoutUser = (req, res) => {
 };
 
 exports.getLoginPage = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   res.render("auth/login", { auth });
 };
 

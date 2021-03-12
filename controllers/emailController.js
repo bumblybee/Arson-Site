@@ -1,14 +1,14 @@
 const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const emailHandler = require("../handlers/emailHandler");
-const { checkAuth } = require("../middleware/isAuth");
+const authService = require("../services/authService");
 
 //TODO: if choose to subscribe, send welcome email
 
 //TODO: re-add eric to email list before going live
 
 exports.sendEmail = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   // Check subscription status
   let subscribe;
   req.body.subscribeNews ? (subscribe = "Yes") : (subscribe = "No");

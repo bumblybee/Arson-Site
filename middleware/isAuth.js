@@ -1,5 +1,5 @@
 const jwt = require("express-jwt");
-const jsonwebtoken = require("jsonwebtoken");
+
 const cookie = require("cookie");
 
 const getTokenFromHeader = (req) => {
@@ -17,21 +17,3 @@ exports.isAuth = jwt({
   algorithms: ["HS256"],
   credentialsRequired: true,
 });
-
-exports.checkAuth = (cookie) => {
-  let auth = false;
-  let token = null;
-
-  if (cookie) {
-    const decoded = jsonwebtoken.verify(
-      cookie,
-      Buffer.from(process.env.JWT_SECRET, "base64")
-    );
-
-    if (decoded) {
-      auth = true;
-      token = decoded;
-    }
-  }
-  return { auth };
-};

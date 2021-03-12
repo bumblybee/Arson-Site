@@ -1,8 +1,8 @@
 const { Recipe } = require("../models");
-const { checkAuth } = require("../middleware/isAuth");
+const authService = require("../services/authService");
 
 exports.getRecipes = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   Recipe.find({ isDeleted: false }, (err, recipes) => {
     if (err) throw err;
 
@@ -11,7 +11,7 @@ exports.getRecipes = (req, res) => {
 };
 
 exports.getRecipe = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   const id = req.params.id;
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
@@ -41,7 +41,7 @@ exports.getRecipe = (req, res) => {
 };
 
 exports.getComposeRecipe = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   res.render("auth/composeRecipe", { auth });
 };
 
@@ -65,7 +65,7 @@ exports.composeRecipe = (req, res) => {
 
 exports.getEditRecipeForm = (req, res) => {
   const id = req.params.id;
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
     if (err) throw err;

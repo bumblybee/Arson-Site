@@ -1,7 +1,7 @@
-const { checkAuth } = require("../middleware/isAuth");
+const authService = require("../services/authService");
 
 exports.notFound = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
+  const { auth } = authService.checkAuth(req.cookies["_PAS"]);
 
   res.status(404).render("404", { auth });
 };
