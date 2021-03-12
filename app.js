@@ -10,7 +10,7 @@ dotenv.config();
 
 const cookieParser = require("cookie-parser");
 
-const siteRouter = require("./routes");
+const homeRouter = require("./routes/home");
 const adminRouter = require("./routes/admin");
 const contactRouter = require("./routes/contact");
 const storyRouter = require("./routes/story");
@@ -45,7 +45,7 @@ app.use("/recipes", recipeRouter);
 app.use("/pricing", pricingRouter);
 app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
-app.use("/", siteRouter);
+app.use("/", homeRouter);
 app.use("/*", notFoundRouter);
 
 // ------- Error Handling -------------
