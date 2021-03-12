@@ -13,6 +13,7 @@ const cookieParser = require("cookie-parser");
 const siteRouter = require("./routes");
 const adminRouter = require("./routes/admin");
 const contactRouter = require("./routes/contact");
+const storyRouter = require("./routes/story");
 const newsRouter = require("./routes/news");
 const recipeRouter = require("./routes/recipe");
 const notFoundRouter = require("./routes/notFound");
@@ -37,11 +38,12 @@ app.use(logger(morganLogStyle));
 
 // --------- Routes -------
 
-app.use("/", siteRouter);
+app.use("/story", storyRouter);
 app.use("/news", newsRouter);
 app.use("/recipes", recipeRouter);
 app.use("/admin", adminRouter);
 app.use("/contact", contactRouter);
+app.use("/", siteRouter);
 app.use("/*", notFoundRouter);
 
 // ------- Error Handling -------------

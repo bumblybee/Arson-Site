@@ -13,11 +13,6 @@ exports.getHome = async (req, res) => {
   res.render("home", { recipes, news, auth });
 };
 
-exports.getStory = (req, res) => {
-  const { auth } = checkAuth(req.cookies["_PAS"]);
-  res.render("story", { auth });
-};
-
 exports.getPricing = (req, res) => {
   const { auth } = checkAuth(req.cookies["_PAS"]);
   //TODO: Add pricing file upload option

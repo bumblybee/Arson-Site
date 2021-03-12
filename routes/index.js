@@ -9,8 +9,6 @@ router.get("/", siteController.getHome);
 
 router.get("/home", siteController.getHome);
 
-router.get("/story", siteController.getStory);
-
 router.get("/pricing", siteController.getPricing);
 
 module.exports = router;
