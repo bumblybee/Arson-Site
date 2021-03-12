@@ -16,6 +16,14 @@ body {
   overflow-y: auto!;
 }
 
+.eric-name:hover {
+  text-decoration-color: hsl(7, 60%, 54%);
+}
+
+.eric-name span {
+  font-weight: 500;
+}
+
 /* #loading-message {
   display: none;
 } */
