@@ -9,7 +9,8 @@
   </a>
 </p>
 
-> Arson Sauce - Pearson Hot Sauce Website
+> Arson Sauce - Website for Pearson hot sauce.
+> Node, Express, EJS, MongoDB, Mongoose, jsonwebtoken, nodemailer
 
 ### 🏠 [Homepage](https://arsonsauce.com)
 
