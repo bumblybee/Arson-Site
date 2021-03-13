@@ -1,14 +1,19 @@
 {
   "name": "arson_sauce",
   "version": "1.0.0",
-  "description": "arson sauce website",
+  "description": "Arson Sauce hot sauce website",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -e js,ejs,css"
   },
-  "author": "t hess",
+  "author": "Tiffani Hess",
   "license": "MIT",
+  "homepage": "https://arsonsauce.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bumblybee/Arson-Site"
+  },
   "engines": {
     "node": "12.x"
   },
