@@ -2,6 +2,7 @@ const nodemailer = require("nodemailer");
 const mailgun = require("nodemailer-mailgun-transport");
 const emailHandler = require("../handlers/emailHandler");
 const authService = require("../services/authService");
+const { logger } = require("../handlers/logger");
 
 //TODO: if choose to subscribe, send welcome email
 
@@ -9,6 +10,7 @@ const authService = require("../services/authService");
 
 exports.sendEmail = (req, res) => {
   const { auth } = authService.checkAuth(req.cookies["_PAS"]);
+
   // Check subscription status
   let subscribe;
   req.body.subscribeNews ? (subscribe = "Yes") : (subscribe = "No");
@@ -43,14 +45,20 @@ exports.sendEmail = (req, res) => {
     if (bot === "unlikely") {
       transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
-          console.log(err);
+          logger.error(err);
           res.status(400).render("email/msgErr", { auth });
         } else {
+          logger.info(
+            `Email sent at contact form - name: ${name}, email: ${email}, message: ${msg}`
+          );
           res.render("email/msgSent", { auth });
         }
       });
     } else {
       // If we hit this case, a bot has checked the box. Still send confirmation.
+      logger.info(
+        `Bot check triggered at contact form - name: ${name}, email: ${email}, msg: ${msg}`
+      );
       res.render("/email/msgSent");
     }
   }, 1000);

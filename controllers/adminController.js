@@ -1,5 +1,6 @@
 const { Recipe, News } = require("../models");
 const authService = require("../services/authService");
+const { logger } = require("../handlers/logger");
 
 const COOKIE_CONFIG = require("../config/cookieConfig");
 
@@ -22,8 +23,10 @@ exports.loginUser = async (req, res) => {
   if (token) res.cookie("_PAS", token, COOKIE_CONFIG);
 
   if (user) {
+    logger.info(`Successful login - ${username}`);
     res.redirect("/");
   } else {
+    logger.error(`Failed login attempt - username: ${username}`);
     res.status(403).redirect("/admin");
   }
 };

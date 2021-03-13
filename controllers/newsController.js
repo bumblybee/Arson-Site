@@ -1,5 +1,6 @@
 const { News } = require("../models");
 const authService = require("../services/authService");
+const { logger } = require("../handlers/logger");
 
 exports.getNews = (req, res) => {
   const { auth } = authService.checkAuth(req.cookies["_PAS"]);
@@ -45,7 +46,7 @@ exports.getComposeNews = (req, res) => {
   res.render("auth/composeNews", { auth });
 };
 
-exports.composeNews = (req, res) => {
+exports.composeNews = async (req, res) => {
   const newPost = new News({
     title: req.body.title,
     date: req.body.date,
@@ -56,7 +57,11 @@ exports.composeNews = (req, res) => {
     comment: req.body.comment,
     images: req.files,
   });
-  newPost.save();
+
+  // logger.info(`News post - ${title}`);
+
+  await newPost.save();
+
   setTimeout(() => {
     res.redirect("/news");
   }, 2000);
