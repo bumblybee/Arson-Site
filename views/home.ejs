@@ -10,8 +10,11 @@
     <img class="chili" src="img/chili.svg" alt="" />
     <div class="story-text-container">
       <div class="story-text">
+        <!--     Title     -->
         <h1 class="story-title">The Story</h1>
+        <!--   Story Image   -->
         <img class="plants-img" src="/img/plants.jpg" alt="" />
+        <!--   Story Text   -->
         <div class="story-p">
           <p>
             When Eric Pearson gave a sample of his spicy red “Pearson Hot Sauce”
@@ -28,6 +31,7 @@
             marshmallows INSIDE THE HOUSE came out of the package already
             roasted!
           </p>
+          <!-- #truncate - cut off on mobile screens -->
           <p>
             <span id="truncate"
               >One time the folks from a neighboring farm called the fire
@@ -80,7 +84,7 @@
     <h1 class="updates-header">Featured Updates</h1>
   </div>
 
-  <!-- Cards -->
+  <!-- "Updates" cards -->
   <div class="updates-card-container container">
     <div class="card home-card border-top-0">
       <div class="card-body d-flex flex-row">
@@ -109,7 +113,7 @@
         </div>
       </div>
 
-      <!-- image -->
+      <!-- Image -->
       <a href="/news/<%= news._id %>" class="card-link-wrapper"
         ><div
           class="card-img-container"
@@ -122,7 +126,7 @@
 
     <% recipes.forEach(recipe => { %>
 
-    <!----------- Card ----------------->
+    <!------  Card  ------>
 
     <div class="card home-card border-top-0">
       <div class="card-body d-flex flex-row">
@@ -151,7 +155,7 @@
         </div>
       </div>
 
-      <!-- image -->
+      <!-- Image -->
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper"
         ><div
           class="card-img-container"

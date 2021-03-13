@@ -93,7 +93,6 @@ exports.getEditNewsForm = (req, res) => {
 
 exports.editNews = (req, res) => {
   const id = req.params.id;
-  // console.log(req.params, req.body);
 
   News.updateOne(
     { _id: id },

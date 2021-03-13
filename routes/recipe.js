@@ -7,11 +7,16 @@ const recipeController = require("../controllers/recipeController");
 
 router.get("/compose", isAuth, recipeController.getComposeRecipe);
 
-router.post("/compose", upload, isAuth, recipeController.composeRecipe);
+router.post(
+  "/compose",
+  upload,
+  isAuth,
+  catchErrors(recipeController.composeRecipe)
+);
 
 router.get("/edit/:id", isAuth, recipeController.getEditRecipeForm);
 
-router.post("/edit/:id", isAuth, recipeController.editRecipe);
+router.post("/edit/:id", isAuth, catchErrors(recipeController.editRecipe));
 
 router.get("/:id", recipeController.getRecipe);
 

@@ -3,6 +3,7 @@
 <footer class="footer">
   
     <div class="container footer-container mx-auto">
+        <!-- Footer Links -->
         <div class="footer-nav-container">
             <nav class="nav footer-nav">
                 <a class="nav-link" href="/">Home</a>
@@ -17,6 +18,8 @@
     
         <div class="container form-container">
             <h3 class="form-text">Questions? Wanna get ahold of a bottle of sauce?</h3>
+
+            <!-- Contact Form -->
             <form id="contact" action="/contact" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="name" id="contact-form" placeholder="Name" required>
@@ -32,7 +35,6 @@
                 <input type="checkbox" name="subscribeNews" id="subscribe-news">
                 <label class="text-white" for="subscribe-news">Send me the latest news</label>
                 <button onClick="animateBtn()" type="submit" class="btn btn-block emailBtn" id="emailBtn" name="emailBtn">Submit</button>
-               
             </form>
             
         </div>
@@ -56,7 +58,7 @@
         }
     };
 
-// Pop up when copying link via icon
+    // Pop up when copying link
     const copiedLinks = document.querySelectorAll(".copy-link");
     const copiedMsgs = document.querySelectorAll(".copy-msg");
     const links = Array.from(copiedLinks);
@@ -73,10 +75,5 @@
     });
 
 </script>
-
-
-
-
-
 </body>
 </html>

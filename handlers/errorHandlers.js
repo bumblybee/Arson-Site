@@ -1,3 +1,5 @@
+const { logger } = require("../handlers/logger");
+
 exports.catchErrors = (fn) => {
   return function (req, res, next) {
     return fn(req, res, next).catch(next);
@@ -11,21 +13,20 @@ exports.developmentErrors = (err, req, res, next) => {
     stack: err.stack,
   };
 
-  // logger.error(err);
+  logger.error(err);
   res.status(err.status || 500).json(errorDetails);
 };
 
 exports.productionErrors = (err, req, res, next) => {
-  // logger.error(err);
-
+  logger.error(err);
   res.status(err.status || 500).json({
     error: err.message,
   });
 };
 
 exports.jwtError = (err, req, res, next) => {
+  logger.error(err);
   if (err.name === "UnauthorizedError") {
-    console.log(err);
     res.status(401).render("error/error", { code: err.code });
   }
 };

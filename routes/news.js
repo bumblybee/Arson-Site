@@ -7,11 +7,16 @@ const newsController = require("../controllers/newsController");
 
 router.get("/compose", isAuth, newsController.getComposeNews);
 
-router.post("/compose", upload, isAuth, newsController.composeNews);
+router.post(
+  "/compose",
+  upload,
+  isAuth,
+  catchErrors(newsController.composeNews)
+);
 
 router.get("/edit/:id", isAuth, newsController.getEditNewsForm);
 
-router.post("/edit/:id", isAuth, newsController.editNews);
+router.post("/edit/:id", isAuth, catchErrors(newsController.editNews));
 
 router.get("/:id", newsController.getNewsPost);
 

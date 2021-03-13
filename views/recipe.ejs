@@ -8,12 +8,14 @@
     <div class="recipe-page-social-icons">
       <p class="copy-msg">Link Copied!</p>
        
-      <!----- Auth Buttons ----->
+      <!----- Admin Buttons ----->
 
         <% if(auth === true) { %>
           <div class="d-flex">
+          <!-- Edit Button -->
           <a class="btn btn-dark text-warning font-weight-bold mb-3 mr-3" type="button" href="/recipes/edit/<%= id %>">Edit Recipe</a>
 
+          <!-- Delete Form / Button -->
           <form
             id="news-delete-form"
             method="POST"
@@ -31,10 +33,10 @@
         <% } %>
     </div>
 
+    <!-- Recipe Text / Images -->
     <img class="recipe-top-image" src="/img/<%= images[0].filename %>" alt="" />
 
  
-    
     <div class="single-recipe-text">
       <p><%= content1 %></p>
      
@@ -57,7 +59,7 @@
   
 </div>
 <script>
-  //Copy Link on Click
+  // Copy Link on Click
   const copiedLinks = document.querySelectorAll(".copy-link");
   const copiedMsgs = document.querySelectorAll(".copy-msg");
   const links = Array.from(copiedLinks);

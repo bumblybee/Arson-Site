@@ -4,6 +4,7 @@
 
   <div class="container mx-auto text-center p-2"><a href="/#contact" class="text-danger">Click here to place an order via email.</a></div>
   <div id="loading-message" class="text-center">If PDF doesn't load, please try refreshing the page.</div>
+  <!-- PDF Viewer -->
  <iframe
     class="pricing-pdf"
     src=http://docs.google.com/gview?url=<%= url %>&embedded=true
@@ -16,6 +17,7 @@
 </div>
 
 <script>
+  // If PDF isn't loaded, display message
   const loadingMessage = document.getElementById("loading-message");
 
   const frameLoaded = () => {

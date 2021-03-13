@@ -10,6 +10,7 @@ dotenv.config();
 
 const cookieParser = require("cookie-parser");
 
+// ---- Routers ----
 const homeRouter = require("./routes/home");
 const adminRouter = require("./routes/admin");
 const contactRouter = require("./routes/contact");
@@ -32,7 +33,7 @@ app.use(cookieParser());
 app.use(compression());
 app.use(helmet.frameguard({ action: "SAMEORIGIN" }));
 
-// ----Logging----
+// ---- Logging ----
 
 const morganLogStyle = app.get("env") === "development" ? "dev" : "common";
 app.use(logger(morganLogStyle));
@@ -48,7 +49,7 @@ app.use("/contact", contactRouter);
 app.use("/", homeRouter);
 app.use("/*", notFoundRouter);
 
-// ------- Error Handling -------------
+// ------- Error Handling --------
 app.use(errorHandlers.jwtError);
 
 if (app.get("env") === "development") {
@@ -65,12 +66,13 @@ if (process.env.NODE_ENV === "production") {
   console.log("Working in prod environment");
 }
 
-//TODO: change db password
+// ----- DB Connection -----
 mongoose.connect(
   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_NAME}-2cvre.mongodb.net/arsonSauce?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
+// ----- Start Server -----
 app.listen(port, () => {
   console.log(`Server running on ${port}`);
 });

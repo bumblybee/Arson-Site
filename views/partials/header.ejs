@@ -56,8 +56,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/favicon/favicon.ico" />
 
+    <!-- Web Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- CSS, Icons, Fonts -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -76,14 +78,16 @@
     />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- Tab Title -->
     <title>Arson Sauce | Pearson Hot Sauce</title>
   </head>
   <body>
     <div class="nav-header">
       <a href="/">
+        <!-- Logo in site header -->
         <img class="banner" src="/img/dragoncolor.png" alt="" />
       </a>
-
+      <!-- Tagline -->
       <p class="nav-header__p">
         Because you can't spell <span class="pearson">Pearson</span> without
         <span class="arson">arson</span>
@@ -102,6 +106,7 @@
             ></span>
           </button>
           <div class="collapse navbar-collapse" id="top-nav">
+            <!-- Navigation links -->
             <ul class="navbar-nav mx-auto">
               <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
               <li class="nav-item">
@@ -120,7 +125,7 @@
                 <a class="nav-link contact" href="/#contact">Contact</a>
               </li>
 
-              <!---- Auth Links ---->
+              <!---- Admin Links ---->
 
               <% if (auth) { %>
               <div class="dropdown">

@@ -1,12 +1,14 @@
 <%- include("partials/header", {auth}) -%>
 
-<!-- TODO: Fix css from recipes to news classes -->
+<!-- TODO: Fix class names -> recipes to news classes -->
 <div class="card-page-container">
   <h1 class="recipe-page-title text-center">News</h1>
   <div class="container recipe-page-card-container">
     <% posts.forEach(post => { %>
     <div class="container">
+      <!-- Link to post wrapping card  -->
       <a href="/news/<%= post._id %>" class="card-link-wrapper">
+        <!------  Card  ------>
       <div class="card recipe-page-card">
         <div class="card-img-container" style="background-image:url('/img/<%= post.images[0].filename %>');">
         </div>
