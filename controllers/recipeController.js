@@ -120,7 +120,7 @@ exports.deleteRecipe = (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(result);
+      // TODO: log result
       setTimeout(() => {
         res.redirect(`/recipes`);
       }, 1500);
