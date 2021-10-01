@@ -34,7 +34,7 @@
     </div>
 
     <!-- Recipe Text / Images -->
-    <img class="recipe-top-image" src="/img/<%= images[0].filename %>" alt="" />
+    <img class="recipe-top-image" src="/img/<%= images[0].filename %>" alt="recipe image" />
 
  
     <div class="single-recipe-text">
@@ -42,7 +42,7 @@
      
       <% if(images.length > 1) { %>
       
-        <img class="recipe-middle-image" src="/img/<%= images[1].filename %>" alt="" />
+        <img class="recipe-middle-image" src="/img/<%= images[1].filename %>" alt="recipe image" />
     
     <% } %>
       <p class="mt-2"><%= content2 %></p>
@@ -50,7 +50,7 @@
       <% if(images.length > 2) { %>
       
      
-        <img class="recipe-bottom-image" src="/img/<%= images[2].filename %>" alt="" />
+        <img class="recipe-bottom-image" src="/img/<%= images[2].filename %>" alt="recipe image" />
      
       <% } %>
       <p class="mt-2"><%= content3 %></p>
