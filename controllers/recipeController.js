@@ -1,10 +1,11 @@
+const { logger } = require("../handlers/logger");
 const { Recipe } = require("../models");
 const authService = require("../services/authService");
 
 exports.getRecipes = (req, res) => {
   const { auth } = authService.checkAuth(req.cookies["_PAS"]);
   Recipe.find({ isDeleted: false }, (err, recipes) => {
-    if (err) throw err;
+    if (err) logger.error(err);
 
     res.render("recipes", { recipes, auth });
   }).sort({ date: -1 });
@@ -15,7 +16,9 @@ exports.getRecipe = (req, res) => {
   const id = req.params.id;
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
-    if (err) throw err;
+    if (err) {
+      logger.error(err);
+    }
     if (recipe) {
       const title = recipe.title;
       const content1 = recipe.content1;
@@ -68,7 +71,8 @@ exports.getEditRecipeForm = (req, res) => {
   const { auth } = authService.checkAuth(req.cookies["_PAS"]);
 
   Recipe.findOne({ _id: id }, (err, recipe) => {
-    if (err) throw err;
+    if (err) logger.error(err);
+
     if (recipe) {
       res.render("auth/editRecipeForm", {
         id: recipe._id,
@@ -104,7 +108,7 @@ exports.editRecipe = (req, res) => {
     },
     (err, result) => {
       if (err) {
-        console.log(err);
+        logger.error(err);
       } else {
         setTimeout(() => {
           res.redirect(`/recipes/${id}`);
@@ -118,7 +122,7 @@ exports.deleteRecipe = (req, res) => {
   const id = req.params.id;
   Recipe.updateOne({ _id: id }, { isDeleted: true }, (err, result) => {
     if (err) {
-      console.log(err);
+      logger.error(err);
     } else {
       // TODO: log result
       setTimeout(() => {
