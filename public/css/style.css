@@ -1370,3 +1370,7 @@ footer {
     font-size: 1.7rem;
   }
 }
+/* Display set to none in head - avoid FOUC */
+html {
+  display: block
+}
