@@ -40,10 +40,12 @@ body {
   z-index: -10;
 }
 
+
 .banner {
-  width: 13rem;
-  height: 11rem;
-  padding: 0.9rem 0;
+  /* width: 12.5rem;
+  height: 10.5rem; */
+  padding: 0.8rem 0;
+  /* margin: 0.75rem 0; */
   filter: saturate(120%);
 }
 
