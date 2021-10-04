@@ -5,5 +5,6 @@
         "titleBar.activeBackground": "#83290e",
         "titleBar.activeForeground": "#F9FAFB",
         "statusBar.background": "#2e0909"
-    }
+    },
+    "editor.parameterHints.cycle": true
 }
