@@ -127,7 +127,8 @@
       </div>
 
       <!-- Image -->
-      <a href="/news/<%= news._id %>" class="card-link-wrapper"
+      <a href="/news/<%= news._id %>"     class="card-link-wrapper"
+      aria-label="<%= news.title %>"
         ><div
           class="card-img-container"
           style="background-image: url('/img/<%= news.images[0].filename %>')"
@@ -170,6 +171,7 @@
 
       <!-- Image -->
       <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper"
+      aria-label="<%= recipe.title %>"
         ><div
           class="card-img-container"
           style="background-image: url('/img/<%= recipe.images[0].filename %>')"

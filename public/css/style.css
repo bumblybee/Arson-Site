@@ -617,15 +617,16 @@ footer {
 
 .copy-msg {
   display: none;
-  position: absolute;
-  top: 10rem;
-  left: 12rem;
+  text-align: center;
+  position: fixed;
+  top: 33%;
+  left: 37%;
   color: hsla(48, 50%, 97%);
   background: #be3624;
   border-radius: 4px;
   padding: 0.5rem;
   font-size: 1.4rem;
-  opacity: 0.5;
+  opacity: 0.7;
   width: 30%;
   z-index: 10;
 }
@@ -1255,12 +1256,6 @@ footer {
     margin-bottom: 2rem;
   }
 
-  .copy-msg {
-    left: 9rem;
-    width: 28%;
-    /* height: 40px; */
-    top: 10rem;
-  }
 
   /* ----------News Post Page------------ */
 
@@ -1311,11 +1306,6 @@ footer {
     margin: 0;
   }
 
-  .copy-msg {
-    left: 7rem;
-    width: 35%;
-    top: 27.5rem;
-  }
   .story-page-title {
     font-size: 2.45rem;
     background-position: 52% -50px;

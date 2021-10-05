@@ -29,6 +29,9 @@
           class="fas fa-link copy-link"
           data-placement="top"
           title="Copy Link"
+          aria-label="copy link to post"
+          aria-role="button"
+          tabindex="0"
         ></i>
         <% } %>
     </div>
@@ -59,21 +62,31 @@
   
 </div>
 <script>
-  // Copy Link on Click
-  const copiedLinks = document.querySelectorAll(".copy-link");
-  const copiedMsgs = document.querySelectorAll(".copy-msg");
-  const links = Array.from(copiedLinks);
-  const msgs = Array.from(copiedMsgs);
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
+  // Copy post URL
+  const copyLink = document.querySelector(".copy-link");
+ 
+    copyLink.addEventListener("click", (e) => {
       window.navigator.clipboard.writeText(window.location.href);
-      console.log(link.previousElementSibling);
-      link.previousElementSibling.style.display = "block";
+      // Show copied message
+      copyLink.previousElementSibling.style.display = "block";
+
       setTimeout(() => {
-        link.previousElementSibling.style.display = "none";
+        copyLink.previousElementSibling.style.display = "none";
       }, 2000);
     });
-  });
+
+     copyLink.addEventListener("keyup", (e) => {
+       if(e.keyCode === 13) {
+        window.navigator.clipboard.writeText(window.location.href);
+        copyLink.previousElementSibling.style.display = "block";
+        
+        setTimeout(() => {
+          copyLink.previousElementSibling.style.display = "none";
+        }, 2000);
+      }
+    });
+  
+ 
 </script>
 </body>
 </html>

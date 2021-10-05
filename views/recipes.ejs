@@ -5,7 +5,7 @@
     <% recipes.forEach(recipe => { %>
     <div class="container">
       <!-- Link to recipe wrapping card -->
-      <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper">
+      <a href="/recipes/<%= recipe._id %>" class="card-link-wrapper" aria-label="<%= recipe.title %>">
 
       <!------  Card  ------>
       <div class="card recipe-page-card">

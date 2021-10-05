@@ -7,7 +7,7 @@
     <% posts.forEach(post => { %>
     <div class="container">
       <!-- Link to post wrapping card  -->
-      <a href="/news/<%= post._id %>" class="card-link-wrapper">
+      <a href="/news/<%= post._id %>" class="card-link-wrapper" aria-label="<%= post.title %>">
         <!------  Card  ------>
       <div class="card recipe-page-card">
         <div class="card-img-container" style="background-image:url('/img/<%= post.images[0].filename %>');">
